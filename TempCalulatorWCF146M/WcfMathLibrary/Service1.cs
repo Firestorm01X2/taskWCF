@@ -12,6 +12,7 @@ namespace WcfMathLibrary
     {
         OutputForTemp IService1.CalculateTemp(InputForTemp input)
         {
+            //Комментарий
             OutputForTemp result = new OutputForTemp();
             result.OutputMessage = "Вы написали: "+ input.InputMessage;
             return result;
