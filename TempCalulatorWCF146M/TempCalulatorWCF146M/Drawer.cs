@@ -12,7 +12,7 @@ namespace TempCalulatorWCF146M
         public void Draw(Graphics g, int Widht, int Height)
         {
             int N = 4; // размер матрицы
-            
+            int D = Widht / N;
             Random rnd = new Random();
             double[][] Umas = new double[N][];
             for (int h = 0; h < N; h++)
@@ -37,12 +37,12 @@ namespace TempCalulatorWCF146M
                 {
                     if (Umas[i][j] < 5)
                     {
-                        Rectangle rect = new Rectangle((300 / N) * j, (300 / N) * i, (300 / N), (300 / N));
+                        Rectangle rect = new Rectangle(D * j, D * i, D, D);
                         g.FillRectangle(blueBrush, rect);
                     }
                     else
                     {
-                        Rectangle rect = new Rectangle((300 / N) * j, (300 / N) * i, (300 / N), (300 / N));
+                        Rectangle rect = new Rectangle(D * j, D * i, D, D);
                         g.FillRectangle(redBrush, rect);
                     }
                 }
