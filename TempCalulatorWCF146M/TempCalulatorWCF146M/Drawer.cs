@@ -6,6 +6,7 @@ using System.Drawing;
 
 namespace TempCalulatorWCF146M
 {
+    //Ещё один комментарий
     public class Drawer
     {
         public void Draw(Graphics g)

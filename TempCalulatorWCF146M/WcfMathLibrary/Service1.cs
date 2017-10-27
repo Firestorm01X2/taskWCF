@@ -15,6 +15,7 @@ namespace WcfMathLibrary
             //Комментарий
             OutputForTemp result = new OutputForTemp();
             result.OutputMessage = "Вы написали: "+ input.InputMessage;
+            //Ещё один комментарий
             return result;
         }
     }
