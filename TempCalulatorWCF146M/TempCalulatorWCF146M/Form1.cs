@@ -14,12 +14,16 @@ namespace TempCalulatorWCF146M
     {
         private List<Point> myPts = new List<Point>();
         Drawer _drawer;
+        private double [][] Umas;
+        private int N=1000;
+
         // hello
         public Form1()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
             _drawer = new Drawer();
+            GenArrey();
         }
 
         private void MovePoints(List<Point> pts)
@@ -32,7 +36,21 @@ namespace TempCalulatorWCF146M
 
             this.Invalidate();
         }
-
+        private void GenArrey()
+        {
+            Umas = new double[N][];
+            for (int h = 0; h < N; h++)
+            {
+                Umas[h] = new double[N];
+            }
+            for (int i = 0; i < N; i++)
+            {
+                for (int j = 0; j < N; j++)
+                {
+                    Umas[i][j] = 0;
+                }
+            }
+        }
         private void DrawCalc(Graphics g)
         {
             string str = "Привет GDI+";
@@ -98,6 +116,7 @@ namespace TempCalulatorWCF146M
 
         private void btStart_Click(object sender, EventArgs e)
         {
+            _drawer.InitData(2, N, 100, 0.001, Umas); // Остальные переменные надо "взять" с формы, т.е. добавить поля.
             timer1.Start();
         }
 
