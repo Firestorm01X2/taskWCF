@@ -14,6 +14,7 @@ namespace TempCalulatorWCF146M
     {
         private List<Point> myPts = new List<Point>();
         Drawer _drawer;
+        // hello
         public Form1()
         {
             InitializeComponent();
