@@ -92,7 +92,7 @@ namespace TempCalulatorWCF146M
         {
             if (!timer1.Enabled)
                 return;
-            _drawer.Draw(e.Graphics);
+            _drawer.Draw(e.Graphics,panel1.Width, panel1.Height);
         }
 
         private void btStart_Click(object sender, EventArgs e)

@@ -9,9 +9,10 @@ namespace TempCalulatorWCF146M
     //Ещё один комментарий
     public class Drawer
     {
-        public void Draw(Graphics g)
+        public void Draw(Graphics g, int Widht, int Height)
         {
             int N = 4; // размер матрицы
+            
             Random rnd = new Random();
             double[][] Umas = new double[N][];
             for (int h = 0; h < N; h++)
