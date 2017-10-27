@@ -42,6 +42,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Location = new System.Drawing.Point(13, 60);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(520, 234);
@@ -50,6 +51,7 @@
             // 
             // btStart
             // 
+            this.btStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btStart.Location = new System.Drawing.Point(23, 311);
             this.btStart.Name = "btStart";
             this.btStart.Size = new System.Drawing.Size(75, 23);
@@ -60,6 +62,7 @@
             // 
             // btStop
             // 
+            this.btStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btStop.Location = new System.Drawing.Point(126, 311);
             this.btStop.Name = "btStop";
             this.btStop.Size = new System.Drawing.Size(75, 23);

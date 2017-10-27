@@ -55,8 +55,8 @@ namespace TempCalulatorWCF146M
             Brush brush = Brushes.DarkRed;
             Pen pen = new Pen(Color.Green);
             pen.Width = 10.0f;
-            g.DrawRectangle(pen, 100, 100, 100, 100);
-            g.FillRectangle(brush, 100, 100, 100, 100);
+            //g.DrawRectangle(pen, 100, 100, 100, 100);
+            //g.FillRectangle(brush, 100, 100, 100, 100);
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
