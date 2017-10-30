@@ -12,11 +12,65 @@ namespace WcfMathLibrary
     {
         OutputForTemp IService1.CalculateTemp(InputForTemp input)
         {
-            //Комментарий
             OutputForTemp result = new OutputForTemp();
-            result.OutputMessage = "Вы написали: "+ input.InputMessage;
-            //Ещё один комментарий
+            try
+            {
+                result.U = CalcNewT(input.U, input.C, input.H, input.Tau, input.TimeSteps);
+                result.OutputMessage = "Calculations are correct";
+            }
+            catch (Exception e)
+            {
+                result.OutputMessage = e.Data.ToString();
+            }
             return result;
+        }
+
+        public double[,] CalcNewT(double[,] U, double a, double h, double tau, int steps)
+        {
+            double R = a * a * tau / h / h;
+            if (R >= 0.25)
+            {
+                throw new Exception("Stability condition is not met!");
+            }
+
+            int M = U.GetLength(0);
+            int N = U.GetLength(1);
+            double[,] UNew = new double[M, N];
+
+            for (int i = 0; i < N; i++)
+            {
+                UNew[0, i] = U[0, i];
+                UNew[M - 1, i] = U[M - 1, i];
+            }
+            for (int i = 0; i < M; i++)
+            {
+                UNew[i, 0] = U[i, 0];
+                UNew[i, N - 1] = U[i, N - 1];
+            }
+
+            int k = 0;
+            do
+            {
+                for (int i = 1; i < M - 1; i++)
+                {
+                    for (int j = 1; j < N - 1; j++)
+                    {
+                        UNew[i, j] = U[i, j] + R * (U[i + 1, j] + U[i - 1, j] + U[i, j + 1] + U[i, j - 1] - 4 * U[i, j]);
+                    }
+                }
+
+                for (int i = 1; i < M - 1; i++)
+                {
+                    for (int j = 1; j < N - 1; j++)
+                    {
+                        U[i, j] = UNew[i, j];
+                    }
+                }
+
+                k++;
+            } while (k < steps);
+
+            return U;
         }
     }
 }

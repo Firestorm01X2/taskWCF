@@ -20,7 +20,7 @@ namespace WcfMathLibrary
     public class OutputForTemp
     {
         [DataMember]
-        public double[][] U
+        public double[,] U
         {
             get; set;
         }
@@ -38,7 +38,7 @@ namespace WcfMathLibrary
         private double _h;
         private double _tau;
         private double _c;
-        private double _TimeMax;    
+        private int _timeSteps;
         [DataMember]
         public string InputMessage
         {
@@ -46,7 +46,7 @@ namespace WcfMathLibrary
         }
 
         [DataMember]
-        public double[][] U
+        public double[,] U
         {
             get; set;
         }
@@ -100,16 +100,16 @@ namespace WcfMathLibrary
         }
 
         [DataMember]
-        public double TimeMax
+        public int TimeSteps
         {
             get
             {
-                return _TimeMax;
+                return _timeSteps;
             }
 
             set
             {
-                _TimeMax = value;
+                _timeSteps = value;
             }
         }
     }  
