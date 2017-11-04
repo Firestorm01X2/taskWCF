@@ -62,10 +62,10 @@ namespace TempCalulatorWCF146M
             input.Tau = 10;
             input.InputMessage = str;
             Service1Client client = new Service1Client();
-            OutputForTemp output = client.CalculateTemp(input);
+            //OutputForTemp output = client.CalculateTemp(input);
 
-            g.DrawString
-                  (output.OutputMessage, new Font(nameFont, 20), Brushes.Green, 0, 0);
+            //g.DrawString
+            //      (output.OutputMessage, new Font(nameFont, 20), Brushes.Green, 0, 0);
 
             foreach (Point p in myPts)
             {
