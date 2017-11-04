@@ -7,7 +7,7 @@ using TempCalulatorWCF146M.ServiceReference1;
 
 namespace TempCalulatorWCF146M
 {
-    //Ещё один комментарий
+
     public class Drawer
     {
         public double[][] Umas;
@@ -19,30 +19,17 @@ namespace TempCalulatorWCF146M
 
         public void InitData(double sizeP, int n, int numItt, double tau, double [][]umas)
         {
-            SizeP = sizeP; // ПОМЕНЯЙ, добавить initData method для инициализации данных. 
+            SizeP = sizeP; 
             N = n;
             NumItt = numItt;
             Tau = tau;
             Umas = umas;
             H = SizeP / N;
-            //Umas = new double[N][];
-            //for (int h = 0; h < N; h++)
-            //{
-            //    Umas[h] = new double[N];
-            //}
-            //for (int i = 0; i < N; i++)
-            //{
-            //    for (int j = 0; j < N; j++)
-            //    {
-            //        Umas[i][j] = 0;
-            //    }
-            //}
         }
         public void Draw(Graphics g, int Widht, int Height)
         {
             Widht = 500;
             Height = 500;
-            //int N = 4; // размер матрицы
             int D = Widht / N;
             Random rnd = new Random();
             Umas = new double[N][];
@@ -58,10 +45,6 @@ namespace TempCalulatorWCF146M
                 }
 
             }
-
-            
-            SolidBrush redBrush = new SolidBrush(Color.Red);
-
             for (int i = 0; i < N; i++)
             {
                 for (int j = 0; j < N; j++)
@@ -71,7 +54,6 @@ namespace TempCalulatorWCF146M
                     g.FillRectangle(Brush, rect);
                     
                 }
-
 
             }
         }
