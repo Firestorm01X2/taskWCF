@@ -19,8 +19,6 @@ namespace TempCalulatorWCF146M
 
         public void InitData(double sizeP, int n, int numItt, double tau, double [][]umas)
         {
-            //Тест для Гита.
-            // Последний тест
             SizeP = sizeP; // ПОМЕНЯЙ, добавить initData method для инициализации данных. 
             N = n;
             NumItt = numItt;
@@ -42,7 +40,9 @@ namespace TempCalulatorWCF146M
         }
         public void Draw(Graphics g, int Widht, int Height)
         {
-            int N = 4; // размер матрицы
+            Widht = 500;
+            Height = 500;
+            //int N = 4; // размер матрицы
             int D = Widht / N;
             Random rnd = new Random();
             Umas = new double[N][];
@@ -59,7 +59,7 @@ namespace TempCalulatorWCF146M
 
             }
 
-            SolidBrush blueBrush = new SolidBrush(Color.FromArgb(2, 3, 4));
+            SolidBrush blueBrush = new SolidBrush(Color.Blue);
             SolidBrush redBrush = new SolidBrush(Color.Red);
 
             for (int i = 0; i < N; i++)
