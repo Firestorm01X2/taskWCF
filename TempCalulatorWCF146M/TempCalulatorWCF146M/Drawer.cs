@@ -20,7 +20,7 @@ namespace TempCalulatorWCF146M
         public void InitData(double sizeP, int n, int numItt, double tau, double [][]umas)
         {
             //Тест для Гита.
-            // Номер 2
+            // Последний тест
             SizeP = sizeP; // ПОМЕНЯЙ, добавить initData method для инициализации данных. 
             N = n;
             NumItt = numItt;
