@@ -59,23 +59,17 @@ namespace TempCalulatorWCF146M
 
             }
 
-            SolidBrush blueBrush = new SolidBrush(Color.Blue);
+            
             SolidBrush redBrush = new SolidBrush(Color.Red);
 
             for (int i = 0; i < N; i++)
             {
                 for (int j = 0; j < N; j++)
                 {
-                    if (Umas[i][j] < 5)
-                    {
-                        Rectangle rect = new Rectangle(D * j, D * i, D, D);
-                        g.FillRectangle(blueBrush, rect);
-                    }
-                    else
-                    {
-                        Rectangle rect = new Rectangle(D * j, D * i, D, D);
-                        g.FillRectangle(redBrush, rect);
-                    }
+                    SolidBrush Brush = new SolidBrush(Color.FromArgb(rnd.Next(0, 255), rnd.Next(0, 255), rnd.Next(0, 255)));
+                    Rectangle rect = new Rectangle(D * j, D * i, D, D);
+                    g.FillRectangle(Brush, rect);
+                    
                 }
 
 

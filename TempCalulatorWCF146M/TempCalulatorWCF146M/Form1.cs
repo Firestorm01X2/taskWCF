@@ -121,7 +121,7 @@ namespace TempCalulatorWCF146M
             int N = Convert.ToInt32(tbN.Text);
             int numItt = Convert.ToInt32(tbNumItt.Text);
             double tau = Convert.ToDouble(tbTau.Text);
-            _drawer.InitData(sizeP, N, numItt, tau, Umas); // Остальные переменные надо "взять" с формы, т.е. добавить поля.
+            _drawer.InitData(sizeP, N, numItt, tau, Umas);
             timer1.Start();
         }
 
