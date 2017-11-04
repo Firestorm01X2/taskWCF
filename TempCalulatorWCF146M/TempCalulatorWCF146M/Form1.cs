@@ -15,7 +15,7 @@ namespace TempCalulatorWCF146M
         private List<Point> myPts = new List<Point>();
         Drawer _drawer;
         private double [][] Umas;
-        private int N = 100;
+        //private int N = 100;
 
         // hello
         public Form1()
@@ -39,6 +39,7 @@ namespace TempCalulatorWCF146M
 
         private void GenArrey()
         {
+            int N = Convert.ToInt32(tbN.Text);
             Umas = new double[N][];
             for (int h = 0; h < N; h++)
             {
@@ -113,11 +114,14 @@ namespace TempCalulatorWCF146M
                 return;
             _drawer.Draw(e.Graphics,panel1.Width, panel1.Height);
         }
-
-        
+                
         private void btStart_Click(object sender, EventArgs e)
         {
-            _drawer.InitData(2, N, 100, 0.001, Umas); // Остальные переменные надо "взять" с формы, т.е. добавить поля.
+            int sizeP = Convert.ToInt32(tbSizeP.Text);
+            int N = Convert.ToInt32(tbN.Text);
+            int numItt = Convert.ToInt32(tbNumItt.Text);
+            double tau = Convert.ToDouble(tbTau.Text);
+            _drawer.InitData(sizeP, N, numItt, tau, Umas); // Остальные переменные надо "взять" с формы, т.е. добавить поля.
             timer1.Start();
         }
 

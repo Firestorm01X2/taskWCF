@@ -145,7 +145,7 @@
             this.tbTau.Name = "tbTau";
             this.tbTau.Size = new System.Drawing.Size(39, 20);
             this.tbTau.TabIndex = 9;
-            this.tbTau.Text = "0.001";
+            this.tbTau.Text = "0,001";
             // 
             // label4
             // 
