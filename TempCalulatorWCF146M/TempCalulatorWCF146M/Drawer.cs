@@ -44,12 +44,19 @@ namespace TempCalulatorWCF146M
                     Umas[i][j] = rnd.Next(0, 10);
                 }
 
-            }
+            }//(((Umas[i][j]-MinU)*(255))/(MaxU-MinU))
+            
+            double MaxU = Umas.SelectMany(y => y).Max();
+            double MinU = Umas.SelectMany(y => y).Min();
+            double Col;
+            int col2;
             for (int i = 0; i < N; i++)
             {
                 for (int j = 0; j < N; j++)
                 {
-                    SolidBrush Brush = new SolidBrush(Color.FromArgb(rnd.Next(0, 255), rnd.Next(0, 255), rnd.Next(0, 255)));
+                    Col = (((Umas[i][j] - MinU) * (255)) / (MaxU - MinU));
+                    col2 = Convert.ToInt32(Col);
+                    SolidBrush Brush = new SolidBrush(Color.FromArgb(col2,100,0));
                     Rectangle rect = new Rectangle(D * j, D * i, D, D);
                     g.FillRectangle(Brush, rect);
                     
