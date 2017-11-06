@@ -20,7 +20,7 @@ namespace WcfMathLibrary
     public class OutputForTemp
     {
         [DataMember]
-        public double[,] U
+        public double[][] U
         {
             get; set;
         }
@@ -46,7 +46,7 @@ namespace WcfMathLibrary
         }
 
         [DataMember]
-        public double[,] U
+        public double[][] U
         {
             get; set;
         }

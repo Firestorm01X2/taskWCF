@@ -35,6 +35,9 @@ namespace TempCalulatorWCF146M.ServiceReference1 {
         private double TauField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TimeStepsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double[][] UField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -95,6 +98,19 @@ namespace TempCalulatorWCF146M.ServiceReference1 {
                 if ((this.TauField.Equals(value) != true)) {
                     this.TauField = value;
                     this.RaisePropertyChanged("Tau");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TimeSteps {
+            get {
+                return this.TimeStepsField;
+            }
+            set {
+                if ((this.TimeStepsField.Equals(value) != true)) {
+                    this.TimeStepsField = value;
+                    this.RaisePropertyChanged("TimeSteps");
                 }
             }
         }

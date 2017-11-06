@@ -31,20 +31,20 @@ namespace TempCalulatorWCF146M
             Widht = 500;
             Height = 500;
             int D = Widht / N;
-            Random rnd = new Random();
-            Umas = new double[N][];
-            for (int h = 0; h < N; h++)
-            {
-                Umas[h] = new double[N];
-            }
-            for (int i = 0; i < N; i++)
-            {
-                for (int j = 0; j < N; j++)
-                {
-                    Umas[i][j] = rnd.Next(0, 10);
-                }
+            //Random rnd = new Random();
+            //Umas = new double[N][];
+            //for (int h = 0; h < N; h++)
+            //{
+            //    Umas[h] = new double[N];
+            //}
+            //for (int i = 0; i < N; i++)
+            //{
+            //    for (int j = 0; j < N; j++)
+            //    {
+            //        Umas[i][j] = rnd.Next(0, 10);
+            //    }
 
-            }//(((Umas[i][j]-MinU)*(255))/(MaxU-MinU))
+            //}//(((Umas[i][j]-MinU)*(255))/(MaxU-MinU))
             
             double MaxU = Umas.SelectMany(y => y).Max();
             double MinU = Umas.SelectMany(y => y).Min();
@@ -67,9 +67,15 @@ namespace TempCalulatorWCF146M
         public void DoCalculate()
         {
             InputForTemp input = new InputForTemp();
-            
+            input.TimeSteps = NumItt;
+            input.C = 1;
+            input.Tau = Tau;
+            input.H = H;
+            input.U = Umas;
             Service1Client client = new Service1Client();
             OutputForTemp output = client.CalculateTemp(input);
+            Umas = output.U;
+
         }
     }
 }

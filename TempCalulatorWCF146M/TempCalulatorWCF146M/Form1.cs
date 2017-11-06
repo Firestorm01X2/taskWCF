@@ -50,9 +50,12 @@ namespace TempCalulatorWCF146M
                 for (int j = 0; j < N; j++)
                 {
                     Umas[i][j] = 0;
+                    
                 }
             }
+            Umas[2][2] = 1000;
         }
+
         private void DrawCalc(Graphics g)
         {
             string str = "Привет GDI+";
@@ -112,6 +115,7 @@ namespace TempCalulatorWCF146M
         {
             if (!timer1.Enabled)
                 return;
+            _drawer.DoCalculate();
             _drawer.Draw(e.Graphics,panel1.Width, panel1.Height);
         }
                 

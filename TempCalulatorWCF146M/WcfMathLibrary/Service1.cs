@@ -15,7 +15,9 @@ namespace WcfMathLibrary
             OutputForTemp result = new OutputForTemp();
             try
             {
-                result.U = CalcNewT(input.U, input.C, input.H, input.Tau, input.TimeSteps);
+                double[,] u= Utils.ToMultiD(input.U);
+                u = CalcNewT(u, input.C, input.H, input.Tau, input.TimeSteps);
+                result.U = Utils.ToJagged(u);
                 result.OutputMessage = "Calculations are correct";
             }
             catch (Exception e)

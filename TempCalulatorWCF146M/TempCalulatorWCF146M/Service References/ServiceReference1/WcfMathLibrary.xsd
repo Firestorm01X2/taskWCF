@@ -7,6 +7,7 @@
       <xs:element minOccurs="0" name="H" type="xs:double" />
       <xs:element minOccurs="0" name="InputMessage" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Tau" type="xs:double" />
+      <xs:element minOccurs="0" name="TimeSteps" type="xs:int" />
       <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="U" nillable="true" type="q1:ArrayOfArrayOfdouble" />
     </xs:sequence>
   </xs:complexType>
