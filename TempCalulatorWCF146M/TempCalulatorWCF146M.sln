@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientConsole", "ClientCons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerUnitTests", "ServerUnitTests\ServerUnitTests.csproj", "{BDC3AE8F-8A4B-4865-8E1D-91F79C9BD068}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfConsoleHost", "WcfConsoleHost\WcfConsoleHost.csproj", "{0E8B96F2-10E1-4A5B-A703-69C1AED1E03D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsServiceHost", "WindowsServiceHost\WindowsServiceHost.csproj", "{E93640CB-9334-4B53-9BE1-9575A7EDDA20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{BDC3AE8F-8A4B-4865-8E1D-91F79C9BD068}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDC3AE8F-8A4B-4865-8E1D-91F79C9BD068}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDC3AE8F-8A4B-4865-8E1D-91F79C9BD068}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E8B96F2-10E1-4A5B-A703-69C1AED1E03D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E8B96F2-10E1-4A5B-A703-69C1AED1E03D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E8B96F2-10E1-4A5B-A703-69C1AED1E03D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E8B96F2-10E1-4A5B-A703-69C1AED1E03D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E93640CB-9334-4B53-9BE1-9575A7EDDA20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E93640CB-9334-4B53-9BE1-9575A7EDDA20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E93640CB-9334-4B53-9BE1-9575A7EDDA20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E93640CB-9334-4B53-9BE1-9575A7EDDA20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
