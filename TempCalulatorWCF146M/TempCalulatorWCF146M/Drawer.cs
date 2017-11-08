@@ -28,6 +28,7 @@ namespace TempCalulatorWCF146M
             Umas = umas;
             H = SizeP / N;
         }
+        
         public void Draw(Graphics g, int Widht, int Height)
         {
             Widht = 500;

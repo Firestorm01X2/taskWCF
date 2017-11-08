@@ -117,7 +117,7 @@
             this.tbN.Name = "tbN";
             this.tbN.Size = new System.Drawing.Size(56, 20);
             this.tbN.TabIndex = 5;
-            this.tbN.Text = "50";
+            this.tbN.Text = "25";
             // 
             // label2
             // 
