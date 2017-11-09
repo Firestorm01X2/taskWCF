@@ -22,7 +22,7 @@ namespace WcfMathLibrary
             }
             catch (Exception e)
             {
-                result.OutputMessage = e.Data.ToString();
+                result.OutputMessage = e.Message.ToString();
             }
             return result;
         }
