@@ -34,31 +34,14 @@ namespace TempCalulatorWCF146M
             Widht = 500;
             Height = 500;
             int D = Widht / N;
-            //Random rnd = new Random();
-            //Umas = new double[N][];
-            //for (int h = 0; h < N; h++)
-            //{
-            //    Umas[h] = new double[N];
-            //}
-            //for (int i = 0; i < N; i++)
-            //{
-            //    for (int j = 0; j < N; j++)
-            //    {
-            //        Umas[i][j] = rnd.Next(0, 10);
-            //    }
-
-            //}//(((Umas[i][j]-MinU)*(255))/(MaxU-MinU))
-
-            //double MaxU = Umas.SelectMany(y => y).Max();
-            //double MinU = Umas.SelectMany(y => y).Min();
-            double minch = 0.0, maxch= 0.0;
+            double minU = 0.0, maxU= 0.0;
             for(int i=0;i<N;i++)
             {
                 for (int j = 0; j < N; j++)
                 {
-                    if(maxch<=Umas[i][j])
+                    if(maxU<=Umas[i][j])
                     {
-                        maxch = Umas[i][j];
+                        maxU = Umas[i][j];
                     }
                 }
             }
@@ -66,13 +49,12 @@ namespace TempCalulatorWCF146M
             {
                 for (int j = 0; j < N; j++)
                 {
-                    if (minch >= Umas[i][j])
+                    if (minU >= Umas[i][j])
                     {
-                         minch= Umas[i][j];
+                         minU= Umas[i][j];
                     }
                 }
             }
-
 
             double Col;
             int col2;
@@ -80,7 +62,7 @@ namespace TempCalulatorWCF146M
             {
                 for (int j = 0; j < N; j++)
                 {
-                    Col = (((Umas[i][j] - minch) * (255)) / (maxch - minch));
+                    Col = (((Umas[i][j] - minU) * (255)) / (maxU - minU));
                     col2 = Convert.ToInt32(Col);
                     SolidBrush Brush = new SolidBrush(Color.FromArgb(col2, 0, 255 - col2));
                     Rectangle rect = new Rectangle(D * j, D * i, D, D);
@@ -98,14 +80,6 @@ namespace TempCalulatorWCF146M
             input.Tau = Tau;
             input.H = H;
             input.U = Umas;
-            Console.WriteLine(H);
-            //for (int i = 0; i < N; i++)
-            //{
-            //    for (int j = 0; j < N; j++)
-            //    {
-            //        Console.WriteLine(input.C + " ");
-            //    }
-            //}
             Service1Client client = new Service1Client();
             OutputForTemp output = client.CalculateTemp(input);
             Umas = output.U;

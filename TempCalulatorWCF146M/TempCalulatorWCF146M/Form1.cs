@@ -15,9 +15,7 @@ namespace TempCalulatorWCF146M
         private List<Point> myPts = new List<Point>();
         Drawer _drawer;
         private double[][] Umas;
-        //private int N = 100;
 
-        // hello
         public Form1()
         {
             InitializeComponent();
@@ -100,9 +98,7 @@ namespace TempCalulatorWCF146M
         private void timer1_Tick(object sender, EventArgs e)
         {
             // MovePoints(myPts);
-            //GenArrey();
             panel1.Invalidate();
-            this.Invalidate();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
