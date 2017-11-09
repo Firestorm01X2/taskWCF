@@ -15,19 +15,15 @@ namespace TempCalulatorWCF146M
         private List<Point> myPts = new List<Point>();
         Drawer _drawer;
         private double[][] Umas;
-        //private int N = 100;
 
-        // hello
         public Form1()
         {
             InitializeComponent();
-            //panel1 = new MyDisplay();
+             //panel1 = new MyDisplay();
             _drawer = new Drawer();
             GenArrey();
-
-
         }
-        // class myPanel : Panel { public myPanel() { this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);  } }
+        //class myPanel : Panel { public myPanel() { this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true); } }
         //public class MyDisplay : Panel
         //{
         //    public MyDisplay()
@@ -92,6 +88,7 @@ namespace TempCalulatorWCF146M
             if ( R >= 0.25)
             {
                 MessageBox.Show("Не выполняется условие устойчивости", "Ошибка в начальных данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                btStart.Enabled = true;
                 return false;
             }
             return true;
@@ -99,10 +96,9 @@ namespace TempCalulatorWCF146M
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            // MovePoints(myPts);
-            //GenArrey();
-            panel1.Invalidate();
-            this.Invalidate();
+           //panel1 = new MyDisplay();
+           panel1.Invalidate();
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -111,11 +107,31 @@ namespace TempCalulatorWCF146M
                 return;
             _drawer.DoCalculate();
             _drawer.Draw(e.Graphics, panel1.Width, panel1.Height);
+           
 
         }
 
         private void btStart_Click(object sender, EventArgs e)
         {
+            btStart.Enabled = false;
+            int T;
+            double T2;
+            if (!Int32.TryParse(tbSizeP.Text, out T) | !Int32.TryParse(tbN.Text, out T) | !Int32.TryParse(tbNumItt.Text, out T)
+                | !Double.TryParse(tbTau.Text, out T2) | !Double.TryParse(tba.Text, out T2) | !Int32.TryParse(tbG1.Text, out T)
+                | !Int32.TryParse(tbG2.Text, out T) | !Int32.TryParse(tbG3.Text, out T) | !Int32.TryParse(tbG4.Text, out T))
+            {
+                MessageBox.Show("Не тот тип данных", "Ошибка в начальных данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                btStart.Enabled = true;
+                return;
+            }
+            if (Int32.Parse(tbSizeP.Text) < 0 | Int32.Parse(tbN.Text) <0 | Int32.Parse(tbNumItt.Text) < 0
+                | Double.Parse(tbTau.Text) < 0.0 | Double.Parse(tba.Text) < 0.0 | Int32.Parse(tbG1.Text) < 0
+                | Int32.Parse(tbG2.Text) < 0 | Int32.Parse(tbG3.Text) < 0 | Int32.Parse(tbG4.Text) < 0)
+            {
+                MessageBox.Show("Значения должны быть положительными", "Ошибка в начальных данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                btStart.Enabled = true;
+                return;
+            }
             int sizeP = Convert.ToInt32(tbSizeP.Text);
             int N = Convert.ToInt32(tbN.Text);
             int numItt = Convert.ToInt32(tbNumItt.Text);
@@ -131,8 +147,10 @@ namespace TempCalulatorWCF146M
 
         private void btStop_Click(object sender, EventArgs e)
         {
+            
             timer1.Stop();
             panel1.Refresh();
+            btStart.Enabled = true;
         }
 
     }
