@@ -59,7 +59,7 @@ namespace WCF_Visualization
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.labelTime = new System.Windows.Forms.Label();
             this.buttonContinue = new System.Windows.Forms.Button();
-            myPanel panel1 = new myPanel();
+            this.panel1 = new WCF_Visualization.Form1.myPanel();
             this.gBConditions.SuspendLayout();
             this.gBBoarders.SuspendLayout();
             this.SuspendLayout();
@@ -321,13 +321,15 @@ namespace WCF_Visualization
             this.buttonContinue.Text = "Continue";
             this.buttonContinue.UseVisualStyleBackColor = true;
             this.buttonContinue.Click += new System.EventHandler(this.buttonContinue_Click);
-
-            
-            panel1.Width = 580;
-            panel1.Height = 580;
-            panel1.Location = new Point(0, 0);
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(580, 580);
+            this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
             // Form1
             // 

@@ -165,7 +165,13 @@ namespace WCF_Visualization
             if(textBoxLeft.Text == "" || textBoxRight.Text == "" || textBoxTop.Text == "" || textBoxBottom.Text == ""
                 || textBoxSize.Text == "" || textBoxH.Text == "" || textBoxTau.Text == "" || textBoxA.Text == "" || textBoxFreq.Text == "")
             {
-                MessageBox.Show("Поля не могут пустыми");
+                MessageBox.Show("Поля не могут быть пустыми");
+                return;
+            }
+            else if (Convert.ToDouble(textBoxSize.Text) <= 0 || Convert.ToDouble(textBoxH.Text) <= 0 || 
+                Convert.ToDouble(textBoxTau.Text) <= 0 || Convert.ToDouble(textBoxFreq.Text) <= 0)
+            {
+                MessageBox.Show("Размер пластины, шаг по пространству, шаг по времени и частота обращения к сервису должны быть ненулевыми значениями");
                 return;
             }
             else
@@ -197,7 +203,7 @@ namespace WCF_Visualization
             bool allCorrect = true;
             for (int i = 0; i < tb.Text.Length; i++)
             {
-                if (char.IsDigit(tb.Text[i]) || tb.Text[i] == '.' || tb.Text[i] == ',')
+                if (char.IsDigit(tb.Text[i]) || tb.Text[i] == '.' || tb.Text[i] == ',' || tb.Text[i] == '-')
                 {
                     correctString += tb.Text[i];
                 }

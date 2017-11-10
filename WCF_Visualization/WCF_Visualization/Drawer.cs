@@ -21,7 +21,9 @@ namespace WCF_Visualization
         public void Draw(Graphics g, Panel panel)
         {
             int N = U[0].Length;
-            int D = Convert.ToInt32(panel.Width / N) + 1;
+            int D = Convert.ToInt32(panel.Width / N);
+            int Rest = panel.Width - N * D;
+            //int Rest = Convert.ToInt32(panel.Width % N);
             double MaxU = U.SelectMany(y => y).Max();
             double MinU = U.SelectMany(y => y).Min();
 
@@ -31,6 +33,7 @@ namespace WCF_Visualization
             {
                 for (int j = 0; j < N; j++)
                 {
+                    
                     Col = (((U[i][j] - MinU) * (255)) / (MaxU - MinU));
                     col2 = Convert.ToInt32(Col);
                     SolidBrush Brush = new SolidBrush(Color.FromArgb(col2, 0, 255 - col2));
