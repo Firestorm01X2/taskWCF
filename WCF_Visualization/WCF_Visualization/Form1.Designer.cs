@@ -60,6 +60,8 @@ namespace WCF_Visualization
             this.labelTime = new System.Windows.Forms.Label();
             this.buttonContinue = new System.Windows.Forms.Button();
             this.panel1 = new WCF_Visualization.Form1.myPanel();
+            this.radioButtonType1 = new System.Windows.Forms.RadioButton();
+            this.radioButtonType2 = new System.Windows.Forms.RadioButton();
             this.gBConditions.SuspendLayout();
             this.gBBoarders.SuspendLayout();
             this.SuspendLayout();
@@ -331,11 +333,36 @@ namespace WCF_Visualization
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
+            // radioButtonType1
+            // 
+            this.radioButtonType1.AutoSize = true;
+            this.radioButtonType1.Checked = true;
+            this.radioButtonType1.Location = new System.Drawing.Point(749, 588);
+            this.radioButtonType1.Name = "radioButtonType1";
+            this.radioButtonType1.Size = new System.Drawing.Size(58, 17);
+            this.radioButtonType1.TabIndex = 8;
+            this.radioButtonType1.TabStop = true;
+            this.radioButtonType1.Text = "Type 1";
+            this.radioButtonType1.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonType2
+            // 
+            this.radioButtonType2.AutoSize = true;
+            this.radioButtonType2.Location = new System.Drawing.Point(749, 611);
+            this.radioButtonType2.Name = "radioButtonType2";
+            this.radioButtonType2.Size = new System.Drawing.Size(58, 17);
+            this.radioButtonType2.TabIndex = 9;
+            this.radioButtonType2.TabStop = true;
+            this.radioButtonType2.Text = "Type 2";
+            this.radioButtonType2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(852, 640);
+            this.Controls.Add(this.radioButtonType2);
+            this.Controls.Add(this.radioButtonType1);
             this.Controls.Add(this.buttonContinue);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.buttonReset);
@@ -385,6 +412,8 @@ namespace WCF_Visualization
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Button buttonContinue;
+        private RadioButton radioButtonType1;
+        private RadioButton radioButtonType2;
     }
 }
 

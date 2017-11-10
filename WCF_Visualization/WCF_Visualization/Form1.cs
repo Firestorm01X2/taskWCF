@@ -36,6 +36,7 @@ namespace WCF_Visualization
         private double A;
         private int Freq;
         private double time = 0;
+        private bool type1;
 
         #region Default parameters
         private double Default_left = 0;
@@ -220,6 +221,8 @@ namespace WCF_Visualization
         }
         private void InitData()
         {
+            Drawer.MaxU = -10000000;
+            Drawer.MinU = -10000000;
             G1 = Convert.ToDouble(textBoxLeft.Text);
             G2 = Convert.ToDouble(textBoxTop.Text);
             G3 = Convert.ToDouble(textBoxRight.Text);
@@ -230,6 +233,7 @@ namespace WCF_Visualization
             Tau = Convert.ToDouble(textBoxTau.Text);
             A = Convert.ToDouble(textBoxA.Text);
             Freq = Convert.ToInt32(textBoxFreq.Text);
+            type1 = radioButtonType1.Checked;
 
             int N = Convert.ToInt32(size / H) + 1;
             U = new double[N][];
@@ -257,7 +261,7 @@ namespace WCF_Visualization
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            time += Tau;
+            time += Tau * Freq;
             labelTime.Text = "Time: " + time;
             panel1.Invalidate();
             this.Invalidate();
@@ -269,7 +273,7 @@ namespace WCF_Visualization
                 return;
             Calculate();
             Drawer dr = new Drawer(U, H);
-            dr.Draw(e.Graphics, (Panel)sender);
+            dr.Draw(e.Graphics, (Panel)sender, type1, U.SelectMany(y => y).Max(), U.SelectMany(y => y).Min());
         }
         private void Calculate()
         {
