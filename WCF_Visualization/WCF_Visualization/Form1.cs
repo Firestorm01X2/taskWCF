@@ -294,6 +294,7 @@ namespace WCF_Visualization
             time = 0;
             labelTime.Text = "Time: " + time;
             panel1.Refresh();
+            buttonContinue.Enabled = false;
             buttonReset.Enabled = false;
         }
 

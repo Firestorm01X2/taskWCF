@@ -339,10 +339,9 @@ namespace WCF_Visualization
             this.radioButtonType1.Checked = true;
             this.radioButtonType1.Location = new System.Drawing.Point(749, 588);
             this.radioButtonType1.Name = "radioButtonType1";
-            this.radioButtonType1.Size = new System.Drawing.Size(58, 17);
+            this.radioButtonType1.Size = new System.Drawing.Size(101, 17);
             this.radioButtonType1.TabIndex = 8;
-            this.radioButtonType1.TabStop = true;
-            this.radioButtonType1.Text = "Type 1";
+            this.radioButtonType1.Text = "Нормализация";
             this.radioButtonType1.UseVisualStyleBackColor = true;
             // 
             // radioButtonType2
@@ -350,10 +349,9 @@ namespace WCF_Visualization
             this.radioButtonType2.AutoSize = true;
             this.radioButtonType2.Location = new System.Drawing.Point(749, 611);
             this.radioButtonType2.Name = "radioButtonType2";
-            this.radioButtonType2.Size = new System.Drawing.Size(58, 17);
+            this.radioButtonType2.Size = new System.Drawing.Size(78, 17);
             this.radioButtonType2.TabIndex = 9;
-            this.radioButtonType2.TabStop = true;
-            this.radioButtonType2.Text = "Type 2";
+            this.radioButtonType2.Text = "Изотермы";
             this.radioButtonType2.UseVisualStyleBackColor = true;
             // 
             // Form1
