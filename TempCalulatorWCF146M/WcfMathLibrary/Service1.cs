@@ -27,12 +27,46 @@ namespace WcfMathLibrary
             return result;
         }
 
+        public double[,] Progonka(double R, double[,] U)
+        {
+            double A = -R/2, B = -R/2, C = 1 - 2 * R;
+             int M = U.GetLength(0);
+            int N = U.GetLength(1);
+            double[,] Result = new double[M, N];
+
+            return Result;
+        }
+        public double[,] CalcNewTN(double[,] U, double a, double h, double tau, int steps)
+        {
+            double R = a * a * tau / h / h;
+
+            int M = U.GetLength(0);
+            int N = U.GetLength(1);
+            double[,] UNew = new double[M, N];
+
+            for (int i = 0; i < N; i++)
+            {
+                UNew[0, i] = U[0, i];
+                UNew[M - 1, i] = U[M - 1, i];
+            }
+            for (int i = 0; i < M; i++)
+            {
+                UNew[i, 0] = U[i, 0];
+                UNew[i, N - 1] = U[i, N - 1];
+            }
+            ///
+
+            UNew=Progonka(R, U);
+            return UNew;
+        }
+
         public double[,] CalcNewT(double[,] U, double a, double h, double tau, int steps)
         {
             double R = a * a * tau / h / h;
             if (R >= 0.25)
             {
-                throw new Exception("Stability condition is not met!");
+               // throw new Exception("Stability condition is not met!");
+                return CalcNewTN(U,a,h,tau, steps);
             }
 
             int M = U.GetLength(0);
