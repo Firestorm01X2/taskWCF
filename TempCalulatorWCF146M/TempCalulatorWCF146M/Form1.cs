@@ -85,12 +85,12 @@ namespace TempCalulatorWCF146M
             double h = sizeP / N;
             double R = a * a * tau / h / h;
 
-            if ( R >= 0.25)
-            {
-                MessageBox.Show("Не выполняется условие устойчивости", "Ошибка в начальных данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                btStart.Enabled = true;
-                return false;
-            }
+            //if ( R >= 0.25)
+            //{
+            //    MessageBox.Show("Не выполняется условие устойчивости", "Ошибка в начальных данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    btStart.Enabled = true;
+            //    return false;
+            //}
             return true;
         }
 
@@ -138,10 +138,10 @@ namespace TempCalulatorWCF146M
             double tau = Convert.ToDouble(tbTau.Text);
             double a = Convert.ToDouble(tba.Text);
             GenArrey();
-            bool Check1 = Check();
+       //     bool Check1 = Check();
             _drawer.InitData(sizeP,a, N, numItt, tau, Umas);
             timer1.Start();
-            if (Check1 == false ) timer1.Stop();
+       //     if (Check1 == false ) timer1.Stop();
              
         }
 
