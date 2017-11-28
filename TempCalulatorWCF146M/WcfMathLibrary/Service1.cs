@@ -29,52 +29,44 @@ namespace WcfMathLibrary
 
         public double[,] ProgonkaPPM(double R, double[,] U)
         {
-            double A = -R/2, B = -R/2, C = 1 +2 * R;
+          //  double A = -R/2, B = -R/2, C = 1 +2 * R;
              int M = U.GetLength(0);
             int N = U.GetLength(1);
 
-            for (int j = 1; j < N-1; j++)
-            {
-                for (int i = 1; i < M-1; i++)
-                {
-                    double[] a = new double[M];
-                    double[] b = new double[M];
-                    a[1] = -B / C;
-                    b[1] = U[0, j] / B;
-                    for (int k = 2; k < M; k++)
-                    {
-                        a[k]=-B/(C+A*a[k-1]);
-                        b[k] = (-A * b[k - 1] + U[k-1, j])/(C+A*a[k-1]);
-                    }
-
-                    for(int k=M-2;k>0;k--)
-                    {
-                        U[k,j]=a[k+1]*U[k+1,j]+b[k+1];
-                    }
-                }
-            }
-
-
             for (int i = 1; i < M-1; i++)
             {
-                for (int j = 1; j < N-1; j++)
+                double[] L = new double[N];
+                double[] K = new double[N];
+                L[1] = 0;
+                K[1] = U[i, 0];
+                for (int q = 2; q < M; q++)
                 {
-                    double[] a = new double[N];
-                    double[] b = new double[N];
-                    a[1] = -B / C;
-                    b[1] = U[0, j] / B;
-                    for (int k = 2; k < N ; k++)
-                    {
-                        a[k] = -B / (C + A * a[k - 1]);
-                        b[k] = (-A * b[k - 1] + U[i, k-1]) / (C + A * a[k - 1]);
-                    }
-
-                    for (int k = M - 2; k > 0; k--)
-                    {
-                        U[k, j] = a[k + 1] * U[i, k+1] + b[k + 1];
-                    }
+                    L[q] = R / (1 + 2 * R - R * L[q - 1]);
+                    K[q] = ((U[i, q - 1] + R * K[q - 1]) / (1 + 2 * R - R * L[q - 1]));
+                }
+                for (int q = N - 2; q > 0; q--)
+                {
+                    U[i, q] = L[q + 1] * U[i, q + 1] + K[q + 1];
                 }
             }
+
+            for (int i = 1; i < N-1; i++)
+            {
+                double[] L = new double[N];
+                double[] K = new double[N];
+                L[1] = 0;
+                K[1] = U[0, i];
+                for (int q = 2; q < N; q++)
+                {
+                    L[q] = R / (1 + 2 * R - R * L[q - 1]);
+                    K[q] = ((U[q-1, i] + R * K[q - 1]) / (1 + 2 * R - R * L[q-1]));
+                }
+                for (int q = M - 2; q > 0; q--)
+                {
+                    U[q, i] = L[q + 1] * U[q + 1, i] + K[q + 1];
+                }
+            }
+
                 return U;
         }
         public double[,] CalcNewTN(double[,] U, double a, double h, double tau, int steps)
@@ -87,15 +79,7 @@ namespace WcfMathLibrary
              int k = 0;
             do
             {
-            UNew=ProgonkaPPM(R, U);
-
-            for (int i = 1; i < M - 1; i++)
-            {
-                for (int j = 1; j < N - 1; j++)
-                {
-                    U[i, j] = UNew[i, j];
-                }
-            }
+            U=ProgonkaPPM(R, U);
             k++;
            } while (k < steps);
 
