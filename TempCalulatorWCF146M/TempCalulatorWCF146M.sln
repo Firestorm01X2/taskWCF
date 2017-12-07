@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempCalulatorWCF146M", "TempCalulatorWCF146M\TempCalulatorWCF146M.csproj", "{5E4D6E8C-DE6D-4539-94DB-4F7925E5B56A}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfConsoleHost", "WcfConsoleHost\WcfConsoleHost.csproj", "{0E8B96F2-10E1-4A5B-A703-69C1AED1E03D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsServiceHost", "WindowsServiceHost\WindowsServiceHost.csproj", "{E93640CB-9334-4B53-9BE1-9575A7EDDA20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAlPar", "WpfAlPar\WpfAlPar.csproj", "{F54E7816-385E-469C-A3C3-148460F7D65B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{E93640CB-9334-4B53-9BE1-9575A7EDDA20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E93640CB-9334-4B53-9BE1-9575A7EDDA20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E93640CB-9334-4B53-9BE1-9575A7EDDA20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F54E7816-385E-469C-A3C3-148460F7D65B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F54E7816-385E-469C-A3C3-148460F7D65B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F54E7816-385E-469C-A3C3-148460F7D65B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F54E7816-385E-469C-A3C3-148460F7D65B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

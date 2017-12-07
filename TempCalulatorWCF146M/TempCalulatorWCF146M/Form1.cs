@@ -90,7 +90,7 @@ namespace TempCalulatorWCF146M
             //    MessageBox.Show("Не выполняется условие устойчивости", "Ошибка в начальных данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             //    btStart.Enabled = true;
             //    return false;
-            //}
+            //} dsa
             return true;
         }
 

@@ -34,7 +34,6 @@ namespace TempCalulatorWCF146M
             Widht = 500;
             Height = 500;
             int D = Widht / N;
-            
             double minU = 0.0, maxU= 0.0;
             for(int i=0;i<N;i++)
             {
@@ -56,7 +55,6 @@ namespace TempCalulatorWCF146M
                     }
                 }
             }
-
 
             double Col;
             int col2;
