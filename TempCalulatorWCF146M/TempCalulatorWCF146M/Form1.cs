@@ -19,10 +19,10 @@ namespace TempCalulatorWCF146M
         public Form1()
         {
             InitializeComponent();
-            //panel1 = new MyDisplay();
+           // panel1 = new MyDisplay();
             _drawer = new Drawer();
             GenArrey();
-
+            
 
         }
         // class myPanel : Panel { public myPanel() { this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);  } }
