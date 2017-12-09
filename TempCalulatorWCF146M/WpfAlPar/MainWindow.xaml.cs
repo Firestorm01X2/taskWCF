@@ -16,9 +16,6 @@ using TempCalulatorWCF146M;
 
 namespace WpfApp
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
 
@@ -89,7 +86,7 @@ namespace WpfApp
 
         private void timerTick(object sender, EventArgs e)
         {
-            //canvas.InvalidateArrange();
+           
             _drawer.DoCalculate();
             _drawer.ReDraw();
         }
