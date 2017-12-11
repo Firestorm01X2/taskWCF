@@ -22,8 +22,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsServiceHost", "WindowsServiceHost\WindowsServiceHost.csproj", "{E93640CB-9334-4B53-9BE1-9575A7EDDA20}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAlPar", "WpfAlPar\WpfAlPar.csproj", "{F54E7816-385E-469C-A3C3-148460F7D65B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{162E2A44-7B04-4398-ABB0-EC6E677930D4} = {162E2A44-7B04-4398-ABB0-EC6E677930D4}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Kulakov", "WPF_Kulakov\WPF_Kulakov.csproj", "{95BDEA27-DE2A-43AD-A212-A35F6C014CA3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{162E2A44-7B04-4398-ABB0-EC6E677930D4} = {162E2A44-7B04-4398-ABB0-EC6E677930D4}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Array3DLibrary", "Array3DLibrary\Array3DLibrary.csproj", "{76BB480E-FA7C-401F-A9E5-B5E1317CC4D4}"
 EndProject

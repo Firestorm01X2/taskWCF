@@ -110,38 +110,24 @@
     <None Include="Service References\ServiceReference1\WcfMathLibrary.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\ServiceReference1\WPF_Kulakov.ServiceReference1.OutputForTemp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClientConsole\ClientConsole.csproj">
-      <Project>{1f937e02-086b-4fd0-b366-80b7b821bacb}</Project>
-      <Name>ClientConsole</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ServerUnitTests\ServerUnitTests.csproj">
       <Project>{bdc3ae8f-8a4b-4865-8e1d-91f79c9bd068}</Project>
       <Name>ServerUnitTests</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TempCalulatorWCF146M\TempCalulatorWCF146M.csproj">
-      <Project>{5e4d6e8c-de6d-4539-94db-4f7925e5b56a}</Project>
-      <Name>TempCalulatorWCF146M</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WcfConsoleHost\WcfConsoleHost.csproj">
-      <Project>{0e8b96f2-10e1-4a5b-a703-69c1aed1e03d}</Project>
-      <Name>WcfConsoleHost</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WcfMathLibrary\WcfMathLibrary.csproj">
-      <Project>{162e2a44-7b04-4398-abb0-ec6e677930d4}</Project>
-      <Name>WcfMathLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WindowsServiceHost\WindowsServiceHost.csproj">
-      <Project>{e93640cb-9334-4b53-9be1-9575a7edda20}</Project>
-      <Name>WindowsServiceHost</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />

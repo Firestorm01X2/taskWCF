@@ -17,23 +17,36 @@ namespace WcfMathLibrary
         
     }
     [DataContract]
-    public class OutputForTemp
+    public class OutputForTempBase
     {
-        [DataMember]
-        public double[][] U
-        {
-            get; set;
-        }
-
         [DataMember]
         public string OutputMessage
         {
             get; set;
         }
     }
+    [DataContract]
+    public class OutputForTemp:OutputForTempBase
+    {
+        [DataMember]
+        public double[][] U
+        {
+            get; set;
+        }
+    }
 
     [DataContract]
-    public class InputForTemp
+    public class OutputForTemp3D:OutputForTempBase
+    {
+        [DataMember]
+        public double[] U
+        {
+            get; set;
+        }
+    }
+
+    [DataContract]
+    public class InputForTempBase
     {
         private double _h;
         private double _tau;
@@ -41,12 +54,6 @@ namespace WcfMathLibrary
         private int _timeSteps;
         [DataMember]
         public string InputMessage
-        {
-            get; set;
-        }
-
-        [DataMember]
-        public double[][] U
         {
             get; set;
         }
@@ -112,5 +119,25 @@ namespace WcfMathLibrary
                 _timeSteps = value;
             }
         }
-    }  
+    }
+
+    [DataContract]
+    public class InputForTemp:InputForTempBase
+    {
+        [DataMember]
+        public double[][] U
+        {
+            get; set;
+        }
+    }
+
+    [DataContract]
+    public class InputForTemp3D : InputForTempBase
+    {
+        [DataMember]
+        public double[] U
+        {
+            get; set;
+        }
+    }
 }

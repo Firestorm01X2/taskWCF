@@ -1,10 +1,11 @@
 ﻿using System;
-using TempCalulatorWCF146M.ServiceReference1;
+
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using WPF_Kulakov.ServiceReference1;
 
-namespace TempCalulatorWCF146M
+namespace WPF_Kulakov
 {
     public class WPF_draw
     {
@@ -115,7 +116,7 @@ namespace TempCalulatorWCF146M
             input.Tau = Tau;
             input.H = H;
             input.U = ArrayU;
-
+            
             Service1Client client = new Service1Client();
             OutputForTemp output = client.CalculateTemp(input);
             ArrayU = output.U;

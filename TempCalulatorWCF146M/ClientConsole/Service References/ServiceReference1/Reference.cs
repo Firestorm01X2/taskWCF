@@ -15,18 +15,28 @@ namespace ClientConsole.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="InputForTemp", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InputForTempBase", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
     [System.SerializableAttribute()]
-    public partial class InputForTemp : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ClientConsole.ServiceReference1.InputForTemp))]
+    public partial class InputForTempBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double CField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double HField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string InputMessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double[][] UField;
+        private double TauField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TimeStepsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -35,6 +45,32 @@ namespace ClientConsole.ServiceReference1 {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double C {
+            get {
+                return this.CField;
+            }
+            set {
+                if ((this.CField.Equals(value) != true)) {
+                    this.CField = value;
+                    this.RaisePropertyChanged("C");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double H {
+            get {
+                return this.HField;
+            }
+            set {
+                if ((this.HField.Equals(value) != true)) {
+                    this.HField = value;
+                    this.RaisePropertyChanged("H");
+                }
             }
         }
         
@@ -52,14 +88,27 @@ namespace ClientConsole.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double[][] U {
+        public double Tau {
             get {
-                return this.UField;
+                return this.TauField;
             }
             set {
-                if ((object.ReferenceEquals(this.UField, value) != true)) {
-                    this.UField = value;
-                    this.RaisePropertyChanged("U");
+                if ((this.TauField.Equals(value) != true)) {
+                    this.TauField = value;
+                    this.RaisePropertyChanged("Tau");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TimeSteps {
+            get {
+                return this.TimeStepsField;
+            }
+            set {
+                if ((this.TimeStepsField.Equals(value) != true)) {
+                    this.TimeStepsField = value;
+                    this.RaisePropertyChanged("TimeSteps");
                 }
             }
         }
@@ -76,18 +125,39 @@ namespace ClientConsole.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OutputForTemp", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InputForTemp", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
     [System.SerializableAttribute()]
-    public partial class OutputForTemp : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class InputForTemp : ClientConsole.ServiceReference1.InputForTempBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double[][] UField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double[][] U {
+            get {
+                return this.UField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UField, value) != true)) {
+                    this.UField = value;
+                    this.RaisePropertyChanged("U");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OutputForTempBase", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ClientConsole.ServiceReference1.OutputForTemp))]
+    public partial class OutputForTempBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string OutputMessageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double[][] UField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -112,6 +182,25 @@ namespace ClientConsole.ServiceReference1 {
             }
         }
         
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OutputForTemp", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
+    [System.SerializableAttribute()]
+    public partial class OutputForTemp : ClientConsole.ServiceReference1.OutputForTempBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double[][] UField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public double[][] U {
             get {
@@ -122,15 +211,6 @@ namespace ClientConsole.ServiceReference1 {
                     this.UField = value;
                     this.RaisePropertyChanged("U");
                 }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }

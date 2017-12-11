@@ -15,9 +15,10 @@ namespace TempCalulatorWCF146M.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="InputForTemp", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InputForTempBase", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
     [System.SerializableAttribute()]
-    public partial class InputForTemp : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TempCalulatorWCF146M.ServiceReference1.InputForTemp))]
+    public partial class InputForTempBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -36,9 +37,6 @@ namespace TempCalulatorWCF146M.ServiceReference1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int TimeStepsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double[][] UField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -115,19 +113,6 @@ namespace TempCalulatorWCF146M.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double[][] U {
-            get {
-                return this.UField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UField, value) != true)) {
-                    this.UField = value;
-                    this.RaisePropertyChanged("U");
-                }
-            }
-        }
-        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -140,18 +125,39 @@ namespace TempCalulatorWCF146M.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OutputForTemp", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InputForTemp", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
     [System.SerializableAttribute()]
-    public partial class OutputForTemp : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class InputForTemp : TempCalulatorWCF146M.ServiceReference1.InputForTempBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double[][] UField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double[][] U {
+            get {
+                return this.UField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UField, value) != true)) {
+                    this.UField = value;
+                    this.RaisePropertyChanged("U");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OutputForTempBase", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TempCalulatorWCF146M.ServiceReference1.OutputForTemp))]
+    public partial class OutputForTempBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string OutputMessageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double[][] UField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -176,6 +182,25 @@ namespace TempCalulatorWCF146M.ServiceReference1 {
             }
         }
         
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OutputForTemp", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
+    [System.SerializableAttribute()]
+    public partial class OutputForTemp : TempCalulatorWCF146M.ServiceReference1.OutputForTempBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double[][] UField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public double[][] U {
             get {
@@ -186,15 +211,6 @@ namespace TempCalulatorWCF146M.ServiceReference1 {
                     this.UField = value;
                     this.RaisePropertyChanged("U");
                 }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }

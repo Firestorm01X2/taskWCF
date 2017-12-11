@@ -12,9 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TempCalulatorWCF146M;
 
-namespace WpfApp
+namespace WPF_Kulakov
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml

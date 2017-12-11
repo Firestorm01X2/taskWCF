@@ -12,9 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TempCalulatorWCF146M;
 
-namespace WpfApp
+namespace WpfAlPar
 {
     public partial class MainWindow : Window
     {
