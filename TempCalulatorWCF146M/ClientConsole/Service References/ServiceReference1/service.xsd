@@ -15,4 +15,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CalculateTemp3D">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="input3D" nillable="true" type="q3:InputForTemp3D" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateTemp3DResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="CalculateTemp3DResult" nillable="true" type="q4:OutputForTemp3D" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

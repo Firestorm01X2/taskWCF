@@ -17,6 +17,7 @@ namespace ClientConsole.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="InputForTempBase", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ClientConsole.ServiceReference1.InputForTemp3D))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ClientConsole.ServiceReference1.InputForTemp))]
     public partial class InputForTempBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -125,6 +126,29 @@ namespace ClientConsole.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InputForTemp3D", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
+    [System.SerializableAttribute()]
+    public partial class InputForTemp3D : ClientConsole.ServiceReference1.InputForTempBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Array3DLibrary.Array3D<double> UField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Array3DLibrary.Array3D<double> U {
+            get {
+                return this.UField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UField, value) != true)) {
+                    this.UField = value;
+                    this.RaisePropertyChanged("U");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="InputForTemp", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
     [System.SerializableAttribute()]
     public partial class InputForTemp : ClientConsole.ServiceReference1.InputForTempBase {
@@ -150,6 +174,7 @@ namespace ClientConsole.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OutputForTempBase", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ClientConsole.ServiceReference1.OutputForTemp3D))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ClientConsole.ServiceReference1.OutputForTemp))]
     public partial class OutputForTempBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -194,6 +219,29 @@ namespace ClientConsole.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OutputForTemp3D", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
+    [System.SerializableAttribute()]
+    public partial class OutputForTemp3D : ClientConsole.ServiceReference1.OutputForTempBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Array3DLibrary.Array3D<double> UField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Array3DLibrary.Array3D<double> U {
+            get {
+                return this.UField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UField, value) != true)) {
+                    this.UField = value;
+                    this.RaisePropertyChanged("U");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OutputForTemp", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
     [System.SerializableAttribute()]
     public partial class OutputForTemp : ClientConsole.ServiceReference1.OutputForTempBase {
@@ -221,6 +269,15 @@ namespace ClientConsole.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CalculateTemp", ReplyAction="http://tempuri.org/IService1/CalculateTempResponse")]
         ClientConsole.ServiceReference1.OutputForTemp CalculateTemp(ClientConsole.ServiceReference1.InputForTemp input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CalculateTemp", ReplyAction="http://tempuri.org/IService1/CalculateTempResponse")]
+        System.Threading.Tasks.Task<ClientConsole.ServiceReference1.OutputForTemp> CalculateTempAsync(ClientConsole.ServiceReference1.InputForTemp input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CalculateTemp3D", ReplyAction="http://tempuri.org/IService1/CalculateTemp3DResponse")]
+        ClientConsole.ServiceReference1.OutputForTemp3D CalculateTemp3D(ClientConsole.ServiceReference1.InputForTemp3D input3D);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CalculateTemp3D", ReplyAction="http://tempuri.org/IService1/CalculateTemp3DResponse")]
+        System.Threading.Tasks.Task<ClientConsole.ServiceReference1.OutputForTemp3D> CalculateTemp3DAsync(ClientConsole.ServiceReference1.InputForTemp3D input3D);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -252,6 +309,18 @@ namespace ClientConsole.ServiceReference1 {
         
         public ClientConsole.ServiceReference1.OutputForTemp CalculateTemp(ClientConsole.ServiceReference1.InputForTemp input) {
             return base.Channel.CalculateTemp(input);
+        }
+        
+        public System.Threading.Tasks.Task<ClientConsole.ServiceReference1.OutputForTemp> CalculateTempAsync(ClientConsole.ServiceReference1.InputForTemp input) {
+            return base.Channel.CalculateTempAsync(input);
+        }
+        
+        public ClientConsole.ServiceReference1.OutputForTemp3D CalculateTemp3D(ClientConsole.ServiceReference1.InputForTemp3D input3D) {
+            return base.Channel.CalculateTemp3D(input3D);
+        }
+        
+        public System.Threading.Tasks.Task<ClientConsole.ServiceReference1.OutputForTemp3D> CalculateTemp3DAsync(ClientConsole.ServiceReference1.InputForTemp3D input3D) {
+            return base.Channel.CalculateTemp3DAsync(input3D);
         }
     }
 }

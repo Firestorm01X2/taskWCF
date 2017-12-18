@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfMathLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Array3DLibrary" />
   <xs:complexType name="InputForTemp">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:InputForTempBase">
@@ -37,4 +38,24 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OutputForTempBase" nillable="true" type="tns:OutputForTempBase" />
+  <xs:complexType name="InputForTemp3D">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InputForTempBase">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Array3DLibrary" minOccurs="0" name="U" nillable="true" type="q3:Array3DOfdouble" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InputForTemp3D" nillable="true" type="tns:InputForTemp3D" />
+  <xs:complexType name="OutputForTemp3D">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OutputForTempBase">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Array3DLibrary" minOccurs="0" name="U" nillable="true" type="q4:Array3DOfdouble" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OutputForTemp3D" nillable="true" type="tns:OutputForTemp3D" />
 </xs:schema>

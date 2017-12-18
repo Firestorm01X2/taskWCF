@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using Array3DLibrary;
 
 namespace WcfMathLibrary
 {
@@ -14,7 +15,11 @@ namespace WcfMathLibrary
         // TODO: Add your service operations here
         [OperationContract]
         OutputForTemp CalculateTemp(InputForTemp input);
-        
+
+
+        [OperationContract]
+        OutputForTemp3D CalculateTemp3D(InputForTemp3D input3D);
+
     }
     [DataContract]
     public class OutputForTempBase
@@ -38,8 +43,13 @@ namespace WcfMathLibrary
     [DataContract]
     public class OutputForTemp3D:OutputForTempBase
     {
+        //[DataMember]
+        //public double[] U
+        //{
+        //    get; set;
+        //}
         [DataMember]
-        public double[] U
+        public Array3D<double> U
         {
             get; set;
         }
@@ -134,8 +144,14 @@ namespace WcfMathLibrary
     [DataContract]
     public class InputForTemp3D : InputForTempBase
     {
+        //[DataMember]
+        //public double[] U
+        //{
+        //    get; set;
+        //}
+
         [DataMember]
-        public double[] U
+        public Array3D<double> U
         {
             get; set;
         }

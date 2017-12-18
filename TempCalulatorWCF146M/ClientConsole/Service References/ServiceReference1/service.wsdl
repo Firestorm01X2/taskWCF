@@ -6,6 +6,7 @@
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Array3DLibrary" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_CalculateTemp_InputMessage">
@@ -14,16 +15,35 @@
   <wsdl:message name="IService1_CalculateTemp_OutputMessage">
     <wsdl:part name="parameters" element="tns:CalculateTempResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_CalculateTemp3D_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateTemp3D" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CalculateTemp3D_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateTemp3DResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="CalculateTemp">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/CalculateTemp" message="tns:IService1_CalculateTemp_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/CalculateTempResponse" message="tns:IService1_CalculateTemp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTemp3D">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CalculateTemp3D" message="tns:IService1_CalculateTemp3D_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CalculateTemp3DResponse" message="tns:IService1_CalculateTemp3D_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="CalculateTemp">
       <soap:operation soapAction="http://tempuri.org/IService1/CalculateTemp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTemp3D">
+      <soap:operation soapAction="http://tempuri.org/IService1/CalculateTemp3D" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

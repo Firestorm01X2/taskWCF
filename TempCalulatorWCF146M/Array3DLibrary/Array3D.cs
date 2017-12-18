@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Array3DLibrary
 {
+    [Serializable]
     public class Array3D<T>
     {
-        private List<T> Items;
+        private T[] Items;
         private int xLength;
         private int yLength;
         private int zLength;
@@ -38,7 +39,7 @@ namespace Array3DLibrary
         #region Constructors
         public Array3D(int xSize, int ySize, int zSize)
         {
-            Items = new List<T>();
+            Items = new T[xSize*ySize*zSize];
 
             XLength = xSize;
             YLength = ySize;
@@ -47,14 +48,14 @@ namespace Array3DLibrary
             MaxItemNumber = xLength * YLength * ZLength - 1;
         }
 
-        public Array3D(int xSize, int ySize, int zSize, T[] arrayItems) : this(xSize, ySize, zSize)
-        {
-            Items.AddRange(arrayItems);
-        }
+        //public Array3D(int xSize, int ySize, int zSize, T[] arrayItems) : this(xSize, ySize, zSize)
+        //{
+        //    Items.AddRange(arrayItems);
+        //}
 
         public Array3D(int xSize, int ySize, int zSize, List<T> listItems) : this(xSize, ySize, zSize)
         {
-            Items = listItems;
+            Items = listItems.ToArray();
         }
         #endregion
 

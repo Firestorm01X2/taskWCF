@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.IO;
+using Array3DLibrary;
+
 namespace WcfMathLibrary
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
@@ -18,6 +20,28 @@ namespace WcfMathLibrary
                 double[,] u= Utils.ToMultiD(input.U);
                 u = CalcNewT(u, input.C, input.H, input.Tau, input.TimeSteps);
                 result.U = Utils.ToJagged(u);
+                result.OutputMessage = "Calculations are correct";
+            }
+            catch (Exception e)
+            {
+                result.OutputMessage = e.Message.ToString();
+            }
+            return result;
+        }
+
+        OutputForTemp3D IService1.CalculateTemp3D(InputForTemp3D input)
+        {
+            OutputForTemp3D result = new OutputForTemp3D();
+            result.U=new Array3D<double>(input.U.XLength, input.U.YLength, input.U.ZLength);
+            try
+            {
+                for (int i = 0; i < input.U.XLength; i++)
+                    for (int j = 0; j < input.U.YLength; j++)
+                        for (int k = 0; k < input.U.ZLength; k++)
+                            result.U[i, j, k] = input.U[i, j, k] + 111;
+
+                // u = CalcNewT3D(u, input.C, input.H, input.Tau, input.TimeSteps);
+
                 result.OutputMessage = "Calculations are correct";
             }
             catch (Exception e)
@@ -131,6 +155,57 @@ namespace WcfMathLibrary
 
                 k++;
             } while (k < steps);
+
+            return U;
+        }
+
+        public Array3D<double> CalcNewT3D(Array3D<double> U, double a, double h, double tau, int steps)
+        {
+            double R = a * a * tau / h / h;
+            //if (R >= 0.25)
+            //{
+            //    // throw new Exception("Stability condition is not met!");
+            //    return CalcNewTN(U, a, h, tau, steps);
+            //}
+
+            int M = U.XLength;
+            int N = U.YLength;
+            int K = U.ZLength;
+            //
+            Array3D<double> UNew = new Array3D<double>(M,N, K);
+
+            //for (int i = 0; i < N; i++)
+            //{
+            //    UNew[0, i] = U[0, i];
+            //    UNew[M - 1, i] = U[M - 1, i];
+            //}
+            //for (int i = 0; i < M; i++)
+            //{
+            //    UNew[i, 0] = U[i, 0];
+            //    UNew[i, N - 1] = U[i, N - 1];
+            //}
+
+            //int k = 0;
+            //do
+            //{
+            //    for (int i = 1; i < M - 1; i++)
+            //    {
+            //        for (int j = 1; j < N - 1; j++)
+            //        {
+            //            UNew[i, j] = U[i, j] + R * (U[i + 1, j] + U[i - 1, j] + U[i, j + 1] + U[i, j - 1] - 4 * U[i, j]);
+            //        }
+            //    }
+
+            //    for (int i = 1; i < M - 1; i++)
+            //    {
+            //        for (int j = 1; j < N - 1; j++)
+            //        {
+            //            U[i, j] = UNew[i, j];
+            //        }
+            //    }
+
+            //    k++;
+            //} while (k < steps);
 
             return U;
         }
