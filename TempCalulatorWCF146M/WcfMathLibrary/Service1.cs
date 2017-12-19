@@ -32,16 +32,12 @@ namespace WcfMathLibrary
         OutputForTemp3D IService1.CalculateTemp3D(InputForTemp3D input)
         {
             OutputForTemp3D result = new OutputForTemp3D();
-            result.U=new Array3D<double>(input.U.XLength, input.U.YLength, input.U.ZLength);
+            result.U = new Array3D<double>(input.U.XLength, input.U.YLength, input.U.ZLength);
             try
             {
-                for (int i = 0; i < input.U.XLength; i++)
-                    for (int j = 0; j < input.U.YLength; j++)
-                        for (int k = 0; k < input.U.ZLength; k++)
-                            result.U[i, j, k] = input.U[i, j, k] + 111;
-
-                // u = CalcNewT3D(u, input.C, input.H, input.Tau, input.TimeSteps);
-
+                Array3D<double> u = input.U;
+                u = CalcNewT3D(u, input.C, input.H, input.Tau, input.TimeSteps);
+                result.U = u;
                 result.OutputMessage = "Calculations are correct";
             }
             catch (Exception e)
@@ -162,52 +158,71 @@ namespace WcfMathLibrary
         public Array3D<double> CalcNewT3D(Array3D<double> U, double a, double h, double tau, int steps)
         {
             double R = a * a * tau / h / h;
-            //if (R >= 0.25)
-            //{
-            //    // throw new Exception("Stability condition is not met!");
-            //    return CalcNewTN(U, a, h, tau, steps);
-            //}
+            if (R >= 0.125)
+            {
+                throw new Exception("Stability condition is not met!");
+                // return CalcNewTN(U, a, h, tau, steps);
+            }
 
             int M = U.XLength;
             int N = U.YLength;
             int K = U.ZLength;
             //
-            Array3D<double> UNew = new Array3D<double>(M,N, K);
+            Array3D<double> UNew = new Array3D<double>(M, N, K);
+            for (int i = 0; i < M; i++)// заполнение грани оХоУ и оХоУ со сдвигом ( дальняя и ближняя стенка)
+            {
+                for (int j = 0; j < N; j++)
+                {
+                    UNew[i, j, 0] = U[i, j, 0];
+                    UNew[i, j, K - 1] = U[i, j, K - 1];
+                }
+            }
+            for (int i = 0; i < M; i++)// заполнение грани оХоZ и оХоZ со сдвигом ( дно и крышка)
+            {
+                for (int k = 0; k < N; k++)
+                {
+                    UNew[i, 0, k] = U[i, 0, k];
+                    UNew[i, N - 1, k] = U[i, N - 1, k];
+                }
+            }
+            for (int j = 0; j < M; j++)// заполнение грани оYоZ и оYоZ со сдвигом ( левая и правая стенка)
+            {
+                for (int k = 0; k < N; k++)
+                {
+                    UNew[0, j, k] = U[0, j, k];
+                    UNew[M - 1, j, k] = U[M - 1, j, k];
+                }
+            }
 
-            //for (int i = 0; i < N; i++)
-            //{
-            //    UNew[0, i] = U[0, i];
-            //    UNew[M - 1, i] = U[M - 1, i];
-            //}
-            //for (int i = 0; i < M; i++)
-            //{
-            //    UNew[i, 0] = U[i, 0];
-            //    UNew[i, N - 1] = U[i, N - 1];
-            //}
+            int k1 = 0;
+            do
+            {
+                for (int i = 1; i < M - 1; i++)
+                {
+                    for (int j = 1; j < N - 1; j++)
+                    {
+                        for (int k = 1; k < K - 1; k++)
+                        {
+                            UNew[i, j, k] = U[i, j, k] + R * (U[i + 1, j, k] + U[i - 1, j, k] + U[i, j + 1, k] + U[i, j - 1, k] + U[i, j, k + 1] + U[i, j, k - 1] - 6 * U[i, j, k]);
+                        }
+                    }
+                }
 
-            //int k = 0;
-            //do
-            //{
-            //    for (int i = 1; i < M - 1; i++)
-            //    {
-            //        for (int j = 1; j < N - 1; j++)
-            //        {
-            //            UNew[i, j] = U[i, j] + R * (U[i + 1, j] + U[i - 1, j] + U[i, j + 1] + U[i, j - 1] - 4 * U[i, j]);
-            //        }
-            //    }
-
-            //    for (int i = 1; i < M - 1; i++)
-            //    {
-            //        for (int j = 1; j < N - 1; j++)
-            //        {
-            //            U[i, j] = UNew[i, j];
-            //        }
-            //    }
-
-            //    k++;
-            //} while (k < steps);
+                for (int i = 1; i < M - 1; i++)
+                {
+                    for (int j = 1; j < N - 1; j++)
+                    {
+                        for (int k = 1; k < K - 1; k++)
+                        {
+                            U[i, j, k] = UNew[i, j, k];
+                        }
+                    }
+                }
+                k1++;
+            } while (k1 < steps);
 
             return U;
+
         }
     }
 }
