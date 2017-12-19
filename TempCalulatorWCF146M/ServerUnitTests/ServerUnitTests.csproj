@@ -55,6 +55,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Array3DLibrary\Array3DLibrary.csproj">
+      <Project>{76bb480e-fa7c-401f-a9e5-b5e1317cc4d4}</Project>
+      <Name>Array3DLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WcfMathLibrary\WcfMathLibrary.csproj">
       <Project>{162e2a44-7b04-4398-abb0-ec6e677930d4}</Project>
       <Name>WcfMathLibrary</Name>

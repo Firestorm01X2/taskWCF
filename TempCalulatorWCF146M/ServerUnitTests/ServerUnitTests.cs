@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WcfMathLibrary;
+using Array3DLibrary;
 
 namespace ServerUnitTests
 {
@@ -30,5 +31,24 @@ namespace ServerUnitTests
                 Assert.Fail("Expected no exception, but got: " + e.Message);
             }
         }
+        [TestMethod]
+        public void testNoExceptions3D()
+        {
+            Service1 serv = new Service1();
+            try
+            {
+                Array3D<double> u = new Array3D<double>(3, 3, 3);
+                for (int i = 0; i < 3; i++)
+                    for (int j = 0; j < 3; j++)
+                        for (int k = 0; k < 3; k++)
+                            u[i, j, k] = 1;
+                Array3D<double> U = serv.CalcNewT3D(u, 1, 0.1, 0.001, 10);
+            }
+            catch (Exception e)
+            {
+                Assert.Fail("Expected no exception, but got: " + e.Message);
+            }
+        }
+
     }
 }
