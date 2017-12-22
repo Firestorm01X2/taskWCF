@@ -106,6 +106,8 @@ namespace WcfMathLibrary
             return U;
         }
 
+
+
         public double[,] CalcNewT(double[,] U, double a, double h, double tau, int steps)
         {
             double R = a * a * tau / h / h;
@@ -160,8 +162,8 @@ namespace WcfMathLibrary
             double R = a * a * tau / h / h;
             if (R >= 0.125)
             {
-                throw new Exception("Stability condition is not met!");
-                // return CalcNewTN(U, a, h, tau, steps);
+               // throw new Exception("Stability condition is not met!");
+                return CalcNewTN3D(U, a, h, tau, steps);
             }
 
             int M = U.XLength;
@@ -223,6 +225,87 @@ namespace WcfMathLibrary
 
             return U;
 
+        }
+
+
+        public Array3D<double> ProgonkaPPM3D(double R, Array3D<double> U)
+        {
+            int M = U.XLength;
+            int N = U.YLength;
+            int S = U.ZLength;
+            Array3D<double> Unew = new Array3D<double>(M, N, S);
+
+            for (int z = 1; z < S - 1;z++ )
+                for (int i = 1; i < M - 1; i++)
+                {
+                    double[] L = new double[N];
+                    double[] K = new double[N];
+                    
+                    L[1] = 0;
+                    K[1] = U[i, 0, 0];
+                    for (int q = 2; q < N; q++)
+                    {
+                        L[q] = R / (1 + 2 * R - R * L[q - 1]);
+                        K[q] = ((U[i, q - 1,z] + R * K[q - 1]) / (1 + 2 * R - R * L[q - 1]));
+                    }
+                    for (int q = N - 2; q > 0; q--)
+                    {
+                        U[i, q,z] = L[q + 1] * U[i, q + 1,z] + K[q + 1];
+                    }
+                }
+
+            for (int z = 1; z < S - 1; z++)
+            for (int j = 1; j < N - 1; j++)
+            {
+                double[] L = new double[M];
+                double[] K = new double[M];
+                
+                L[1] = 0;
+                K[1] = U[0, j,z];
+                for (int q = 2; q < M; q++)
+                {
+                    L[q] = R / (1 + 2 * R - R * L[q - 1]);
+                    K[q] = ((U[q - 1, j,z] + R * K[q - 1]) / (1 + 2 * R - R * L[q - 1]));
+                }
+                for (int q = M - 2; q > 0; q--)
+                {
+                    U[q, j,z] = L[q + 1] * U[q + 1, j,z] + K[q + 1];
+                }
+            }
+
+            for (int i = 1; i < M - 1; i++)
+                for (int j = 1; j < N - 1; j++)
+                {
+                    double[] L = new double[S];
+                    double[] K = new double[S];
+                   
+                    L[1] = 0;
+                    K[1] = U[i, j, 0];
+                    for (int q = 2; q < S; q++)
+                    {
+                        L[q] = R / (1 + 2 * R - R * L[q - 1]);
+                        K[q] = ((U[i, j, q-1] + R * K[q - 1]) / (1 + 2 * R - R * L[q - 1]));
+                    }
+                    for (int q = M - 2; q > 0; q--)
+                    {
+                        U[i, j, q] = L[q + 1] * U[i, j, q+1] + K[q + 1];
+                    }
+                }
+
+            return U;
+        }
+        public Array3D<double> CalcNewTN3D(Array3D<double> U, double a, double h, double tau, int steps)
+        {
+            double R = a * a * tau / h / h;
+            ///
+            int k = 0;
+            do
+            {
+                U = ProgonkaPPM3D(R,U);
+                k++;
+            } while (k < steps);
+
+            return U;
         }
     }
 }
