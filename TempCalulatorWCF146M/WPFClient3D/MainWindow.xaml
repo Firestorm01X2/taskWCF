@@ -50,11 +50,11 @@
                     </WrapPanel>
                     <WrapPanel>
                         <Label Content="Шаг по времени:" Width="120" Margin="0,0,0,10"></Label>
-                        <TextBox Name="textboxTau" Width="100" Margin="0,0,0,10">0.001</TextBox>
+                        <TextBox x:Name="textboxTau" Width="100" Margin="0,0,0,10" Text="0,001"/>
                     </WrapPanel>
                     <WrapPanel>
                         <Label Content="Шаг по координате:" Width="120" Margin="0,0,0,10"></Label>
-                        <TextBox Name="textboxH" Width="100" Margin="0,0,0,10">0.8</TextBox>
+                        <TextBox x:Name="textboxH" Width="100" Margin="0,0,0,10" Text="0,8"/>
                     </WrapPanel>
                     <WrapPanel>
                         <Label Content="Коэф. теплопров:" Width="120" Margin="0,0,0,10"></Label>

@@ -235,20 +235,20 @@ namespace WcfMathLibrary
             int S = U.ZLength;
             Array3D<double> Unew = new Array3D<double>(M, N, S);
 
-            for (int z = 1; z < S - 1;z++ )
+            for (int z = 1; z < S - 1;z++ ) //перебираем по I и Z
                 for (int i = 1; i < M - 1; i++)
                 {
                     double[] L = new double[N];
                     double[] K = new double[N];
                     
-                    L[1] = 0;
-                    K[1] = U[i, 0, 0];
-                    for (int q = 2; q < N; q++)
+                    L[1] = 0;              //начальные значения прогоночных коэффициентов
+                    K[1] = U[i, 0, z];
+                    for (int q = 2; q < N; q++)  //вычисление прогоночных коэффициентов (прямой ход прогонки)
                     {
                         L[q] = R / (1 + 2 * R - R * L[q - 1]);
                         K[q] = ((U[i, q - 1,z] + R * K[q - 1]) / (1 + 2 * R - R * L[q - 1]));
                     }
-                    for (int q = N - 2; q > 0; q--)
+                    for (int q = N - 2; q > 0; q--)    //вычисление температуры (обратный ход прогонки)
                     {
                         U[i, q,z] = L[q + 1] * U[i, q + 1,z] + K[q + 1];
                     }
