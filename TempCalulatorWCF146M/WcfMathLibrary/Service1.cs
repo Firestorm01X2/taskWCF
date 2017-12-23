@@ -91,7 +91,7 @@ namespace WcfMathLibrary
         }
         public double[,] CalcNewTN(double[,] U, double a, double h, double tau, int steps)
         {
-            double R = a * a * tau / h / h;
+            double R = a * a * tau/2 / h / h;
             int M = U.GetLength(0);
             int N = U.GetLength(1);
             double[,] UNew = new double[M, N];
@@ -230,6 +230,7 @@ namespace WcfMathLibrary
 
         public Array3D<double> ProgonkaPPM3D(double R, Array3D<double> U)
         {
+            R = R / 3;
             int M = U.XLength;
             int N = U.YLength;
             int S = U.ZLength;
