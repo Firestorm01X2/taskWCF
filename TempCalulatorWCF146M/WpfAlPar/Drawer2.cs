@@ -52,8 +52,8 @@ namespace WpfAlPar
                 for (int j = 0; j < N; j++)
                 {
                     Rectangle rect = new Rectangle();
-                    rect.Width = canvas.Width / N;
-                    rect.Height = canvas.Height / N;
+                    rect.Width = canvas.ActualWidth / N;
+                    rect.Height = canvas.ActualHeight / N;
                     //Color col = Color.FromArgb(0, 10, 10, 10);
                     //Brush br = new SolidColorBrush(col);
                     rect.Fill = Brushes.Blue;

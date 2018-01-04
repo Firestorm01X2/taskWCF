@@ -13,7 +13,7 @@
             <ColumnDefinition Width="85*" />
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Canvas x:Name="canvas" Grid.Column="0" Grid.Row="0" Width="520" Height="520">
+        <Canvas x:Name="canvas" Grid.Column="0" Grid.Row="0" Width="auto" Height="auto">
 
         </Canvas>
         <StackPanel Grid.Column="1" Grid.Row="0" >

@@ -130,7 +130,8 @@ namespace WpfAlPar
                 timer.Stop();
                 return;
             }
-            _drawer.PrepareDraw(canvas, canvas.Width, canvas.Height);
+           // _drawer.PrepareDraw(canvas, canvas.Width, canvas.Height);
+            _drawer.PrepareDraw(canvas,canvas.ActualWidth, canvas.ActualHeight);
         }
 
 
