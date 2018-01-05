@@ -19,11 +19,6 @@ using HelixToolkit.Wpf;
 
 namespace WPFClient3D
 {
-    struct Circle
-    {
-        public Point Poit;
-        public Color color;
-    }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -31,8 +26,8 @@ namespace WPFClient3D
     {
         public static double MaxU = -10000000;
         public static double MinU = 10000000;
-
-        Array3D<Circle> circleArray;
+        Array3D<GeometryModel3D> models;
+        Array3D<ModelVisual3D> visuals;
         Array3D<double> U;
         int size;
         double H;
@@ -42,26 +37,35 @@ namespace WPFClient3D
         private int MaxSize = 10;
         int realSize;
         double[] T;
+        System.Windows.Threading.DispatcherTimer timer;
 
         private void InitData()
         {
             T = new double[6];
-            T[0] = Convert.ToDouble(textboxT1.Text);
-            T[1] = Convert.ToDouble(textboxT2.Text);
-            T[2] = Convert.ToDouble(textboxT3.Text);
-            T[3] = Convert.ToDouble(textboxT4.Text);
-            T[4] = Convert.ToDouble(textboxT5.Text);
-            T[5] = Convert.ToDouble(textboxT6.Text);
+            try
+            {
+                T[0] = Convert.ToDouble(textboxT1.Text);
+                T[1] = Convert.ToDouble(textboxT2.Text);
+                T[2] = Convert.ToDouble(textboxT3.Text);
+                T[3] = Convert.ToDouble(textboxT4.Text);
+                T[4] = Convert.ToDouble(textboxT5.Text);
+                T[5] = Convert.ToDouble(textboxT6.Text);
 
 
-            
-            H = Convert.ToDouble(textboxH.Text);
-            tau = Convert.ToDouble(textboxTau.Text);
-            frequency = Convert.ToInt32(textboxFreq.Text);
-            a = Convert.ToDouble(textboxA.Text);
+                H = Convert.ToDouble(textboxH.Text);
+                tau = Convert.ToDouble(textboxTau.Text);
+                frequency = Convert.ToInt32(textboxFreq.Text);
+                a = Convert.ToDouble(textboxA.Text);
 
-            size = Convert.ToInt32(Convert.ToDouble(textboxSize.Text) / H) + 1;
-
+                size = Convert.ToInt32(Convert.ToDouble(textboxSize.Text) / H) + 1;
+                if (!this.CheckConditions())
+                    throw new Exception("Input problems");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Data initialization failed!" + e.Message);
+                throw e;
+            }
             if (size > MaxSize)
                 realSize = MaxSize;
             else
@@ -90,6 +94,9 @@ namespace WPFClient3D
                     U[i, j, size - 1] = T[5];
                 }
             }
+
+            models = new Array3D<GeometryModel3D>(this.size, this.size, this.size);
+            visuals = new Array3D<ModelVisual3D>(this.size, this.size, this.size);
         }
 
         private Array3D<double> GetRealValues(Array3D<double> currentArray, int realSize)
@@ -243,7 +250,9 @@ namespace WPFClient3D
         private void buttonStart_Click(object sender, RoutedEventArgs e)
         {
             InitData();
-            System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
+            DrawField();
+
+            timer = new System.Windows.Threading.DispatcherTimer();
             timer.Tick += new EventHandler(timerTick);
             timer.Interval = new TimeSpan(0, 0, 0, 0, 500);
             timer.Start();
@@ -252,7 +261,7 @@ namespace WPFClient3D
         private void timerTick(object sender, EventArgs e)
         {
             Calculate();
-            Draw();
+            ChangeColors();
         }
 
         private void DefineMaxMin()
@@ -274,6 +283,125 @@ namespace WPFClient3D
                     }
                 }
             }
+        }
+
+        private bool CheckConditions()
+        {
+            if (this.H <= 0 || this.tau <= 0 || this.size <= 0 ||
+                this.a <= 0 || this.frequency <= 0)
+            {
+                MessageBox.Show("Значения в поле \"Условия\" должны быть неотрицательными");
+                return false;
+            }
+
+            return true;
+        }
+
+        private void DrawFieldIsoterm()
+        {
+            if (MaxU == -10000000 || MinU == -10000000)
+                DefineMaxMin();
+            double l = 5;
+            double interval = (MaxU - MinU) / l;
+            ModelArea.Children.Clear();
+
+            for (int i = 0; i < U.XLength; i++)
+            {
+                for (int j = 0; j < U.XLength; j++)
+                {
+                    for (int k = 0; k < U.XLength; k++)
+                    {
+                        var builder = new MeshBuilder(true, true);
+                        var position = new Point3D(i, j, k);
+                        builder.AddSphere(position, 0.25, 15, 15);
+
+                        if (U[i, j, k] < MinU + interval)
+                            models[i,j,k] = new GeometryModel3D(builder.ToMesh(), Materials.Blue);
+                        else if (U[i, j, k] >= MinU + interval && U[i, j, k] < MinU + 2 * interval)
+                            models[i, j, k] = new GeometryModel3D(builder.ToMesh(), Materials.Yellow);
+                        else if (U[i, j, k] >= MinU + 2 * interval && U[i, j, k] < MinU + 3 * interval)
+                            models[i, j, k] = new GeometryModel3D(builder.ToMesh(), Materials.Gold);
+                        else if (U[i, j, k] >= MinU + 3 * interval && U[i, j, k] < MinU + 4 * interval)
+                            models[i, j, k] = new GeometryModel3D(builder.ToMesh(), Materials.Orange);
+                        else
+                            models[i, j, k] = new GeometryModel3D(builder.ToMesh(), Materials.Red);
+
+                        visuals[i, j, k] = new ModelVisual3D();
+                        visuals[i, j, k].Content = models[i, j, k];
+                        ModelArea.Children.Add(visuals[i,j,k]);
+                    }
+                }
+            }
+        }
+
+        private void DrawField()
+        {
+            if (MaxU == -10000000 || MinU == -10000000)
+                DefineMaxMin();
+
+            double Col;
+            byte col2;
+            byte col3;
+
+            ModelArea.Children.Clear();
+
+            for (int i = 0; i < U.XLength; i++)
+            {
+                for(int j = 0; j < U.XLength; j++)
+                {
+                    for (int k = 0; k < U.XLength; k++)
+                    {
+                        Col = (((U[i, j, k] - MinU) * 255) / (MaxU - MinU));
+                        col2 = Convert.ToByte(Col);
+                        col3 = Convert.ToByte(255 - col2);
+                        Color col4 = Color.FromArgb(255, col2, 0, col3);
+                        Brush br2 = new SolidColorBrush(col4);
+
+                        var builder = new MeshBuilder(true, true);
+                        var position = new Point3D(i, j, k);
+                        builder.AddSphere(position, 0.25, 15, 15);
+
+                        models[i, j, k] = new GeometryModel3D(builder.ToMesh(), new DiffuseMaterial(br2));
+                        visuals[i, j, k] = new ModelVisual3D();
+                        visuals[i, j, k].Content = models[i, j, k];
+                        ModelArea.Children.Add(visuals[i, j, k]);
+                    }
+                }
+            }
+        }
+
+        private void ChangeColors()
+        {
+            double Col;
+            byte col2;
+            byte col3;
+
+            for (int i = 0; i < U.XLength; i++)
+            {
+                for (int j = 0; j < U.XLength; j++)
+                {
+                    for (int k = 0; k < U.XLength; k++)
+                    {
+                        Col = (((U[i, j, k] - MinU) * 255) / (MaxU - MinU));
+                        col2 = Convert.ToByte(Col);
+                        col3 = Convert.ToByte(255 - col2);
+                        Color col4 = Color.FromArgb(255, col2, 0, col3);
+                        Brush br2 = new SolidColorBrush(col4);
+                        //Brush br2 = new SolidColorBrush(Colors.Green);
+                        var builder = new MeshBuilder(true, true);
+                        var position = new Point3D(i, j, k);
+                        builder.AddSphere(position, 0.25, 15, 15);
+
+                        models[i, j, k] = new GeometryModel3D(builder.ToMesh(), new DiffuseMaterial(br2));
+                        visuals[i, j, k].Content = models[i, j, k];
+                    }
+                }
+            }
+        }
+
+        private void ButtonStop_Click(object sender, RoutedEventArgs e)
+        {
+            timer.Stop();
         }
     }
 }
