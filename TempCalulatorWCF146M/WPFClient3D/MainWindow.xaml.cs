@@ -387,13 +387,7 @@ namespace WPFClient3D
                         col3 = Convert.ToByte(255 - col2);
                         Color col4 = Color.FromArgb(255, col2, 0, col3);
                         Brush br2 = new SolidColorBrush(col4);
-                        //Brush br2 = new SolidColorBrush(Colors.Green);
-                        var builder = new MeshBuilder(true, true);
-                        var position = new Point3D(i, j, k);
-                        builder.AddSphere(position, 0.25, 15, 15);
-
-                        models[i, j, k] = new GeometryModel3D(builder.ToMesh(), new DiffuseMaterial(br2));
-                        visuals[i, j, k].Content = models[i, j, k];
+                        models[i, j, k].Material = new DiffuseMaterial(br2);
                     }
                 }
             }
