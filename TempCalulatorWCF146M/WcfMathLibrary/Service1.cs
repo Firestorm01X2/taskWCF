@@ -47,6 +47,23 @@ namespace WcfMathLibrary
             return result;
         }
 
+        OutputForTemp1D IService1.CalculateTemp1D(InputForTemp1D input1D)
+        {
+            OutputForTemp1D result = new OutputForTemp1D();
+
+            try
+            {
+                result.U = this.CalcNewT1D(input1D.U, input1D.C, input1D.H, input1D.Tau, input1D.TimeSteps);
+                result.OutputMessage = "Calculations are correct";
+            }
+            catch (Exception e)
+            {
+                result.OutputMessage = e.Message.ToString();
+            }
+
+            return result;
+        }
+
         public double[,] ProgonkaPPM(double R, double[,] U)
         {
           //  double A = -R/2, B = -R/2, C = 1 +2 * R;
@@ -225,6 +242,36 @@ namespace WcfMathLibrary
 
             return U;
 
+        }
+
+        public double[] CalcNewT1D(double[] U, double a, double h, double tau, int steps)
+        {
+            double R = a * a * tau / h / h;
+            if(R >= 0.5)
+            {
+                throw new Exception("Stability condition is not met!");
+            }
+
+            double[] UNew = new double[U.Length];
+            UNew[0] = U[0];
+            UNew[U.Length - 1] = U[U.Length - 1];
+
+            int k = 0;
+            do
+            {
+                for (int i = 1; i < U.Length - 1; i++)
+                {
+                    UNew[i] = U[i] + R * (U[i - 1] + U[i + 1] - 2 * U[i]);
+                }
+
+                for (int i = 1; i < U.Length - 1; i++)
+                {
+                    U[i] = UNew[i];
+                }
+                k++;
+            } while (k < steps);
+
+            return U;
         }
 
 

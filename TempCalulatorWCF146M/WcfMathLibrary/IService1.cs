@@ -20,7 +20,10 @@ namespace WcfMathLibrary
         [OperationContract]
         OutputForTemp3D CalculateTemp3D(InputForTemp3D input3D);
 
+        [OperationContract]
+        OutputForTemp1D CalculateTemp1D(InputForTemp1D input1D);
     }
+
     [DataContract]
     public class OutputForTempBase
     {
@@ -30,6 +33,7 @@ namespace WcfMathLibrary
             get; set;
         }
     }
+
     [DataContract]
     public class OutputForTemp:OutputForTempBase
     {
@@ -155,5 +159,22 @@ namespace WcfMathLibrary
         {
             get; set;
         }
+    }
+
+    [DataContract]
+    public class InputForTemp1D: InputForTempBase
+    {
+        [DataMember]
+        public double[] U
+        {
+            get; set;
+        }
+    }
+
+    [DataContract]
+    public class OutputForTemp1D: OutputForTempBase
+    {
+        [DataMember]
+        public double[] U { get; set; }
     }
 }
