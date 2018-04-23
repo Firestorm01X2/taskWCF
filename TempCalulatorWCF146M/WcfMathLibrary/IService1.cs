@@ -86,7 +86,7 @@ namespace WcfMathLibrary
             {
                 if (value <= 0)
                     throw new ArgumentException("tau <= 0");
-                _tau = value;
+                _tau = value; ///
             }
         }
 
