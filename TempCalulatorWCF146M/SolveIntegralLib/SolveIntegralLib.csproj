@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ParallelMets.cs" />
     <Compile Include="SeqMeth.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
