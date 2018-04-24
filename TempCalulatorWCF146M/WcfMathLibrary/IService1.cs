@@ -13,7 +13,7 @@ namespace WcfMathLibrary
     {
         // TODO: Add your service operations here
         [OperationContract]
-        OutputForTemp CalculateTemp(InputForTemp input);
+       newMathLib.OutputForTemp CalculateTemp(newMathLib.InputForTemp input);
         
     }
     [DataContract]

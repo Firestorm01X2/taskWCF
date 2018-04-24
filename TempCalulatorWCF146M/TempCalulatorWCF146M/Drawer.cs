@@ -74,14 +74,14 @@ namespace TempCalulatorWCF146M
         }
         public void DoCalculate()
         {
-            InputForTemp input = new InputForTemp();
+            newMathLib.InputForTemp input = new newMathLib.InputForTemp();
             input.TimeSteps = NumItt;
             input.C = A;
             input.Tau = Tau;
             input.H = H;
             input.U = Umas;
-            Service1Client client = new Service1Client();
-            OutputForTemp output = client.CalculateTemp(input);
+            newMathLib.HeatFlow client = new newMathLib.HeatFlow();
+            newMathLib.OutputForTemp output = client.CalculateTemp(input);
             Umas = output.U;
             string mes = output.OutputMessage;
 

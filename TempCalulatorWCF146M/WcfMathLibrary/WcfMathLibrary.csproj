@@ -61,6 +61,10 @@
       <Project>{76bb480e-fa7c-401f-a9e5-b5e1317cc4d4}</Project>
       <Name>Array3DLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\newMathLib\newMathLib.csproj">
+      <Project>{2f8453aa-9c89-43b5-8f52-466acf2d9847}</Project>
+      <Name>newMathLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
