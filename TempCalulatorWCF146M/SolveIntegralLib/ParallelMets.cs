@@ -8,7 +8,7 @@ namespace SolveIntegralLib
 {
     class ParallelMets
     {
-        public double RectangleMedium(double a, double b, int N, Func<double, double> F)
+        public double RectangleMedium(double a, double b, int N, Func<double, double> F) // метод средних прямоугольников
         {
             double h = (b - a) / N;
             double newa = a + 0.5 * h;
@@ -53,7 +53,7 @@ namespace SolveIntegralLib
             return s;
         }
 
-        public double Simpson(double a, double b, int N, Func<double, double> F)
+        public double Simpson(double a, double b, int N, Func<double, double> F) // метод Симпсона
         {
             double h = (b - a) / N;
             double newa = a + 0.5 * h;
