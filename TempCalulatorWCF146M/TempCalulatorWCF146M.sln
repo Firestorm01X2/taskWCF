@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempCalulatorWCF146M", "TempCalulatorWCF146M\TempCalulatorWCF146M.csproj", "{5E4D6E8C-DE6D-4539-94DB-4F7925E5B56A}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient1DAskieva", "C
 	ProjectSection(ProjectDependencies) = postProject
 		{162E2A44-7B04-4398-ABB0-EC6E677930D4} = {162E2A44-7B04-4398-ABB0-EC6E677930D4}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolveIntegralLib", "SolveIntegralLib\SolveIntegralLib.csproj", "{678FAA83-7DA3-40CB-8CA6-933C96681B62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -108,8 +110,15 @@ Global
 		{0D238C46-2510-4651-ACC6-1BF5ED6EA23B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D238C46-2510-4651-ACC6-1BF5ED6EA23B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D238C46-2510-4651-ACC6-1BF5ED6EA23B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{678FAA83-7DA3-40CB-8CA6-933C96681B62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{678FAA83-7DA3-40CB-8CA6-933C96681B62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{678FAA83-7DA3-40CB-8CA6-933C96681B62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{678FAA83-7DA3-40CB-8CA6-933C96681B62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F43BEEDF-11A3-40F1-AA77-7FBE22E32516}
 	EndGlobalSection
 EndGlobal
