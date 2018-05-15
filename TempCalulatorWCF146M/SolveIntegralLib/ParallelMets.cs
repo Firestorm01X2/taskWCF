@@ -5,7 +5,8 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    class ParallelMets
+
+    public class ParallelMets
     {
         /// <summary>
         /// Solution of the integral by the method of medium rectangles.
@@ -93,7 +94,7 @@
                     d += local;
                 }
             });
-            s = (h / 6) * (d + F(a) - F(a));
+            s = (h / 6) * (d + F(a) - F(b));
             return s;
         }
     }

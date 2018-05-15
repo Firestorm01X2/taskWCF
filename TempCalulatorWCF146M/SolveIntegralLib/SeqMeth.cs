@@ -15,7 +15,7 @@
         /// <param name="N">Number of partitions</param>
         /// <param name="F">Integrand</param>
         /// <returns>The numerical solution</returns>
-        public double RectangleMedium(double a, double b, double N, Func<double, double> F)//метод средних прямоугольников
+        public double RectangleMedium(double a, double b, int N, Func<double, double> F)//метод средних прямоугольников
         {
             if (b < a)
             {
@@ -48,7 +48,7 @@
         /// <param name="N">Number of partitions</param>
         /// <param name="F">Integrand</param>
         /// <returns>The numerical solution</returns>
-        public double Trapeze(double a, double b, double N, Func<double, double> F)//метод трапеций
+        public double Trapeze(double a, double b, int N, Func<double, double> F)//метод трапеций
         {
             if (b < a)
             {
@@ -62,16 +62,13 @@
 
             double h = (b - a) / N;
             double s = 0;
-            s = s + F(a);
-            s = s + F(b);
-            double x = a + h;
-            while (x < b)
+            double d = 0;
+            for (int i = 0; i < N; i++)
             {
-                s = s + 2 * F(x);
-                x = x + h;
+                d += F(a + h * i);
             }
-
-            s = s * h / 2;
+            s = (F(a) + F(b)) / 2;
+            s = (s + d) * h;
             return s;
         }
 
@@ -83,7 +80,7 @@
         /// <param name="N">Number of partitions</param>
         /// <param name="F">Integrand</param>
         /// <returns>The numerical solution</returns>
-        public double Simpson(double a, double b, double N, Func<double, double> F)//метод Симпсона
+        public double Simpson(double a, double b, int N, Func<double, double> F)//метод Симпсона
         {
             if (b < a)
             {

@@ -52,6 +52,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient1DAskieva", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolveIntegralLib", "SolveIntegralLib\SolveIntegralLib.csproj", "{678FAA83-7DA3-40CB-8CA6-933C96681B62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestSolveIntegralLib", "UnitTestSolveIntegralLib\UnitTestSolveIntegralLib.csproj", "{745C2D4E-A834-41A4-8C8D-4763BB338FBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -114,6 +116,10 @@ Global
 		{678FAA83-7DA3-40CB-8CA6-933C96681B62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{678FAA83-7DA3-40CB-8CA6-933C96681B62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{678FAA83-7DA3-40CB-8CA6-933C96681B62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{745C2D4E-A834-41A4-8C8D-4763BB338FBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{745C2D4E-A834-41A4-8C8D-4763BB338FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{745C2D4E-A834-41A4-8C8D-4763BB338FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{745C2D4E-A834-41A4-8C8D-4763BB338FBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
