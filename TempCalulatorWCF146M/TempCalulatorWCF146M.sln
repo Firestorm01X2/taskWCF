@@ -58,6 +58,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewMathLib", "NewMathLib\Ne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix", "Matrix\Matrix\Matrix.csproj", "{97897428-1027-4022-BB2F-6F323FFDF8FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixUnitTest", "MatrixUnitTest\MatrixUnitTest.csproj", "{0A001DC6-35BF-4980-B93C-95AAB452C6A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -132,6 +134,10 @@ Global
 		{97897428-1027-4022-BB2F-6F323FFDF8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97897428-1027-4022-BB2F-6F323FFDF8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97897428-1027-4022-BB2F-6F323FFDF8FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A001DC6-35BF-4980-B93C-95AAB452C6A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A001DC6-35BF-4980-B93C-95AAB452C6A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A001DC6-35BF-4980-B93C-95AAB452C6A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A001DC6-35BF-4980-B93C-95AAB452C6A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
