@@ -62,8 +62,11 @@
       <Name>Array3DLibrary</Name>
     </ProjectReference>
 
-    <ProjectReference Include="..\Matrix\Matrix\Matrix.csproj">
+    <ProjectReference Include="..\NewMathLib\NewMathLib.csproj">
+      <Project>{3d6e2392-91be-43a3-8923-4a76527b862b}</Project>
+      <Name>NewMathLib</Name>
 
+    <ProjectReference Include="F:\Matrix\Matrix\Matrix.csproj">
       <Project>{97897428-1027-4022-bb2f-6f323ffdf8fb}</Project>
       <Name>Matrix</Name>
 
