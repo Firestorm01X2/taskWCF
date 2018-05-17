@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using Array3DLibrary;
+using Matrix;
 
 namespace WcfMathLibrary
 {
@@ -22,6 +23,28 @@ namespace WcfMathLibrary
 
         [OperationContract]
         OutputForTemp1D CalculateTemp1D(InputForTemp1D input1D);
+
+        [OperationContract]
+        MatrixOutput MatrixSum(MatrixInput matrixes);
+
+        [OperationContract]
+        MatrixOutput MatrixMul(MatrixInput matrixes);
+    }
+
+    [DataContract]
+    public class MatrixOutput
+    {
+        [DataMember]
+        public MatrixT<int> matrixResult { get; set; }
+    }
+
+    [DataContract]
+    public class MatrixInput
+    {
+        [DataMember]
+       public MatrixT<int> matrix1 { get; set; }
+        [DataMember]
+       public MatrixT<int> matrix2 { get; set; }
     }
 
     [DataContract]
@@ -30,22 +53,24 @@ namespace WcfMathLibrary
         [DataMember]
         public string OutputMessage
         {
-            get; set;
+            get;
+            set;
         }
     }
 
     [DataContract]
-    public class OutputForTemp:OutputForTempBase
+    public class OutputForTemp : OutputForTempBase
     {
         [DataMember]
         public double[][] U
         {
-            get; set;
+            get;
+            set;
         }
     }
 
     [DataContract]
-    public class OutputForTemp3D:OutputForTempBase
+    public class OutputForTemp3D : OutputForTempBase
     {
         //[DataMember]
         //public double[] U
@@ -55,7 +80,8 @@ namespace WcfMathLibrary
         [DataMember]
         public Array3D<double> U
         {
-            get; set;
+            get;
+            set;
         }
     }
 
@@ -69,7 +95,8 @@ namespace WcfMathLibrary
         [DataMember]
         public string InputMessage
         {
-            get; set;
+            get;
+            set;
         }
 
         [DataMember]
@@ -136,12 +163,13 @@ namespace WcfMathLibrary
     }
 
     [DataContract]
-    public class InputForTemp:InputForTempBase
+    public class InputForTemp : InputForTempBase
     {
         [DataMember]
         public double[][] U
         {
-            get; set;
+            get;
+            set;
         }
     }
 
@@ -157,22 +185,24 @@ namespace WcfMathLibrary
         [DataMember]
         public Array3D<double> U
         {
-            get; set;
+            get;
+            set;
         }
     }
 
     [DataContract]
-    public class InputForTemp1D: InputForTempBase
+    public class InputForTemp1D : InputForTempBase
     {
         [DataMember]
         public double[] U
         {
-            get; set;
+            get;
+            set;
         }
     }
 
     [DataContract]
-    public class OutputForTemp1D: OutputForTempBase
+    public class OutputForTemp1D : OutputForTempBase
     {
         [DataMember]
         public double[] U { get; set; }
