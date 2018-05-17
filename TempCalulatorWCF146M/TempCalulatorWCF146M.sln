@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> parent of e2e5241... Revert troubles
@@ -303,6 +304,8 @@ EndGlobal
 =======
 >>>>>>> parent of ae9877b... Merge pull request #14 from V-vltru/KulakovNewBranch
 =======
+=======
+>>>>>>> parent of 05bd2c7... миграция рассчетов
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
@@ -439,4 +442,7 @@ Global
 		SolutionGuid = {F43BEEDF-11A3-40F1-AA77-7FBE22E32516}
 	EndGlobalSection
 EndGlobal
+<<<<<<< HEAD
 >>>>>>> parent of abd9ab2... Merge branch 'master' into KulakovNewBranch
+=======
+>>>>>>> parent of 05bd2c7... миграция рассчетов
