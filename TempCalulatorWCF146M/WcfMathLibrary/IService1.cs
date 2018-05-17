@@ -93,7 +93,8 @@ namespace WcfMathLibrary
         }
         set
         {
-            _a=value;
+            if (value < _a) { throw new ArgumentException("b<a"); }
+                _b=value;
         }
     }
         public int N
