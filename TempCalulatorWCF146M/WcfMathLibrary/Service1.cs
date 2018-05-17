@@ -7,9 +7,17 @@ using System.Text;
 using System.IO;
 using Array3DLibrary;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 using NewMathLib;
 >>>>>>> parent of c3fff2d... Revert "Merge branch 'master' into KulakovNewBranch"
+=======
+
+using NewMathLib;
+=======
+using Matrix;
+
+>>>>>>> parent of e2e5241... Revert troubles
 
 namespace WcfMathLibrary
 {
@@ -68,6 +76,7 @@ namespace WcfMathLibrary
             return result;
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         public double[,] ProgonkaPPM(double R, double[,] U)
         {
@@ -363,5 +372,25 @@ namespace WcfMathLibrary
 =======
        
 >>>>>>> parent of c3fff2d... Revert "Merge branch 'master' into KulakovNewBranch"
+=======
+
+        MatrixTOutput IService1.MatrixSum(MatrixTInput matrixes)
+        {
+            MatrixT<int> MatResult = matrixes.matrix1 + matrixes.matrix2;
+            MatrixTOutput result = new MatrixTOutput();
+            result.matrixOut = MatResult;
+            return result;
+        }
+
+        MatrixTOutput IService1.MatrixMul(MatrixTInput matrixes)
+        {
+            MatrixT<int> MatResult = matrixes.matrix1 * matrixes.matrix2;
+            MatrixTOutput result = new MatrixTOutput();
+            result.matrixOut = MatResult;
+            return result;
+        }
+
+      
+>>>>>>> parent of e2e5241... Revert troubles
     }
 }
