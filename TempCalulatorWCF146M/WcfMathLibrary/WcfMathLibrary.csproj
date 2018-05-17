@@ -62,6 +62,7 @@
       <Name>Array3DLibrary</Name>
     </ProjectReference>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     <ProjectReference Include="..\Matrix\Matrix\Matrix.csproj">
 
@@ -74,6 +75,8 @@
       <Name>NewMathLib</Name>
 >>>>>>> parent of abd9ab2... Merge branch 'master' into KulakovNewBranch
     </ProjectReference>
+=======
+>>>>>>> parent of ea36c67... Merge pull request #15 from V-vltru/AlParMatrix
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
