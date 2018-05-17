@@ -9,6 +9,7 @@ using Array3DLibrary;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 using NewMathLib;
 >>>>>>> parent of c3fff2d... Revert "Merge branch 'master' into KulakovNewBranch"
@@ -24,6 +25,10 @@ using Matrix;
 using Matrix;
 
 >>>>>>> parent of 0f196f6... Merge branch 'master' into AlParMatrix
+=======
+using Matrix;
+
+>>>>>>> parent of ae9877b... Merge pull request #14 from V-vltru/KulakovNewBranch
 namespace WcfMathLibrary
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
@@ -81,6 +86,7 @@ namespace WcfMathLibrary
             return result;
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -382,6 +388,8 @@ namespace WcfMathLibrary
 
 =======
 >>>>>>> parent of 0f196f6... Merge branch 'master' into AlParMatrix
+=======
+>>>>>>> parent of ae9877b... Merge pull request #14 from V-vltru/KulakovNewBranch
         MatrixTOutput IService1.MatrixSum(MatrixTInput matrixes)
         {
             MatrixT<int> MatResult = matrixes.matrix1 + matrixes.matrix2;
@@ -399,9 +407,12 @@ namespace WcfMathLibrary
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       
 >>>>>>> parent of e2e5241... Revert troubles
 =======
+=======
+>>>>>>> parent of ae9877b... Merge pull request #14 from V-vltru/KulakovNewBranch
         public double[,] ProgonkaPPM(double R, double[,] U)
         {
           //  double A = -R/2, B = -R/2, C = 1 +2 * R;
@@ -693,6 +704,9 @@ namespace WcfMathLibrary
 
             return U;
         }
+<<<<<<< HEAD
 >>>>>>> parent of 0f196f6... Merge branch 'master' into AlParMatrix
+=======
+>>>>>>> parent of ae9877b... Merge pull request #14 from V-vltru/KulakovNewBranch
     }
 }

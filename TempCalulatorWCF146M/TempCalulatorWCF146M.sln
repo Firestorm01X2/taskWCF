@@ -1,11 +1,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> parent of e2e5241... Revert troubles
 =======
 >>>>>>> parent of 0f196f6... Merge branch 'master' into AlParMatrix
+=======
+>>>>>>> parent of ae9877b... Merge pull request #14 from V-vltru/KulakovNewBranch
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
@@ -148,6 +151,7 @@ Global
 		SolutionGuid = {8291BCEF-E404-41B3-A4C6-55427FCBE8FD}
 	EndGlobalSection
 EndGlobal
+<<<<<<< HEAD
 =======
 
 Microsoft Visual Studio Solution File, Format Version 12.00
@@ -295,3 +299,5 @@ Global
 EndGlobal
 
 >>>>>>> parent of ebb0e1d... Merge pull request #16 from V-vltru/AlParMatrix
+=======
+>>>>>>> parent of ae9877b... Merge pull request #14 from V-vltru/KulakovNewBranch
