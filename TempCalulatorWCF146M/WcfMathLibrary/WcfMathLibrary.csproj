@@ -64,6 +64,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ProjectReference Include="..\Matrix\Matrix\Matrix.csproj">
 =======
 
@@ -96,6 +97,9 @@
 =======
     <ProjectReference Include="..\Matrix\Matrix\Matrix.csproj">
 >>>>>>> parent of 0f196f6... Merge branch 'master' into AlParMatrix
+=======
+    <ProjectReference Include="F:\Matrix\Matrix\Matrix.csproj">
+>>>>>>> parent of dfbdc46... Исправил ошибку
       <Project>{97897428-1027-4022-bb2f-6f323ffdf8fb}</Project>
       <Name>Matrix</Name>
     </ProjectReference>
