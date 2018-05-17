@@ -63,6 +63,7 @@
     </ProjectReference>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ProjectReference Include="..\Matrix\Matrix\Matrix.csproj">
 =======
 
@@ -92,9 +93,11 @@
 =======
     <ProjectReference Include="F:\Matrix\Matrix\Matrix.csproj">
 >>>>>>> parent of ebb0e1d... Merge pull request #16 from V-vltru/AlParMatrix
+=======
+    <ProjectReference Include="..\Matrix\Matrix\Matrix.csproj">
+>>>>>>> parent of 0f196f6... Merge branch 'master' into AlParMatrix
       <Project>{97897428-1027-4022-bb2f-6f323ffdf8fb}</Project>
       <Name>Matrix</Name>
-
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
