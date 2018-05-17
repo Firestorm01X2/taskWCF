@@ -8,6 +8,7 @@ using System.IO;
 using Array3DLibrary;
 using NewMathLib;
 using Matrix;
+using SolveIntegralLib;
 namespace WcfMathLibrary
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
@@ -78,6 +79,54 @@ namespace WcfMathLibrary
             MatrixT<int> MatResult = matrixes.matrix1 * matrixes.matrix2;
             MatrixOutput result = new MatrixOutput();
             result.matrixResult = MatResult;
+            return result;
+        }
+
+        IntegralOutput IService1.IntegralSeqRectangleMedium(IntegralInput Input)
+        {
+            IntegralOutput result = new IntegralOutput();
+            SeqMeth integral=new SeqMeth();
+            result.result = integral.RectangleMedium(Input.A,Input.B,Input.N,Input.F);
+            return result;
+        }
+
+        IntegralOutput IService1.IntegralParRectangleMedium(IntegralInput input)
+        {
+            IntegralOutput result = new IntegralOutput();
+            ParallelMets integral = new ParallelMets();
+            result.result = integral.RectangleMedium(input.A, input.B, input.N, input.F);
+            return result;
+        }
+                
+        IntegralOutput IService1.IntegralParSimpson(IntegralInput input)
+        {
+            IntegralOutput result = new IntegralOutput();
+            ParallelMets integral = new ParallelMets();
+            result.result = integral.Simpson(input.A, input.B, input.N, input.F);
+            return result;
+        }
+
+        IntegralOutput IService1.IntegralSeqTrapeze(IntegralInput input)
+        {
+            IntegralOutput result = new IntegralOutput();
+            SeqMeth integral = new SeqMeth();
+            result.result = integral.Trapeze(input.A, input.B, input.N, input.F);
+            return result;
+        }
+                        
+       IntegralOutput IService1.IntegralParTrapeze(IntegralInput input)
+        {
+            IntegralOutput result = new IntegralOutput();
+            ParallelMets integral = new ParallelMets();
+            result.result = integral.Trapeze(input.A, input.B, input.N, input.F);
+            return result;
+        }
+
+        IntegralOutput IService1.IntegralSeqSimpson(IntegralInput input)
+        {
+            IntegralOutput result = new IntegralOutput();
+            SeqMeth integral = new SeqMeth();
+            result.result = integral.Simpson(input.A, input.B, input.N, input.F);
             return result;
         }
 

@@ -29,6 +29,24 @@ namespace WcfMathLibrary
 
         [OperationContract]
         MatrixOutput MatrixMul(MatrixInput matrixes);
+
+        [OperationContract]
+        IntegralOutput IntegralParTrapeze(IntegralInput Input);
+
+        [OperationContract]
+        IntegralOutput IntegralParRectangleMedium(IntegralInput Input);
+
+        [OperationContract]
+        IntegralOutput IntegralParSimpson(IntegralInput Input);
+
+        [OperationContract]
+        IntegralOutput IntegralSeqTrapeze(IntegralInput Input);
+
+        [OperationContract]
+        IntegralOutput IntegralSeqRectangleMedium(IntegralInput Input);
+
+        [OperationContract]
+        IntegralOutput IntegralSeqSimpson(IntegralInput Input);
     }
 
     [DataContract]
@@ -38,6 +56,7 @@ namespace WcfMathLibrary
         public MatrixT<int> matrixResult { get; set; }
     }
 
+   
     [DataContract]
     public class MatrixInput
     {
@@ -45,6 +64,54 @@ namespace WcfMathLibrary
        public MatrixT<int> matrix1 { get; set; }
         [DataMember]
        public MatrixT<int> matrix2 { get; set; }
+    }
+
+    [DataContract]
+    public class IntegralInput
+    { 
+        private double _a;
+        private double _b;
+        private int _n;
+        private Func<double, double> _f;
+    [DataMember]
+        public double A
+        {
+            get
+            {
+                return _a;
+            }
+            set
+            {
+                _a = value;
+            }
+        }
+        public double B
+    {
+        get
+        {
+            return _b;
+        }
+        set
+        {
+            _a=value;
+        }
+    }
+        public int N
+        {
+            get { return _n; }
+            set { _n = value; }
+        }
+        public Func<double, double> F
+        {
+            get { return _f; }
+            set { _f = value; }
+        }
+    }
+    public class IntegralOutput
+    {
+        [DataMember]
+        public double result {get;set;}
+    
     }
 
     [DataContract]
