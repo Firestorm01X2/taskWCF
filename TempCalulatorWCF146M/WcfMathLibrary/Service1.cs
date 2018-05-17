@@ -355,21 +355,21 @@ namespace WcfMathLibrary
 
             return U;
         }
-        //MatrixTOutput IService1.MatrixSum(MatrixTInput matrixes)
-        //{
-        //    MatrixT<int> MatResult = matrixes.matrix1 + matrixes.matrix2;
-        //    MatrixTOutput result = new MatrixTOutput();
-        //    result.matrixOut = MatResult;
-        //    return result;
-        //}
+        MatrixOutput IService1.MatrixSum(MatrixInput matrixes)
+        {
+            MatrixT<int> MatResult = matrixes.matrix1 + matrixes.matrix2;
+            MatrixOutput result = new MatrixOutput();
+            result.matrixResult = MatResult;
+            return result;
+        }
 
-        //MatrixTOutput IService1.MatrixMul(MatrixTInput matrixes)
-        //{
-        //    MatrixT<int> MatResult = matrixes.matrix1 * matrixes.matrix2;
-        //    MatrixTOutput result = new MatrixTOutput();
-        //    result.matrixOut = MatResult;
-        //    return result;
-        //}
+        MatrixOutput IService1.MatrixMul(MatrixInput matrixes)
+        {
+            MatrixT<int> MatResult = matrixes.matrix1 * matrixes.matrix2;
+            MatrixOutput result = new MatrixOutput();
+            result.matrixResult = MatResult;
+            return result;
+        }
 
     }
 }

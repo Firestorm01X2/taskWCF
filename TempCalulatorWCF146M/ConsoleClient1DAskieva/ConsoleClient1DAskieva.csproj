@@ -53,7 +53,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ServiceReference1\Array3DLibrary.xsd">
       <SubType>Designer</SubType>
     </None>
