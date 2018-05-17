@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 0f196f6e5518d0cfbb5da4c8764d75e0643f6dc8
@@ -12,6 +13,8 @@
 >>>>>>> parent of b9e01c9... Merge branch 'AlParMatrix' of https://github.com/V-vltru/taskWCF into AlParMatrix
 =======
 >>>>>>> parent of 0f196f6... Merge branch 'master' into AlParMatrix
+=======
+>>>>>>> parent of ae9877b... Merge pull request #14 from V-vltru/KulakovNewBranch
 =======
 >>>>>>> parent of ae9877b... Merge pull request #14 from V-vltru/KulakovNewBranch
 ﻿
@@ -156,6 +159,7 @@ Global
 		SolutionGuid = {8291BCEF-E404-41B3-A4C6-55427FCBE8FD}
 	EndGlobalSection
 EndGlobal
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -603,5 +607,7 @@ Global
 EndGlobal
 
 >>>>>>> parent of ebb0e1d... Merge pull request #16 from V-vltru/AlParMatrix
+=======
+>>>>>>> parent of ae9877b... Merge pull request #14 from V-vltru/KulakovNewBranch
 =======
 >>>>>>> parent of ae9877b... Merge pull request #14 from V-vltru/KulakovNewBranch
