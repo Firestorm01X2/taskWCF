@@ -1,4 +1,5 @@
 
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
@@ -25,8 +26,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAlPar", "WpfAlPar\WpfAlP
 	ProjectSection(ProjectDependencies) = postProject
 		{162E2A44-7B04-4398-ABB0-EC6E677930D4} = {162E2A44-7B04-4398-ABB0-EC6E677930D4}
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewMathLib", "NewMathLib\NewMathLib.csproj", "{3D6E2392-91BE-43A3-8923-4A76527B862B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Kulakov", "WPF_Kulakov\WPF_Kulakov.csproj", "{95BDEA27-DE2A-43AD-A212-A35F6C014CA3}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -56,9 +55,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolveIntegralLib", "SolveIn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestSolveIntegralLib", "UnitTestSolveIntegralLib\UnitTestSolveIntegralLib.csproj", "{745C2D4E-A834-41A4-8C8D-4763BB338FBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix", "F:\Matrix\Matrix\Matrix.csproj", "{97897428-1027-4022-BB2F-6F323FFDF8FB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestMatrix", "UnitTestMatrix\UnitTestMatrix.csproj", "{104B7110-B547-455B-8BB9-A2382E3C20D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix", "Matrix\Matrix\Matrix.csproj", "{97897428-1027-4022-BB2F-6F323FFDF8FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -126,14 +125,14 @@ Global
 		{745C2D4E-A834-41A4-8C8D-4763BB338FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{745C2D4E-A834-41A4-8C8D-4763BB338FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{745C2D4E-A834-41A4-8C8D-4763BB338FBD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{97897428-1027-4022-BB2F-6F323FFDF8FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{97897428-1027-4022-BB2F-6F323FFDF8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{97897428-1027-4022-BB2F-6F323FFDF8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{97897428-1027-4022-BB2F-6F323FFDF8FB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{104B7110-B547-455B-8BB9-A2382E3C20D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{104B7110-B547-455B-8BB9-A2382E3C20D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{104B7110-B547-455B-8BB9-A2382E3C20D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{104B7110-B547-455B-8BB9-A2382E3C20D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97897428-1027-4022-BB2F-6F323FFDF8FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97897428-1027-4022-BB2F-6F323FFDF8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97897428-1027-4022-BB2F-6F323FFDF8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97897428-1027-4022-BB2F-6F323FFDF8FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -142,4 +141,3 @@ Global
 		SolutionGuid = {8291BCEF-E404-41B3-A4C6-55427FCBE8FD}
 	EndGlobalSection
 EndGlobal
-
