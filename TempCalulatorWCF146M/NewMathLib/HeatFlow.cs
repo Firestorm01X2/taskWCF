@@ -1,83 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
 using System.Text;
-using System.IO;
+using System.Threading.Tasks;
 using Array3DLibrary;
-<<<<<<< HEAD
-using NewMathLib;
-=======
->>>>>>> parent of ea36c67... Merge pull request #15 from V-vltru/AlParMatrix
 
-namespace WcfMathLibrary
+namespace NewMathLib
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
-    public class Service1 : IService1
+    public class HeatFlow
     {
-        OutputForTemp IService1.CalculateTemp(InputForTemp input)
+       static public double[,] ProgonkaPPM(double R, double[,] U)
         {
-            OutputForTemp result = new OutputForTemp();
-            try
-            {
-                double[,] u= Utils.ToMultiD(input.U);
-                u =NewMathLib.HeatFlow.CalcNewT(u, input.C, input.H, input.Tau, input.TimeSteps);
-                result.U = Utils.ToJagged(u);
-                result.OutputMessage = "Calculations are correct";
-            }
-            catch (Exception e)
-            {
-                result.OutputMessage = e.Message.ToString();
-            }
-            return result;
-        }
-
-        OutputForTemp3D IService1.CalculateTemp3D(InputForTemp3D input)
-        {
-            OutputForTemp3D result = new OutputForTemp3D();
-            result.U = new Array3D<double>(input.U.XLength, input.U.YLength, input.U.ZLength);
-            try
-            {
-                Array3D<double> u = input.U;
-                u = NewMathLib.HeatFlow.CalcNewT3D(u, input.C, input.H, input.Tau, input.TimeSteps);
-                result.U = u;
-                result.OutputMessage = "Calculations are correct";
-            }
-            catch (Exception e)
-            {
-                result.OutputMessage = e.Message.ToString();
-            }
-            return result;
-        }
-
-        OutputForTemp1D IService1.CalculateTemp1D(InputForTemp1D input1D)
-        {
-            OutputForTemp1D result = new OutputForTemp1D();
-
-            try
-            {
-                result.U = NewMathLib.HeatFlow.CalcNewT1D(input1D.U, input1D.C, input1D.H, input1D.Tau, input1D.TimeSteps);
-                result.OutputMessage = "Calculations are correct";
-            }
-            catch (Exception e)
-            {
-                result.OutputMessage = e.Message.ToString();
-            }
-
-            return result;
-        }
-
-<<<<<<< HEAD
-       
-=======
-        public double[,] ProgonkaPPM(double R, double[,] U)
-        {
-          //  double A = -R/2, B = -R/2, C = 1 +2 * R;
-             int M = U.GetLength(0);
+            //  double A = -R/2, B = -R/2, C = 1 +2 * R;
+            int M = U.GetLength(0);
             int N = U.GetLength(1);
 
-            for (int i = 1; i < M-1; i++)
+            for (int i = 1; i < M - 1; i++)
             {
                 double[] L = new double[N];
                 double[] K = new double[N];
@@ -94,7 +32,7 @@ namespace WcfMathLibrary
                 }
             }
 
-            for (int i = 1; i < N-1; i++)
+            for (int i = 1; i < N - 1; i++)
             {
                 double[] L = new double[N];
                 double[] K = new double[N];
@@ -103,7 +41,7 @@ namespace WcfMathLibrary
                 for (int q = 2; q < N; q++)
                 {
                     L[q] = R / (1 + 2 * R - R * L[q - 1]);
-                    K[q] = ((U[q-1, i] + R * K[q - 1]) / (1 + 2 * R - R * L[q-1]));
+                    K[q] = ((U[q - 1, i] + R * K[q - 1]) / (1 + 2 * R - R * L[q - 1]));
                 }
                 for (int q = M - 2; q > 0; q--)
                 {
@@ -111,28 +49,26 @@ namespace WcfMathLibrary
                 }
             }
 
-                return U;
+            return U;
         }
-        public double[,] CalcNewTN(double[,] U, double a, double h, double tau, int steps)
+       static public double[,] CalcNewTN(double[,] U, double a, double h, double tau, int steps)
         {
-            double R = a * a * tau/2 / h / h;
+            double R = a * a * tau / 2 / h / h;
             int M = U.GetLength(0);
             int N = U.GetLength(1);
             double[,] UNew = new double[M, N];
             ///
-             int k = 0;
+            int k = 0;
             do
             {
-            U=ProgonkaPPM(R, U);
-            k++;
-           } while (k < steps);
+                U = ProgonkaPPM(R, U);
+                k++;
+            } while (k < steps);
 
             return U;
         }
 
-
-
-        public double[,] CalcNewT(double[,] U, double a, double h, double tau, int steps)
+       static public double[,] CalcNewT(double[,] U, double a, double h, double tau, int steps)
         {
             double R = a * a * tau / h / h;
             if (R >= 0.25)
@@ -181,12 +117,12 @@ namespace WcfMathLibrary
             return U;
         }
 
-        public Array3D<double> CalcNewT3D(Array3D<double> U, double a, double h, double tau, int steps)
+       static public Array3D<double> CalcNewT3D(Array3D<double> U, double a, double h, double tau, int steps)
         {
             double R = a * a * tau / h / h;
             if (R >= 0.125)
             {
-               // throw new Exception("Stability condition is not met!");
+                // throw new Exception("Stability condition is not met!");
                 return CalcNewTN3D(U, a, h, tau, steps);
             }
 
@@ -251,10 +187,10 @@ namespace WcfMathLibrary
 
         }
 
-        public double[] CalcNewT1D(double[] U, double a, double h, double tau, int steps)
+       static public double[] CalcNewT1D(double[] U, double a, double h, double tau, int steps)
         {
             double R = a * a * tau / h / h;
-            if(R >= 0.5)
+            if (R >= 0.5)
             {
                 throw new Exception("Stability condition is not met!");
             }
@@ -282,7 +218,7 @@ namespace WcfMathLibrary
         }
 
 
-        public Array3D<double> ProgonkaPPM3D(double R, Array3D<double> U)
+       static public Array3D<double> ProgonkaPPM3D(double R, Array3D<double> U)
         {
             R = R / 3;
             int M = U.XLength;
@@ -290,78 +226,77 @@ namespace WcfMathLibrary
             int S = U.ZLength;
             Array3D<double> Unew = new Array3D<double>(M, N, S);
 
-            for (int z = 1; z < S - 1;z++ ) //перебираем по I и Z
+            for (int z = 1; z < S - 1; z++) //перебираем по I и Z
                 for (int i = 1; i < M - 1; i++)
                 {
                     double[] L = new double[N];
                     double[] K = new double[N];
-                    
+
                     L[1] = 0;              //начальные значения прогоночных коэффициентов
                     K[1] = U[i, 0, z];
                     for (int q = 2; q < N; q++)  //вычисление прогоночных коэффициентов (прямой ход прогонки)
                     {
                         L[q] = R / (1 + 2 * R - R * L[q - 1]);
-                        K[q] = ((U[i, q - 1,z] + R * K[q - 1]) / (1 + 2 * R - R * L[q - 1]));
+                        K[q] = ((U[i, q - 1, z] + R * K[q - 1]) / (1 + 2 * R - R * L[q - 1]));
                     }
                     for (int q = N - 2; q > 0; q--)    //вычисление температуры (обратный ход прогонки)
                     {
-                        U[i, q,z] = L[q + 1] * U[i, q + 1,z] + K[q + 1];
+                        U[i, q, z] = L[q + 1] * U[i, q + 1, z] + K[q + 1];
                     }
                 }
 
             for (int z = 1; z < S - 1; z++)
-            for (int j = 1; j < N - 1; j++)
-            {
-                double[] L = new double[M];
-                double[] K = new double[M];
-                
-                L[1] = 0;
-                K[1] = U[0, j,z];
-                for (int q = 2; q < M; q++)
+                for (int j = 1; j < N - 1; j++)
                 {
-                    L[q] = R / (1 + 2 * R - R * L[q - 1]);
-                    K[q] = ((U[q - 1, j,z] + R * K[q - 1]) / (1 + 2 * R - R * L[q - 1]));
+                    double[] L = new double[M];
+                    double[] K = new double[M];
+
+                    L[1] = 0;
+                    K[1] = U[0, j, z];
+                    for (int q = 2; q < M; q++)
+                    {
+                        L[q] = R / (1 + 2 * R - R * L[q - 1]);
+                        K[q] = ((U[q - 1, j, z] + R * K[q - 1]) / (1 + 2 * R - R * L[q - 1]));
+                    }
+                    for (int q = M - 2; q > 0; q--)
+                    {
+                        U[q, j, z] = L[q + 1] * U[q + 1, j, z] + K[q + 1];
+                    }
                 }
-                for (int q = M - 2; q > 0; q--)
-                {
-                    U[q, j,z] = L[q + 1] * U[q + 1, j,z] + K[q + 1];
-                }
-            }
 
             for (int i = 1; i < M - 1; i++)
                 for (int j = 1; j < N - 1; j++)
                 {
                     double[] L = new double[S];
                     double[] K = new double[S];
-                   
+
                     L[1] = 0;
                     K[1] = U[i, j, 0];
                     for (int q = 2; q < S; q++)
                     {
                         L[q] = R / (1 + 2 * R - R * L[q - 1]);
-                        K[q] = ((U[i, j, q-1] + R * K[q - 1]) / (1 + 2 * R - R * L[q - 1]));
+                        K[q] = ((U[i, j, q - 1] + R * K[q - 1]) / (1 + 2 * R - R * L[q - 1]));
                     }
                     for (int q = M - 2; q > 0; q--)
                     {
-                        U[i, j, q] = L[q + 1] * U[i, j, q+1] + K[q + 1];
+                        U[i, j, q] = L[q + 1] * U[i, j, q + 1] + K[q + 1];
                     }
                 }
 
             return U;
         }
-        public Array3D<double> CalcNewTN3D(Array3D<double> U, double a, double h, double tau, int steps)
+       static public Array3D<double> CalcNewTN3D(Array3D<double> U, double a, double h, double tau, int steps)
         {
             double R = a * a * tau / h / h;
             ///
             int k = 0;
             do
             {
-                U = ProgonkaPPM3D(R,U);
+                U = ProgonkaPPM3D(R, U);
                 k++;
             } while (k < steps);
 
             return U;
         }
->>>>>>> parent of ea36c67... Merge pull request #15 from V-vltru/AlParMatrix
     }
 }
