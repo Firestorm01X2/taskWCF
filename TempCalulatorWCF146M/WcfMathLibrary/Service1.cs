@@ -6,6 +6,10 @@ using System.ServiceModel;
 using System.Text;
 using System.IO;
 using Array3DLibrary;
+<<<<<<< HEAD
+=======
+using NewMathLib;
+>>>>>>> parent of c3fff2d... Revert "Merge branch 'master' into KulakovNewBranch"
 
 namespace WcfMathLibrary
 {
@@ -64,6 +68,7 @@ namespace WcfMathLibrary
             return result;
         }
 
+<<<<<<< HEAD
         public double[,] ProgonkaPPM(double R, double[,] U)
         {
           //  double A = -R/2, B = -R/2, C = 1 +2 * R;
@@ -355,5 +360,8 @@ namespace WcfMathLibrary
 
             return U;
         }
+=======
+       
+>>>>>>> parent of c3fff2d... Revert "Merge branch 'master' into KulakovNewBranch"
     }
 }
