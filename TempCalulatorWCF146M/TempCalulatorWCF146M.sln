@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2015
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempCalulatorWCF146M", "TempCalulatorWCF146M\TempCalulatorWCF146M.csproj", "{5E4D6E8C-DE6D-4539-94DB-4F7925E5B56A}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -53,6 +53,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolveIntegralLib", "SolveIntegralLib\SolveIntegralLib.csproj", "{678FAA83-7DA3-40CB-8CA6-933C96681B62}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestSolveIntegralLib", "UnitTestSolveIntegralLib\UnitTestSolveIntegralLib.csproj", "{745C2D4E-A834-41A4-8C8D-4763BB338FBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix", "F:\Matrix\Matrix\Matrix.csproj", "{97897428-1027-4022-BB2F-6F323FFDF8FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestMatrix", "UnitTestMatrix\UnitTestMatrix.csproj", "{104B7110-B547-455B-8BB9-A2382E3C20D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -120,11 +124,19 @@ Global
 		{745C2D4E-A834-41A4-8C8D-4763BB338FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{745C2D4E-A834-41A4-8C8D-4763BB338FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{745C2D4E-A834-41A4-8C8D-4763BB338FBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97897428-1027-4022-BB2F-6F323FFDF8FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97897428-1027-4022-BB2F-6F323FFDF8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97897428-1027-4022-BB2F-6F323FFDF8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97897428-1027-4022-BB2F-6F323FFDF8FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{104B7110-B547-455B-8BB9-A2382E3C20D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{104B7110-B547-455B-8BB9-A2382E3C20D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{104B7110-B547-455B-8BB9-A2382E3C20D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{104B7110-B547-455B-8BB9-A2382E3C20D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F43BEEDF-11A3-40F1-AA77-7FBE22E32516}
+		SolutionGuid = {8291BCEF-E404-41B3-A4C6-55427FCBE8FD}
 	EndGlobalSection
 EndGlobal
