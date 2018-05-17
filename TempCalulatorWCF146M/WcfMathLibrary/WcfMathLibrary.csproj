@@ -64,6 +64,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     <ProjectReference Include="..\NewMathLib\NewMathLib.csproj">
       <Project>{3d6e2392-91be-43a3-8923-4a76527b862b}</Project>
@@ -80,6 +81,11 @@
 >>>>>>> parent of dfbdc46... Исправил ошибку
       <Project>{97897428-1027-4022-bb2f-6f323ffdf8fb}</Project>
       <Name>Matrix</Name>
+=======
+    <ProjectReference Include="..\NewMathLib\NewMathLib.csproj">
+      <Project>{3d6e2392-91be-43a3-8923-4a76527b862b}</Project>
+      <Name>NewMathLib</Name>
+>>>>>>> parent of abd9ab2... Merge branch 'master' into KulakovNewBranch
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

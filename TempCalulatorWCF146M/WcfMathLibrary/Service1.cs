@@ -10,6 +10,7 @@ using Array3DLibrary;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 using NewMathLib;
 >>>>>>> parent of c3fff2d... Revert "Merge branch 'master' into KulakovNewBranch"
@@ -27,6 +28,9 @@ using Matrix;
 >>>>>>> parent of 0f196f6... Merge branch 'master' into AlParMatrix
 =======
 using Matrix;
+=======
+using NewMathLib;
+>>>>>>> parent of abd9ab2... Merge branch 'master' into KulakovNewBranch
 
 >>>>>>> parent of ae9877b... Merge pull request #14 from V-vltru/KulakovNewBranch
 namespace WcfMathLibrary
@@ -86,6 +90,7 @@ namespace WcfMathLibrary
             return result;
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -708,5 +713,8 @@ namespace WcfMathLibrary
 >>>>>>> parent of 0f196f6... Merge branch 'master' into AlParMatrix
 =======
 >>>>>>> parent of ae9877b... Merge pull request #14 from V-vltru/KulakovNewBranch
+=======
+       
+>>>>>>> parent of abd9ab2... Merge branch 'master' into KulakovNewBranch
     }
 }
