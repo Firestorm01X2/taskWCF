@@ -5,7 +5,6 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using Array3DLibrary;
-using Matrix;
 
 namespace WcfMathLibrary
 {
@@ -23,12 +22,6 @@ namespace WcfMathLibrary
 
         [OperationContract]
         OutputForTemp1D CalculateTemp1D(InputForTemp1D input1D);
-
-        [OperationContract]
-        MatrixTOutput MatrixSum(MatrixTInput matrixes);
-
-        [OperationContract]
-        MatrixTOutput MatrixMul(MatrixTInput matrixes);
     }
 
     [DataContract]
@@ -78,7 +71,6 @@ namespace WcfMathLibrary
         {
             get; set;
         }
-        
 
         [DataMember]
         public double H
@@ -142,32 +134,6 @@ namespace WcfMathLibrary
             }
         }
     }
-    [DataContract]
-    public class MatrixTInput
-    {
-        [DataMember]
-        public MatrixT<int> matrix1
-        {
-            get;set;
-        }
-
-        [DataMember]
-        public MatrixT<int> matrix2
-        {
-            get;set;
-        }
-    }
-
-    [DataContract]
-    public class MatrixTOutput
-    {
-        [DataMember]
-        public MatrixT<int> matrixOut
-        {
-            get;set;
-        }
-    }
-
 
     [DataContract]
     public class InputForTemp:InputForTempBase

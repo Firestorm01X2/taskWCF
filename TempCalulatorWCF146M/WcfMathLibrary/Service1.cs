@@ -6,11 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using System.IO;
 using Array3DLibrary;
-
 using NewMathLib;
-=======
-using Matrix;
-
 
 namespace WcfMathLibrary
 {
@@ -69,23 +65,6 @@ namespace WcfMathLibrary
             return result;
         }
 
-
-        MatrixTOutput IService1.MatrixSum(MatrixTInput matrixes)
-        {
-            MatrixT<int> MatResult = matrixes.matrix1 + matrixes.matrix2;
-            MatrixTOutput result = new MatrixTOutput();
-            result.matrixOut = MatResult;
-            return result;
-        }
-
-        MatrixTOutput IService1.MatrixMul(MatrixTInput matrixes)
-        {
-            MatrixT<int> MatResult = matrixes.matrix1 * matrixes.matrix2;
-            MatrixTOutput result = new MatrixTOutput();
-            result.matrixOut = MatResult;
-            return result;
-        }
-
-      
+       
     }
 }
