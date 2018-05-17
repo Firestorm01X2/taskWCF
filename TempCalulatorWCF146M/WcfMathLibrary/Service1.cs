@@ -11,6 +11,7 @@ using Array3DLibrary;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 using NewMathLib;
 >>>>>>> parent of c3fff2d... Revert "Merge branch 'master' into KulakovNewBranch"
@@ -19,6 +20,8 @@ using NewMathLib;
 using NewMathLib;
 =======
 using Matrix;
+=======
+>>>>>>> parent of ea36c67... Merge pull request #15 from V-vltru/AlParMatrix
 
 >>>>>>> parent of e2e5241... Revert troubles
 
@@ -90,6 +93,7 @@ namespace WcfMathLibrary
             return result;
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -418,6 +422,8 @@ namespace WcfMathLibrary
 =======
 =======
 >>>>>>> parent of ae9877b... Merge pull request #14 from V-vltru/KulakovNewBranch
+=======
+>>>>>>> parent of ea36c67... Merge pull request #15 from V-vltru/AlParMatrix
         public double[,] ProgonkaPPM(double R, double[,] U)
         {
           //  double A = -R/2, B = -R/2, C = 1 +2 * R;
