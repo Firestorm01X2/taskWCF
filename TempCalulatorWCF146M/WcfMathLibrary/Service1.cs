@@ -6,10 +6,6 @@ using System.ServiceModel;
 using System.Text;
 using System.IO;
 using Array3DLibrary;
-<<<<<<< HEAD
-using NewMathLib;
-=======
->>>>>>> parent of ea36c67... Merge pull request #15 from V-vltru/AlParMatrix
 
 namespace WcfMathLibrary
 {
@@ -22,7 +18,7 @@ namespace WcfMathLibrary
             try
             {
                 double[,] u= Utils.ToMultiD(input.U);
-                u =NewMathLib.HeatFlow.CalcNewT(u, input.C, input.H, input.Tau, input.TimeSteps);
+                u = CalcNewT(u, input.C, input.H, input.Tau, input.TimeSteps);
                 result.U = Utils.ToJagged(u);
                 result.OutputMessage = "Calculations are correct";
             }
@@ -40,7 +36,7 @@ namespace WcfMathLibrary
             try
             {
                 Array3D<double> u = input.U;
-                u = NewMathLib.HeatFlow.CalcNewT3D(u, input.C, input.H, input.Tau, input.TimeSteps);
+                u = CalcNewT3D(u, input.C, input.H, input.Tau, input.TimeSteps);
                 result.U = u;
                 result.OutputMessage = "Calculations are correct";
             }
@@ -57,7 +53,7 @@ namespace WcfMathLibrary
 
             try
             {
-                result.U = NewMathLib.HeatFlow.CalcNewT1D(input1D.U, input1D.C, input1D.H, input1D.Tau, input1D.TimeSteps);
+                result.U = this.CalcNewT1D(input1D.U, input1D.C, input1D.H, input1D.Tau, input1D.TimeSteps);
                 result.OutputMessage = "Calculations are correct";
             }
             catch (Exception e)
@@ -68,9 +64,6 @@ namespace WcfMathLibrary
             return result;
         }
 
-<<<<<<< HEAD
-       
-=======
         public double[,] ProgonkaPPM(double R, double[,] U)
         {
           //  double A = -R/2, B = -R/2, C = 1 +2 * R;
@@ -362,6 +355,5 @@ namespace WcfMathLibrary
 
             return U;
         }
->>>>>>> parent of ea36c67... Merge pull request #15 from V-vltru/AlParMatrix
     }
 }
