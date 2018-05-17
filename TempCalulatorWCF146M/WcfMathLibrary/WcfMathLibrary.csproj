@@ -62,7 +62,6 @@
       <Name>Array3DLibrary</Name>
     </ProjectReference>
 <<<<<<< HEAD
-<<<<<<< HEAD
     <ProjectReference Include="..\Matrix\Matrix\Matrix.csproj">
 =======
 
@@ -72,6 +71,7 @@
 
     <ProjectReference Include="F:\Matrix\Matrix\Matrix.csproj">
 >>>>>>> master
+<<<<<<< HEAD
 =======
 
     <ProjectReference Include="..\NewMathLib\NewMathLib.csproj">
@@ -83,6 +83,8 @@
 =======
     <ProjectReference Include="F:\Matrix\Matrix\Matrix.csproj">
 >>>>>>> parent of ebb0e1d... Merge pull request #16 from V-vltru/AlParMatrix
+=======
+>>>>>>> parent of b9e01c9... Merge branch 'AlParMatrix' of https://github.com/V-vltru/taskWCF into AlParMatrix
       <Project>{97897428-1027-4022-bb2f-6f323ffdf8fb}</Project>
       <Name>Matrix</Name>
 

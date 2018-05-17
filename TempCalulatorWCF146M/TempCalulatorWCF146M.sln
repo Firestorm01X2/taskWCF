@@ -1,9 +1,12 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 0f196f6e5518d0cfbb5da4c8764d75e0643f6dc8
+=======
+>>>>>>> parent of b9e01c9... Merge branch 'AlParMatrix' of https://github.com/V-vltru/taskWCF into AlParMatrix
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
@@ -146,7 +149,6 @@ Global
 		SolutionGuid = {8291BCEF-E404-41B3-A4C6-55427FCBE8FD}
 	EndGlobalSection
 EndGlobal
-<<<<<<< HEAD
 =======
 
 Microsoft Visual Studio Solution File, Format Version 12.00
@@ -294,6 +296,7 @@ Global
 EndGlobal
 
 >>>>>>> master
+<<<<<<< HEAD
 =======
 >>>>>>> 0f196f6e5518d0cfbb5da4c8764d75e0643f6dc8
 =======
@@ -443,3 +446,5 @@ Global
 EndGlobal
 
 >>>>>>> parent of ebb0e1d... Merge pull request #16 from V-vltru/AlParMatrix
+=======
+>>>>>>> parent of b9e01c9... Merge branch 'AlParMatrix' of https://github.com/V-vltru/taskWCF into AlParMatrix
