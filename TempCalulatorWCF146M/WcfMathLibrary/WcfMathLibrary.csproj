@@ -61,35 +61,6 @@
       <Project>{76bb480e-fa7c-401f-a9e5-b5e1317cc4d4}</Project>
       <Name>Array3DLibrary</Name>
     </ProjectReference>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    <ProjectReference Include="..\NewMathLib\NewMathLib.csproj">
-      <Project>{3d6e2392-91be-43a3-8923-4a76527b862b}</Project>
-      <Name>NewMathLib</Name>
-
-=======
->>>>>>> parent of ae9877b... Merge pull request #14 from V-vltru/KulakovNewBranch
-    <ProjectReference Include="F:\Matrix\Matrix\Matrix.csproj">
-=======
-    <ProjectReference Include="..\Matrix\Matrix\Matrix.csproj">
->>>>>>> parent of 0f196f6... Merge branch 'master' into AlParMatrix
-=======
-    <ProjectReference Include="F:\Matrix\Matrix\Matrix.csproj">
->>>>>>> parent of dfbdc46... Исправил ошибку
-      <Project>{97897428-1027-4022-bb2f-6f323ffdf8fb}</Project>
-      <Name>Matrix</Name>
-=======
-    <ProjectReference Include="..\NewMathLib\NewMathLib.csproj">
-      <Project>{3d6e2392-91be-43a3-8923-4a76527b862b}</Project>
-      <Name>NewMathLib</Name>
->>>>>>> parent of abd9ab2... Merge branch 'master' into KulakovNewBranch
-    </ProjectReference>
-=======
->>>>>>> parent of ea36c67... Merge pull request #15 from V-vltru/AlParMatrix
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
