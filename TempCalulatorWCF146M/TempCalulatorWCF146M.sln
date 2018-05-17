@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0f196f6e5518d0cfbb5da4c8764d75e0643f6dc8
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
@@ -141,6 +145,7 @@ Global
 		SolutionGuid = {8291BCEF-E404-41B3-A4C6-55427FCBE8FD}
 	EndGlobalSection
 EndGlobal
+<<<<<<< HEAD
 =======
 
 Microsoft Visual Studio Solution File, Format Version 12.00
@@ -288,3 +293,5 @@ Global
 EndGlobal
 
 >>>>>>> master
+=======
+>>>>>>> 0f196f6e5518d0cfbb5da4c8764d75e0643f6dc8
