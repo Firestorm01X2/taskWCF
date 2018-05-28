@@ -26,10 +26,10 @@ namespace WcfMathLibrary
         OutputForTemp1D CalculateTemp1D(InputForTemp1D input1D);
 
         [OperationContract]
-        MatrixOutput MatrixSum(MatrixInput matrixes);
+        MatrixOutput MatrixSum(MatrixInput Input);
 
         [OperationContract]
-        MatrixOutput MatrixMul(MatrixInput matrixes);
+        MatrixOutput MatrixMul(MatrixInput Input);
 
         [OperationContract]
         IntegralOutput IntegralParTrapeze(IntegralInput Input);

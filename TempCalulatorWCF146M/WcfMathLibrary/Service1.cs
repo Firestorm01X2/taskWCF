@@ -65,22 +65,22 @@ namespace WcfMathLibrary
 
             return result;
         }
-       
-        //MatrixOutput IService1.MatrixSum(MatrixInput matrixes)
-        //{
-        //    MatrixT<int> MatResult = matrixes.matrix1 + matrixes.matrix2;
-        //    MatrixOutput result = new MatrixOutput();
-        //    result.matrixResult = MatResult;
-        //    return result;
-        //}
 
-        //MatrixOutput IService1.MatrixMul(MatrixInput matrixes)
-        //{
-        //    MatrixT<int> MatResult = matrixes.matrix1 * matrixes.matrix2;
-        //    MatrixOutput result = new MatrixOutput();
-        //    result.matrixResult = MatResult;
-        //    return result;
-        //}
+        MatrixOutput IService1.MatrixSum(MatrixInput Input)
+        {
+            MatrixT<int> MatResult = Input.matrix1 + Input.matrix2;
+            MatrixOutput result = new MatrixOutput();
+            result.matrixResult = MatResult;
+            return result;
+        }
+
+        MatrixOutput IService1.MatrixMul(MatrixInput Input)
+        {
+            MatrixT<int> MatResult = Input.matrix1;// *Input.matrix2;
+            MatrixOutput result = new MatrixOutput();
+            result.matrixResult = MatResult;
+            return result;
+        }
 
         IntegralOutput IService1.IntegralSeqRectangleMedium(IntegralInput Input)
         {
@@ -128,16 +128,6 @@ namespace WcfMathLibrary
             SeqMeth integral = new SeqMeth();
             result.result = integral.Simpson(input.A, input.B, input.N, input.F);
             return result;
-        }
-
-        MatrixOutput IService1.MatrixSum(MatrixInput matrixes)
-        {
-            throw new NotImplementedException();
-        }
-
-        MatrixOutput IService1.MatrixMul(MatrixInput matrixes)
-        {
-            throw new NotImplementedException();
         }
     }
 }
