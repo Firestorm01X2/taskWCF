@@ -76,7 +76,7 @@ namespace WcfMathLibrary
 
         MatrixOutput IService1.MatrixMul(MatrixInput Input)
         {
-            MatrixT<int> MatResult = Input.matrix1;// *Input.matrix2;
+            MatrixT<int> MatResult = Input.matrix1 * Input.matrix2;
             MatrixOutput result = new MatrixOutput();
             result.matrixResult = MatResult;
             return result;
