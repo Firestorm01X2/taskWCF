@@ -7,6 +7,8 @@
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/Array3DLibrary" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Matrix" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_CalculateTemp_InputMessage">
@@ -27,6 +29,54 @@
   <wsdl:message name="IService1_CalculateTemp1D_OutputMessage">
     <wsdl:part name="parameters" element="tns:CalculateTemp1DResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_MatrixSum_InputMessage">
+    <wsdl:part name="parameters" element="tns:MatrixSum" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MatrixSum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MatrixSumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MatrixMul_InputMessage">
+    <wsdl:part name="parameters" element="tns:MatrixMul" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MatrixMul_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MatrixMulResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IntegralParTrapeze_InputMessage">
+    <wsdl:part name="parameters" element="tns:IntegralParTrapeze" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IntegralParTrapeze_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IntegralParTrapezeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IntegralParRectangleMedium_InputMessage">
+    <wsdl:part name="parameters" element="tns:IntegralParRectangleMedium" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IntegralParRectangleMedium_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IntegralParRectangleMediumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IntegralParSimpson_InputMessage">
+    <wsdl:part name="parameters" element="tns:IntegralParSimpson" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IntegralParSimpson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IntegralParSimpsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IntegralSeqTrapeze_InputMessage">
+    <wsdl:part name="parameters" element="tns:IntegralSeqTrapeze" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IntegralSeqTrapeze_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IntegralSeqTrapezeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IntegralSeqRectangleMedium_InputMessage">
+    <wsdl:part name="parameters" element="tns:IntegralSeqRectangleMedium" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IntegralSeqRectangleMedium_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IntegralSeqRectangleMediumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IntegralSeqSimpson_InputMessage">
+    <wsdl:part name="parameters" element="tns:IntegralSeqSimpson" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IntegralSeqSimpson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IntegralSeqSimpsonResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="CalculateTemp">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/CalculateTemp" message="tns:IService1_CalculateTemp_InputMessage" />
@@ -39,6 +89,38 @@
     <wsdl:operation name="CalculateTemp1D">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/CalculateTemp1D" message="tns:IService1_CalculateTemp1D_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/CalculateTemp1DResponse" message="tns:IService1_CalculateTemp1D_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MatrixSum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/MatrixSum" message="tns:IService1_MatrixSum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MatrixSumResponse" message="tns:IService1_MatrixSum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MatrixMul">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/MatrixMul" message="tns:IService1_MatrixMul_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MatrixMulResponse" message="tns:IService1_MatrixMul_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IntegralParTrapeze">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IntegralParTrapeze" message="tns:IService1_IntegralParTrapeze_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IntegralParTrapezeResponse" message="tns:IService1_IntegralParTrapeze_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IntegralParRectangleMedium">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IntegralParRectangleMedium" message="tns:IService1_IntegralParRectangleMedium_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IntegralParRectangleMediumResponse" message="tns:IService1_IntegralParRectangleMedium_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IntegralParSimpson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IntegralParSimpson" message="tns:IService1_IntegralParSimpson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IntegralParSimpsonResponse" message="tns:IService1_IntegralParSimpson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IntegralSeqTrapeze">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IntegralSeqTrapeze" message="tns:IService1_IntegralSeqTrapeze_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IntegralSeqTrapezeResponse" message="tns:IService1_IntegralSeqTrapeze_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IntegralSeqRectangleMedium">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IntegralSeqRectangleMedium" message="tns:IService1_IntegralSeqRectangleMedium_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IntegralSeqRectangleMediumResponse" message="tns:IService1_IntegralSeqRectangleMedium_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IntegralSeqSimpson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IntegralSeqSimpson" message="tns:IService1_IntegralSeqSimpson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IntegralSeqSimpsonResponse" message="tns:IService1_IntegralSeqSimpson_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -63,6 +145,78 @@
     </wsdl:operation>
     <wsdl:operation name="CalculateTemp1D">
       <soap:operation soapAction="http://tempuri.org/IService1/CalculateTemp1D" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatrixSum">
+      <soap:operation soapAction="http://tempuri.org/IService1/MatrixSum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatrixMul">
+      <soap:operation soapAction="http://tempuri.org/IService1/MatrixMul" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegralParTrapeze">
+      <soap:operation soapAction="http://tempuri.org/IService1/IntegralParTrapeze" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegralParRectangleMedium">
+      <soap:operation soapAction="http://tempuri.org/IService1/IntegralParRectangleMedium" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegralParSimpson">
+      <soap:operation soapAction="http://tempuri.org/IService1/IntegralParSimpson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegralSeqTrapeze">
+      <soap:operation soapAction="http://tempuri.org/IService1/IntegralSeqTrapeze" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegralSeqRectangleMedium">
+      <soap:operation soapAction="http://tempuri.org/IService1/IntegralSeqRectangleMedium" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegralSeqSimpson">
+      <soap:operation soapAction="http://tempuri.org/IService1/IntegralSeqSimpson" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

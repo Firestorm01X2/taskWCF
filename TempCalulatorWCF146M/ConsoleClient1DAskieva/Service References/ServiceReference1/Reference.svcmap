@@ -28,6 +28,8 @@
     <MetadataFile FileName="WcfMathLibrary.xsd" MetadataType="Schema" ID="c1492e2d-f8d9-4d71-875e-c5e3f349ac85" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/Service1/mex" />
     <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="2a31f9f0-e421-49e7-a50f-a25b48e415a7" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/Service1/mex" />
     <MetadataFile FileName="Array3DLibrary.xsd" MetadataType="Schema" ID="b7c1e3d4-0408-4810-8581-1adcf388f8c8" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/Service1/mex" />
+    <MetadataFile FileName="Matrix.xsd" MetadataType="Schema" ID="5ec46e67-1b08-4430-9dc7-d3cf3b1db268" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/Service1/mex" />
+    <MetadataFile FileName="System.xsd" MetadataType="Schema" ID="22eaa44b-abac-4cab-ab11-bb02ca7ef2cf" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/Service1/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

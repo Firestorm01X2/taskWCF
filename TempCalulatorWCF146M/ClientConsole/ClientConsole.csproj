@@ -65,17 +65,32 @@
     <None Include="Service References\ServiceReference1\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\ServiceReference1\ClientConsole.ServiceReference1.IntegralOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\ClientConsole.ServiceReference1.MatrixOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\ClientConsole.ServiceReference1.OutputForTemp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\ClientConsole.ServiceReference1.OutputForTemp1D.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\ClientConsole.ServiceReference1.OutputForTemp3D.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\Matrix.xsd">
+      <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServiceReference1\service.wsdl" />
     <None Include="Service References\ServiceReference1\service.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServiceReference1\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\System.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServiceReference1\WcfMathLibrary.xsd">
@@ -86,6 +101,10 @@
     <ProjectReference Include="..\Array3DLibrary\Array3DLibrary.csproj">
       <Project>{76bb480e-fa7c-401f-a9e5-b5e1317cc4d4}</Project>
       <Name>Array3DLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Matrix\Matrix\Matrix.csproj">
+      <Project>{97897428-1027-4022-bb2f-6f323ffdf8fb}</Project>
+      <Name>Matrix</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

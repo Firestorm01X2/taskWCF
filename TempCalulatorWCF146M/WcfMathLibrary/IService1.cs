@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using Array3DLibrary;
 using Matrix;
+using System.Threading.Tasks;
 
 namespace WcfMathLibrary
 {
@@ -56,14 +57,14 @@ namespace WcfMathLibrary
         public MatrixT<int> matrixResult { get; set; }
     }
 
-   
+
     [DataContract]
     public class MatrixInput
     {
+        [DataMember]        
+        public MatrixT<int> matrix1 { get; set; }
         [DataMember]
-       public MatrixT<int> matrix1 { get; set; }
-        [DataMember]
-       public MatrixT<int> matrix2 { get; set; }
+        public MatrixT<int> matrix2 { get; set; }
     }
 
     [DataContract]
@@ -73,7 +74,8 @@ namespace WcfMathLibrary
         private double _b;
         private int _n;
         private Func<double, double> _f;
-    [DataMember]
+
+        [DataMember]
         public double A
         {
             get
@@ -85,29 +87,37 @@ namespace WcfMathLibrary
                 _a = value;
             }
         }
+
+        [DataMember]
         public double B
-    {
-        get
         {
-            return _b;
+            get
+            {
+                return _b;
+            }
+            set
+            {
+                if (value < _a) { throw new ArgumentException("b<a"); }
+                    _b=value;
+            }
         }
-        set
-        {
-            if (value < _a) { throw new ArgumentException("b<a"); }
-                _b=value;
-        }
-    }
+
+        [DataMember]
         public int N
         {
             get { return _n; }
             set { _n = value; }
         }
+
+        [DataMember]
         public Func<double, double> F
         {
             get { return _f; }
             set { _f = value; }
         }
     }
+
+    [DataContract]
     public class IntegralOutput
     {
         [DataMember]
@@ -140,11 +150,6 @@ namespace WcfMathLibrary
     [DataContract]
     public class OutputForTemp3D : OutputForTempBase
     {
-        //[DataMember]
-        //public double[] U
-        //{
-        //    get; set;
-        //}
         [DataMember]
         public Array3D<double> U
         {
@@ -160,12 +165,9 @@ namespace WcfMathLibrary
         private double _tau;
         private double _c;
         private int _timeSteps;
+
         [DataMember]
-        public string InputMessage
-        {
-            get;
-            set;
-        }
+        public string InputMessage { get; set; }
 
         [DataMember]
         public double H
@@ -244,12 +246,6 @@ namespace WcfMathLibrary
     [DataContract]
     public class InputForTemp3D : InputForTempBase
     {
-        //[DataMember]
-        //public double[] U
-        //{
-        //    get; set;
-        //}
-
         [DataMember]
         public Array3D<double> U
         {

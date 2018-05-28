@@ -18,6 +18,7 @@ namespace ClientConsole.ServiceReference1 {
     [System.Runtime.Serialization.DataContractAttribute(Name="InputForTempBase", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ClientConsole.ServiceReference1.InputForTemp3D))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ClientConsole.ServiceReference1.InputForTemp1D))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ClientConsole.ServiceReference1.InputForTemp))]
     public partial class InputForTempBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -149,6 +150,29 @@ namespace ClientConsole.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InputForTemp1D", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
+    [System.SerializableAttribute()]
+    public partial class InputForTemp1D : ClientConsole.ServiceReference1.InputForTempBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double[] UField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double[] U {
+            get {
+                return this.UField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UField, value) != true)) {
+                    this.UField = value;
+                    this.RaisePropertyChanged("U");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="InputForTemp", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
     [System.SerializableAttribute()]
     public partial class InputForTemp : ClientConsole.ServiceReference1.InputForTempBase {
@@ -175,6 +199,7 @@ namespace ClientConsole.ServiceReference1 {
     [System.Runtime.Serialization.DataContractAttribute(Name="OutputForTempBase", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ClientConsole.ServiceReference1.OutputForTemp3D))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ClientConsole.ServiceReference1.OutputForTemp1D))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ClientConsole.ServiceReference1.OutputForTemp))]
     public partial class OutputForTempBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -242,6 +267,29 @@ namespace ClientConsole.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OutputForTemp1D", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
+    [System.SerializableAttribute()]
+    public partial class OutputForTemp1D : ClientConsole.ServiceReference1.OutputForTempBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double[] UField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double[] U {
+            get {
+                return this.UField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UField, value) != true)) {
+                    this.UField = value;
+                    this.RaisePropertyChanged("U");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OutputForTemp", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
     [System.SerializableAttribute()]
     public partial class OutputForTemp : ClientConsole.ServiceReference1.OutputForTempBase {
@@ -263,6 +311,250 @@ namespace ClientConsole.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MatrixInput", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
+    [System.SerializableAttribute()]
+    public partial class MatrixInput : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Matrix.MatrixT<int> matrix1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Matrix.MatrixT<int> matrix2Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Matrix.MatrixT<int> matrix1 {
+            get {
+                return this.matrix1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.matrix1Field, value) != true)) {
+                    this.matrix1Field = value;
+                    this.RaisePropertyChanged("matrix1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Matrix.MatrixT<int> matrix2 {
+            get {
+                return this.matrix2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.matrix2Field, value) != true)) {
+                    this.matrix2Field = value;
+                    this.RaisePropertyChanged("matrix2");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MatrixOutput", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
+    [System.SerializableAttribute()]
+    public partial class MatrixOutput : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Matrix.MatrixT<int> matrixResultField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Matrix.MatrixT<int> matrixResult {
+            get {
+                return this.matrixResultField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.matrixResultField, value) != true)) {
+                    this.matrixResultField = value;
+                    this.RaisePropertyChanged("matrixResult");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IntegralInput", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
+    [System.SerializableAttribute()]
+    public partial class IntegralInput : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double AField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double BField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Func<double, double> FField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double A {
+            get {
+                return this.AField;
+            }
+            set {
+                if ((this.AField.Equals(value) != true)) {
+                    this.AField = value;
+                    this.RaisePropertyChanged("A");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double B {
+            get {
+                return this.BField;
+            }
+            set {
+                if ((this.BField.Equals(value) != true)) {
+                    this.BField = value;
+                    this.RaisePropertyChanged("B");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Func<double, double> F {
+            get {
+                return this.FField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FField, value) != true)) {
+                    this.FField = value;
+                    this.RaisePropertyChanged("F");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int N {
+            get {
+                return this.NField;
+            }
+            set {
+                if ((this.NField.Equals(value) != true)) {
+                    this.NField = value;
+                    this.RaisePropertyChanged("N");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IntegralOutput", Namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary")]
+    [System.SerializableAttribute()]
+    public partial class IntegralOutput : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double resultField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double result {
+            get {
+                return this.resultField;
+            }
+            set {
+                if ((this.resultField.Equals(value) != true)) {
+                    this.resultField = value;
+                    this.RaisePropertyChanged("result");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
@@ -278,6 +570,60 @@ namespace ClientConsole.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CalculateTemp3D", ReplyAction="http://tempuri.org/IService1/CalculateTemp3DResponse")]
         System.Threading.Tasks.Task<ClientConsole.ServiceReference1.OutputForTemp3D> CalculateTemp3DAsync(ClientConsole.ServiceReference1.InputForTemp3D input3D);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CalculateTemp1D", ReplyAction="http://tempuri.org/IService1/CalculateTemp1DResponse")]
+        ClientConsole.ServiceReference1.OutputForTemp1D CalculateTemp1D(ClientConsole.ServiceReference1.InputForTemp1D input1D);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CalculateTemp1D", ReplyAction="http://tempuri.org/IService1/CalculateTemp1DResponse")]
+        System.Threading.Tasks.Task<ClientConsole.ServiceReference1.OutputForTemp1D> CalculateTemp1DAsync(ClientConsole.ServiceReference1.InputForTemp1D input1D);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MatrixSum", ReplyAction="http://tempuri.org/IService1/MatrixSumResponse")]
+        ClientConsole.ServiceReference1.MatrixOutput MatrixSum(ClientConsole.ServiceReference1.MatrixInput matrixes);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MatrixSum", ReplyAction="http://tempuri.org/IService1/MatrixSumResponse")]
+        System.Threading.Tasks.Task<ClientConsole.ServiceReference1.MatrixOutput> MatrixSumAsync(ClientConsole.ServiceReference1.MatrixInput matrixes);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MatrixMul", ReplyAction="http://tempuri.org/IService1/MatrixMulResponse")]
+        ClientConsole.ServiceReference1.MatrixOutput MatrixMul(ClientConsole.ServiceReference1.MatrixInput matrixes);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MatrixMul", ReplyAction="http://tempuri.org/IService1/MatrixMulResponse")]
+        System.Threading.Tasks.Task<ClientConsole.ServiceReference1.MatrixOutput> MatrixMulAsync(ClientConsole.ServiceReference1.MatrixInput matrixes);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IntegralParTrapeze", ReplyAction="http://tempuri.org/IService1/IntegralParTrapezeResponse")]
+        ClientConsole.ServiceReference1.IntegralOutput IntegralParTrapeze(ClientConsole.ServiceReference1.IntegralInput Input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IntegralParTrapeze", ReplyAction="http://tempuri.org/IService1/IntegralParTrapezeResponse")]
+        System.Threading.Tasks.Task<ClientConsole.ServiceReference1.IntegralOutput> IntegralParTrapezeAsync(ClientConsole.ServiceReference1.IntegralInput Input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IntegralParRectangleMedium", ReplyAction="http://tempuri.org/IService1/IntegralParRectangleMediumResponse")]
+        ClientConsole.ServiceReference1.IntegralOutput IntegralParRectangleMedium(ClientConsole.ServiceReference1.IntegralInput Input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IntegralParRectangleMedium", ReplyAction="http://tempuri.org/IService1/IntegralParRectangleMediumResponse")]
+        System.Threading.Tasks.Task<ClientConsole.ServiceReference1.IntegralOutput> IntegralParRectangleMediumAsync(ClientConsole.ServiceReference1.IntegralInput Input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IntegralParSimpson", ReplyAction="http://tempuri.org/IService1/IntegralParSimpsonResponse")]
+        ClientConsole.ServiceReference1.IntegralOutput IntegralParSimpson(ClientConsole.ServiceReference1.IntegralInput Input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IntegralParSimpson", ReplyAction="http://tempuri.org/IService1/IntegralParSimpsonResponse")]
+        System.Threading.Tasks.Task<ClientConsole.ServiceReference1.IntegralOutput> IntegralParSimpsonAsync(ClientConsole.ServiceReference1.IntegralInput Input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IntegralSeqTrapeze", ReplyAction="http://tempuri.org/IService1/IntegralSeqTrapezeResponse")]
+        ClientConsole.ServiceReference1.IntegralOutput IntegralSeqTrapeze(ClientConsole.ServiceReference1.IntegralInput Input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IntegralSeqTrapeze", ReplyAction="http://tempuri.org/IService1/IntegralSeqTrapezeResponse")]
+        System.Threading.Tasks.Task<ClientConsole.ServiceReference1.IntegralOutput> IntegralSeqTrapezeAsync(ClientConsole.ServiceReference1.IntegralInput Input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IntegralSeqRectangleMedium", ReplyAction="http://tempuri.org/IService1/IntegralSeqRectangleMediumResponse")]
+        ClientConsole.ServiceReference1.IntegralOutput IntegralSeqRectangleMedium(ClientConsole.ServiceReference1.IntegralInput Input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IntegralSeqRectangleMedium", ReplyAction="http://tempuri.org/IService1/IntegralSeqRectangleMediumResponse")]
+        System.Threading.Tasks.Task<ClientConsole.ServiceReference1.IntegralOutput> IntegralSeqRectangleMediumAsync(ClientConsole.ServiceReference1.IntegralInput Input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IntegralSeqSimpson", ReplyAction="http://tempuri.org/IService1/IntegralSeqSimpsonResponse")]
+        ClientConsole.ServiceReference1.IntegralOutput IntegralSeqSimpson(ClientConsole.ServiceReference1.IntegralInput Input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/IntegralSeqSimpson", ReplyAction="http://tempuri.org/IService1/IntegralSeqSimpsonResponse")]
+        System.Threading.Tasks.Task<ClientConsole.ServiceReference1.IntegralOutput> IntegralSeqSimpsonAsync(ClientConsole.ServiceReference1.IntegralInput Input);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -321,6 +667,78 @@ namespace ClientConsole.ServiceReference1 {
         
         public System.Threading.Tasks.Task<ClientConsole.ServiceReference1.OutputForTemp3D> CalculateTemp3DAsync(ClientConsole.ServiceReference1.InputForTemp3D input3D) {
             return base.Channel.CalculateTemp3DAsync(input3D);
+        }
+        
+        public ClientConsole.ServiceReference1.OutputForTemp1D CalculateTemp1D(ClientConsole.ServiceReference1.InputForTemp1D input1D) {
+            return base.Channel.CalculateTemp1D(input1D);
+        }
+        
+        public System.Threading.Tasks.Task<ClientConsole.ServiceReference1.OutputForTemp1D> CalculateTemp1DAsync(ClientConsole.ServiceReference1.InputForTemp1D input1D) {
+            return base.Channel.CalculateTemp1DAsync(input1D);
+        }
+        
+        public ClientConsole.ServiceReference1.MatrixOutput MatrixSum(ClientConsole.ServiceReference1.MatrixInput matrixes) {
+            return base.Channel.MatrixSum(matrixes);
+        }
+        
+        public System.Threading.Tasks.Task<ClientConsole.ServiceReference1.MatrixOutput> MatrixSumAsync(ClientConsole.ServiceReference1.MatrixInput matrixes) {
+            return base.Channel.MatrixSumAsync(matrixes);
+        }
+        
+        public ClientConsole.ServiceReference1.MatrixOutput MatrixMul(ClientConsole.ServiceReference1.MatrixInput matrixes) {
+            return base.Channel.MatrixMul(matrixes);
+        }
+        
+        public System.Threading.Tasks.Task<ClientConsole.ServiceReference1.MatrixOutput> MatrixMulAsync(ClientConsole.ServiceReference1.MatrixInput matrixes) {
+            return base.Channel.MatrixMulAsync(matrixes);
+        }
+        
+        public ClientConsole.ServiceReference1.IntegralOutput IntegralParTrapeze(ClientConsole.ServiceReference1.IntegralInput Input) {
+            return base.Channel.IntegralParTrapeze(Input);
+        }
+        
+        public System.Threading.Tasks.Task<ClientConsole.ServiceReference1.IntegralOutput> IntegralParTrapezeAsync(ClientConsole.ServiceReference1.IntegralInput Input) {
+            return base.Channel.IntegralParTrapezeAsync(Input);
+        }
+        
+        public ClientConsole.ServiceReference1.IntegralOutput IntegralParRectangleMedium(ClientConsole.ServiceReference1.IntegralInput Input) {
+            return base.Channel.IntegralParRectangleMedium(Input);
+        }
+        
+        public System.Threading.Tasks.Task<ClientConsole.ServiceReference1.IntegralOutput> IntegralParRectangleMediumAsync(ClientConsole.ServiceReference1.IntegralInput Input) {
+            return base.Channel.IntegralParRectangleMediumAsync(Input);
+        }
+        
+        public ClientConsole.ServiceReference1.IntegralOutput IntegralParSimpson(ClientConsole.ServiceReference1.IntegralInput Input) {
+            return base.Channel.IntegralParSimpson(Input);
+        }
+        
+        public System.Threading.Tasks.Task<ClientConsole.ServiceReference1.IntegralOutput> IntegralParSimpsonAsync(ClientConsole.ServiceReference1.IntegralInput Input) {
+            return base.Channel.IntegralParSimpsonAsync(Input);
+        }
+        
+        public ClientConsole.ServiceReference1.IntegralOutput IntegralSeqTrapeze(ClientConsole.ServiceReference1.IntegralInput Input) {
+            return base.Channel.IntegralSeqTrapeze(Input);
+        }
+        
+        public System.Threading.Tasks.Task<ClientConsole.ServiceReference1.IntegralOutput> IntegralSeqTrapezeAsync(ClientConsole.ServiceReference1.IntegralInput Input) {
+            return base.Channel.IntegralSeqTrapezeAsync(Input);
+        }
+        
+        public ClientConsole.ServiceReference1.IntegralOutput IntegralSeqRectangleMedium(ClientConsole.ServiceReference1.IntegralInput Input) {
+            return base.Channel.IntegralSeqRectangleMedium(Input);
+        }
+        
+        public System.Threading.Tasks.Task<ClientConsole.ServiceReference1.IntegralOutput> IntegralSeqRectangleMediumAsync(ClientConsole.ServiceReference1.IntegralInput Input) {
+            return base.Channel.IntegralSeqRectangleMediumAsync(Input);
+        }
+        
+        public ClientConsole.ServiceReference1.IntegralOutput IntegralSeqSimpson(ClientConsole.ServiceReference1.IntegralInput Input) {
+            return base.Channel.IntegralSeqSimpson(Input);
+        }
+        
+        public System.Threading.Tasks.Task<ClientConsole.ServiceReference1.IntegralOutput> IntegralSeqSimpsonAsync(ClientConsole.ServiceReference1.IntegralInput Input) {
+            return base.Channel.IntegralSeqSimpsonAsync(Input);
         }
     }
 }
