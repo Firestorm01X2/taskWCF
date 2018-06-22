@@ -65,22 +65,90 @@ namespace WcfMathLibrary
 
             return result;
         }
-       
-        //MatrixOutput IService1.MatrixSum(MatrixInput matrixes)
-        //{
-        //    MatrixT<int> MatResult = matrixes.matrix1 + matrixes.matrix2;
-        //    MatrixOutput result = new MatrixOutput();
-        //    result.matrixResult = MatResult;
-        //    return result;
-        //}
 
-        //MatrixOutput IService1.MatrixMul(MatrixInput matrixes)
-        //{
-        //    MatrixT<int> MatResult = matrixes.matrix1 * matrixes.matrix2;
-        //    MatrixOutput result = new MatrixOutput();
-        //    result.matrixResult = MatResult;
-        //    return result;
-        //}
+        MatrixOutput IService1.MatrixSum(MatrixInput Input)
+        {
+            MatrixT<int> A = new MatrixT<int>(new int[Input.matrix1[0].Length, Input.matrix1[1].Length]);
+            MatrixT<int> B = new MatrixT<int>(new int[Input.matrix2[0].Length, Input.matrix2[1].Length]);
+            for (int i = 0; i < Input.matrix1[0].Length; i++)
+            {
+                for (int j = 0; j < Input.matrix1[1].Length; j++)
+                {
+                    A[i, j] = Input.matrix1[i][j];
+                }
+            }
+            for (int i = 0; i < Input.matrix2[0].Length; i++)
+            {
+                for (int j = 0; j < Input.matrix2[1].Length; j++)
+                {
+                    B[i, j] = Input.matrix2[i][j];
+                }
+            }
+
+            MatrixT<int> MatResult = A + B;
+            MatrixOutput result = new MatrixOutput();
+            result.matrixResult = new int[Input.matrix1[0].Length][];
+            for (int i = 0; i < Input.matrix1[1].Length; i++)
+            {
+                result.matrixResult[i] = new int[Input.matrix1[0].Length];
+            }
+            int[][] ansArr = new int[Input.matrix1[0].Length][];
+            for (int i = 0; i < Input.matrix1[1].Length; i++)
+            {
+                ansArr[i] = new int[Input.matrix1[0].Length];
+            }
+
+            for (int i = 0; i < Input.matrix1[0].Length; i++)
+            {
+                for (int j = 0; j < Input.matrix1[1].Length; j++)
+                {
+                    ansArr[i][j] = MatResult[i,j];
+                }
+            }
+            result.matrixResult = ansArr;
+            return result;
+        }
+
+        MatrixOutput IService1.MatrixMul(MatrixInput Input)
+        {
+            MatrixT<int> A = new MatrixT<int>(new int[Input.matrix1[0].Length, Input.matrix1[1].Length]);
+            MatrixT<int> B = new MatrixT<int>(new int[Input.matrix2[0].Length, Input.matrix2[1].Length]);
+            for (int i = 0; i < Input.matrix1[0].Length; i++)
+            {
+                for (int j = 0; j < Input.matrix1[1].Length; j++)
+                {
+                    A[i, j] = Input.matrix1[i][j];
+                }
+
+            }
+            for (int i = 0; i < Input.matrix2[0].Length; i++)
+            {
+                for (int j = 0; j < Input.matrix2[1].Length; j++)
+                {
+                    B[i, j] = Input.matrix2[i][j];
+                }
+
+            }
+
+            MatrixT<int> MatResult = A * B;
+            MatrixOutput result = new MatrixOutput();
+            result.matrixResult = new int[Input.matrix1[0].Length][];
+            for (int i = 0; i < Input.matrix1[1].Length; i++)
+            {
+                result.matrixResult[i] = new int[Input.matrix1[0].Length];
+            }
+            
+            for (int i = 0; i < Input.matrix1[0].Length; i++)
+            {
+                for (int j = 0; j < Input.matrix1[1].Length; j++)
+                {
+                    result.matrixResult[i][j] = MatResult[i, j];
+                }
+
+            }
+
+            return result;
+        }
 
         IntegralOutput IService1.IntegralSeqRectangleMedium(IntegralInput Input)
         {
@@ -128,16 +196,6 @@ namespace WcfMathLibrary
             SeqMeth integral = new SeqMeth();
             result.result = integral.Simpson(input.A, input.B, input.N, input.F);
             return result;
-        }
-
-        MatrixOutput IService1.MatrixSum(MatrixInput matrixes)
-        {
-            throw new NotImplementedException();
-        }
-
-        MatrixOutput IService1.MatrixMul(MatrixInput matrixes)
-        {
-            throw new NotImplementedException();
         }
     }
 }

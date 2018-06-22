@@ -26,6 +26,7 @@ namespace ClientConsole
             input.H = 0.001;
             input.TimeSteps = 100;
             input.U = array3D;
+
             Service1Client client = new Service1Client();
             OutputForTemp3D output = client.CalculateTemp3D(input);
             Console.WriteLine(output.OutputMessage);
