@@ -54,17 +54,17 @@ namespace WcfMathLibrary
     public class MatrixOutput
     {
         [DataMember]
-        public MatrixT<int> matrixResult { get; set; }
+        public int[][] matrixResult { get; set; }
     }
 
 
     [DataContract]
     public class MatrixInput
     {
-        [DataMember]        
-        public MatrixT<int> matrix1 { get; set; }
         [DataMember]
-        public MatrixT<int> matrix2 { get; set; }
+        public int[][] matrix1 { get; set; }
+        [DataMember]
+        public int[][] matrix2 { get; set; }
     }
 
     [DataContract]
