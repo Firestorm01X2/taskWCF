@@ -165,7 +165,7 @@ namespace WcfMathLibrary
             result.result = integral.RectangleMedium(input.A, input.B, input.N, input.F);
             return result;
         }
-                
+
         IntegralOutput IService1.IntegralParSimpson(IntegralInput input)
         {
             IntegralOutput result = new IntegralOutput();
@@ -181,8 +181,8 @@ namespace WcfMathLibrary
             result.result = integral.Trapeze(input.A, input.B, input.N, input.F);
             return result;
         }
-                        
-       IntegralOutput IService1.IntegralParTrapeze(IntegralInput input)
+
+        IntegralOutput IService1.IntegralParTrapeze(IntegralInput input)
         {
             IntegralOutput result = new IntegralOutput();
             ParallelMets integral = new ParallelMets();

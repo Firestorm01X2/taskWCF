@@ -7,6 +7,7 @@ using System.Text;
 using Array3DLibrary;
 using Matrix;
 using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace WcfMathLibrary
 {
@@ -112,7 +113,7 @@ namespace WcfMathLibrary
         [DataMember]
         public Func<double, double> F
         {
-            get { return _f; }
+            get{ return _f; }
             set { _f = value; }
         }
     }
