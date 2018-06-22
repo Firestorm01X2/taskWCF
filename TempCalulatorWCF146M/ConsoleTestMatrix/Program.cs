@@ -1,4 +1,6 @@
-﻿namespace ConsoleTestMatrix
+﻿
+
+namespace ConsoleTestMatrix
 {using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,6 +46,7 @@ using ConsoleTestMatrix.ServiceReference1;
                     Console.Write(input.matrix1[i][j]);
                 }
 
+                Console.WriteLine();
             }
 
             for (int i = 0; i < 2; i++)
@@ -53,6 +56,7 @@ using ConsoleTestMatrix.ServiceReference1;
                     Console.Write(input.matrix2[i][j]);
                 }
 
+                Console.WriteLine();
             }
 
             Console.WriteLine("Ответ:");
@@ -64,6 +68,7 @@ using ConsoleTestMatrix.ServiceReference1;
                     Console.Write(otv[i][j]);
                 }
 
+                Console.WriteLine();
             }
 
             Console.ReadKey();
