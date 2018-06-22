@@ -119,6 +119,7 @@ namespace WcfMathLibrary
                 {
                     A[i, j] = Input.matrix1[i][j];
                 }
+
             }
             for (int i = 0; i < Input.matrix2[0].Length; i++)
             {
@@ -126,6 +127,7 @@ namespace WcfMathLibrary
                 {
                     B[i, j] = Input.matrix2[i][j];
                 }
+
             }
 
             MatrixT<int> MatResult = A * B;
@@ -142,7 +144,9 @@ namespace WcfMathLibrary
                 {
                     result.matrixResult[i][j] = MatResult[i, j];
                 }
+
             }
+
             return result;
         }
 
