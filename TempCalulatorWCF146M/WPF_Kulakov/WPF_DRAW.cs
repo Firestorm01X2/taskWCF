@@ -117,7 +117,7 @@ namespace WPF_Kulakov
             input.H = H;
             input.U = ArrayU;
             
-            Service1Client client = new Service1Client();
+            ServiceClient client = new ServiceClient();
             OutputForTemp output = client.CalculateTemp(input);
             ArrayU = output.U;
             string mes = output.OutputMessage;

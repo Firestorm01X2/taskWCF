@@ -37,6 +37,7 @@
             s = h * d;
             return s;
         }
+
         /// <summary>
         /// Solution of the integral by the method of trapeze.
         /// </summary>
@@ -64,10 +65,12 @@
                     d += local;
                 }
             });
+
             s = (F(a) + F(b)) / 2;
             s = (s + d) * h;
             return s;
         }
+
         /// <summary>
         /// Solution of the integral by the method of Simpson.
         /// </summary>
@@ -94,6 +97,7 @@
                     d += local;
                 }
             });
+
             s = (h / 6) * (d + F(a) - F(b));
             return s;
         }

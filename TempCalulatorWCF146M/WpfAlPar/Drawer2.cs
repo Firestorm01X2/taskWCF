@@ -116,7 +116,7 @@ namespace WpfAlPar
             input.Tau = Tau;
             input.H = H;
             input.U = Umas;
-            Service1Client client = new Service1Client();
+            ServiceClient client = new ServiceClient();
             OutputForTemp output = client.CalculateTemp(input);
             Umas = output.U;
             string mes = output.OutputMessage;

@@ -21,7 +21,7 @@ namespace WindowsServiceHost
 
         protected override void OnStart(string[] args)
         {
-            host = new ServiceHost(typeof(WcfMathLibrary.Service1));
+            host = new ServiceHost(typeof(WcfMathLibrary.MatrixTemperatureService));
             host.Open();
         }
 

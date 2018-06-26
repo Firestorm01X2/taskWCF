@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary.Integrals" />
+  <xs:element name="IntegralParTrapeze">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WcfMathLibrary.Integrals" minOccurs="0" name="input" nillable="true" type="q1:IntegralInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralParTrapezeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WcfMathLibrary.Integrals" minOccurs="0" name="IntegralParTrapezeResult" nillable="true" type="q2:IntegralOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralParRectangleMedium">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfMathLibrary.Integrals" minOccurs="0" name="input" nillable="true" type="q3:IntegralInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralParRectangleMediumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfMathLibrary.Integrals" minOccurs="0" name="IntegralParRectangleMediumResult" nillable="true" type="q4:IntegralOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralParSimpson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfMathLibrary.Integrals" minOccurs="0" name="input" nillable="true" type="q5:IntegralInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralParSimpsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfMathLibrary.Integrals" minOccurs="0" name="IntegralParSimpsonResult" nillable="true" type="q6:IntegralOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralSeqTrapeze">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfMathLibrary.Integrals" minOccurs="0" name="input" nillable="true" type="q7:IntegralInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralSeqTrapezeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfMathLibrary.Integrals" minOccurs="0" name="IntegralSeqTrapezeResult" nillable="true" type="q8:IntegralOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralSeqRectangleMedium">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WcfMathLibrary.Integrals" minOccurs="0" name="input" nillable="true" type="q9:IntegralInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralSeqRectangleMediumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfMathLibrary.Integrals" minOccurs="0" name="IntegralSeqRectangleMediumResult" nillable="true" type="q10:IntegralOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralSeqSimpson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WcfMathLibrary.Integrals" minOccurs="0" name="input" nillable="true" type="q11:IntegralInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralSeqSimpsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WcfMathLibrary.Integrals" minOccurs="0" name="IntegralSeqSimpsonResult" nillable="true" type="q12:IntegralOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Integrand">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="x" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegrandResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IntegrandResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

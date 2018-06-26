@@ -174,7 +174,7 @@ namespace WPFAskieva2D
             input.H = this.H;
             input.U = this.U;
 
-            Service1Client client = new Service1Client();
+            ServiceClient client = new ServiceClient();
 
             OutputForTemp output = client.CalculateTemp(input);
             this.U = output.U;

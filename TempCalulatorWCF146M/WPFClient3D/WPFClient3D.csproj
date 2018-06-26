@@ -120,10 +120,19 @@
     <None Include="Service References\ServiceReference1\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference1\WcfMathLibrary.xsd">
+    <None Include="Service References\ServiceReference1\WcfMathLibrary.Matrix.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\ServiceReference1\WcfMathLibrary.Temperature.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\WPFClient3D.ServiceReference1.MatrixOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\WPFClient3D.ServiceReference1.OutputForTemp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\WPFClient3D.ServiceReference1.OutputForTemp1D.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\WPFClient3D.ServiceReference1.OutputForTemp3D.datasource">
@@ -135,6 +144,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Array3DLibrary\Array3DLibrary.csproj">
+      <Project>{76bb480e-fa7c-401f-a9e5-b5e1317cc4d4}</Project>
+      <Name>Array3DLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
@@ -150,12 +165,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Array3DLibrary\Array3DLibrary.csproj">
-      <Project>{76bb480e-fa7c-401f-a9e5-b5e1317cc4d4}</Project>
-      <Name>Array3DLibrary</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

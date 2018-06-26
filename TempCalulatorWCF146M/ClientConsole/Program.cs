@@ -1,12 +1,9 @@
-﻿using ClientConsole.ServiceReference1;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Array3DLibrary;
-
-namespace ClientConsole
+﻿namespace ClientConsole
 {
+    using ServiceReference1;
+    using System;
+    using Array3DLibrary;
+
     class Program
     {
         static void Main(string[] args)
@@ -23,22 +20,13 @@ namespace ClientConsole
             input.InputMessage = str;
             input.C = 3;
             input.Tau = 0.001;
-            input.H = 0.001;
+            input.H = 0.1;
             input.TimeSteps = 100;
             input.U = array3D;
 
-            Service1Client client = new Service1Client();
+            ServiceClient client = new ServiceClient();
             OutputForTemp3D output = client.CalculateTemp3D(input);
             Console.WriteLine(output.OutputMessage);
-
-            
-            //string str = "Hello World";
-            //InputForTemp input = new InputForTemp();
-            //input.InputMessage = str;
-            //Service1Client client = new Service1Client();
-            //OutputForTemp output=client.CalculateTemp(input);
-            //Console.WriteLine(output.OutputMessage);
-
             Console.ReadKey();
         }
     }

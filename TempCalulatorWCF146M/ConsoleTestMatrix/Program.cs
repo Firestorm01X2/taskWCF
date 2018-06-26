@@ -8,6 +8,8 @@
     using WcfMathLibrary;
     using Matrix;
     using ConsoleTestMatrix.ServiceReference1;
+    using WcfMathLibrary.Matrix;
+
     class Program
     {
         static void Main(string[] args)
@@ -35,7 +37,7 @@
 
             }
 
-            Service1Client client = new Service1Client();
+            ServiceClient client = new ServiceClient();
             MatrixOutput output = client.MatrixMul(input);
             Console.WriteLine("Исходные матрицы:");
             for (int i = 0; i < 2; i++)
