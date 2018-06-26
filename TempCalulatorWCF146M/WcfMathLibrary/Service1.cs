@@ -12,6 +12,7 @@ using SolveIntegralLib;
 namespace WcfMathLibrary
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
+    [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple)]
     public class Service1 : IService1
     {
         OutputForTemp IService1.CalculateTemp(InputForTemp input)
@@ -20,7 +21,7 @@ namespace WcfMathLibrary
             try
             {
                 double[,] u = Utils.ToMultiD(input.U);
-                u =NewMathLib.HeatFlow.CalcNewT(u, input.C, input.H, input.Tau, input.TimeSteps);
+                u = NewMathLib.HeatFlow.CalcNewT(u, input.C, input.H, input.Tau, input.TimeSteps);
                 result.U = Utils.ToJagged(u);
                 result.OutputMessage = "Calculations are correct";
             }
@@ -102,7 +103,7 @@ namespace WcfMathLibrary
             {
                 for (int j = 0; j < Input.matrix1[1].Length; j++)
                 {
-                    ansArr[i][j] = MatResult[i,j];
+                    ansArr[i][j] = MatResult[i, j];
                 }
             }
             result.matrixResult = ansArr;
@@ -137,7 +138,7 @@ namespace WcfMathLibrary
             {
                 result.matrixResult[i] = new int[Input.matrix1[0].Length];
             }
-            
+
             for (int i = 0; i < Input.matrix1[0].Length; i++)
             {
                 for (int j = 0; j < Input.matrix1[1].Length; j++)
@@ -153,8 +154,8 @@ namespace WcfMathLibrary
         IntegralOutput IService1.IntegralSeqRectangleMedium(IntegralInput Input)
         {
             IntegralOutput result = new IntegralOutput();
-            SeqMeth integral=new SeqMeth();
-            result.result = integral.RectangleMedium(Input.A,Input.B,Input.N,Input.F);
+            SeqMeth integral = new SeqMeth();
+            result.result = integral.RectangleMedium(Input.A, Input.B, Input.N, OperationContext.Current.GetCallbackChannel<IServiceCallBack>().F);
             return result;
         }
 
@@ -162,15 +163,15 @@ namespace WcfMathLibrary
         {
             IntegralOutput result = new IntegralOutput();
             ParallelMets integral = new ParallelMets();
-            result.result = integral.RectangleMedium(input.A, input.B, input.N, input.F);
+            result.result = integral.RectangleMedium(input.A, input.B, input.N, OperationContext.Current.GetCallbackChannel<IServiceCallBack>().F);
             return result;
         }
-                
+
         IntegralOutput IService1.IntegralParSimpson(IntegralInput input)
         {
             IntegralOutput result = new IntegralOutput();
             ParallelMets integral = new ParallelMets();
-            result.result = integral.Simpson(input.A, input.B, input.N, input.F);
+            result.result = integral.Simpson(input.A, input.B, input.N, OperationContext.Current.GetCallbackChannel<IServiceCallBack>().F);
             return result;
         }
 
@@ -178,15 +179,15 @@ namespace WcfMathLibrary
         {
             IntegralOutput result = new IntegralOutput();
             SeqMeth integral = new SeqMeth();
-            result.result = integral.Trapeze(input.A, input.B, input.N, input.F);
+            result.result = integral.Trapeze(input.A, input.B, input.N, OperationContext.Current.GetCallbackChannel<IServiceCallBack>().F);
             return result;
         }
-                        
-       IntegralOutput IService1.IntegralParTrapeze(IntegralInput input)
+
+        IntegralOutput IService1.IntegralParTrapeze(IntegralInput input)
         {
             IntegralOutput result = new IntegralOutput();
             ParallelMets integral = new ParallelMets();
-            result.result = integral.Trapeze(input.A, input.B, input.N, input.F);
+            result.result = integral.Trapeze(input.A, input.B, input.N, OperationContext.Current.GetCallbackChannel<IServiceCallBack>().F);
             return result;
         }
 
@@ -194,8 +195,8 @@ namespace WcfMathLibrary
         {
             IntegralOutput result = new IntegralOutput();
             SeqMeth integral = new SeqMeth();
-            result.result = integral.Simpson(input.A, input.B, input.N, input.F);
+            result.result = integral.Simpson(input.A, input.B, input.N, OperationContext.Current.GetCallbackChannel<IServiceCallBack>().F);
             return result;
-        }
+        }       
     }
 }

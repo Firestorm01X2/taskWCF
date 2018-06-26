@@ -11,7 +11,9 @@ using System.Threading.Tasks;
 namespace WcfMathLibrary
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
-    [ServiceContract]
+    
+    //[ServiceContract]
+    [ServiceContract(CallbackContract = typeof(IServiceCallBack))]
     public interface IService1
     {
         // TODO: Add your service operations here
@@ -50,6 +52,12 @@ namespace WcfMathLibrary
         IntegralOutput IntegralSeqSimpson(IntegralInput Input);
     }
 
+    public interface IServiceCallBack
+    {
+        [OperationContract]
+        double F(double x);
+    }
+
     [DataContract]
     public class MatrixOutput
     {
@@ -69,7 +77,7 @@ namespace WcfMathLibrary
 
     [DataContract]
     public class IntegralInput
-    { 
+    {
         private double _a;
         private double _b;
         private int _n;
@@ -98,7 +106,7 @@ namespace WcfMathLibrary
             set
             {
                 if (value < _a) { throw new ArgumentException("b<a"); }
-                    _b=value;
+                _b = value;
             }
         }
 
@@ -121,8 +129,8 @@ namespace WcfMathLibrary
     public class IntegralOutput
     {
         [DataMember]
-        public double result {get;set;}
-    
+        public double result { get; set; }
+
     }
 
     [DataContract]

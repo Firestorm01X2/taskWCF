@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary" />
+  <xs:element name="CalculateTemp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="input" nillable="true" type="q1:InputForTemp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateTempResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="CalculateTempResult" nillable="true" type="q2:OutputForTemp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateTemp3D">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="input3D" nillable="true" type="q3:InputForTemp3D" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateTemp3DResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="CalculateTemp3DResult" nillable="true" type="q4:OutputForTemp3D" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateTemp1D">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="input1D" nillable="true" type="q5:InputForTemp1D" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateTemp1DResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="CalculateTemp1DResult" nillable="true" type="q6:OutputForTemp1D" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MatrixSum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="Input" nillable="true" type="q7:MatrixInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MatrixSumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="MatrixSumResult" nillable="true" type="q8:MatrixOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MatrixMul">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="Input" nillable="true" type="q9:MatrixInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MatrixMulResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="MatrixMulResult" nillable="true" type="q10:MatrixOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralParTrapeze">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="Input" nillable="true" type="q11:IntegralInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralParTrapezeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="IntegralParTrapezeResult" nillable="true" type="q12:IntegralOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralParRectangleMedium">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="Input" nillable="true" type="q13:IntegralInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralParRectangleMediumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="IntegralParRectangleMediumResult" nillable="true" type="q14:IntegralOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralParSimpson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="Input" nillable="true" type="q15:IntegralInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralParSimpsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="IntegralParSimpsonResult" nillable="true" type="q16:IntegralOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralSeqTrapeze">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="Input" nillable="true" type="q17:IntegralInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralSeqTrapezeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="IntegralSeqTrapezeResult" nillable="true" type="q18:IntegralOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralSeqRectangleMedium">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="Input" nillable="true" type="q19:IntegralInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralSeqRectangleMediumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="IntegralSeqRectangleMediumResult" nillable="true" type="q20:IntegralOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralSeqSimpson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="Input" nillable="true" type="q21:IntegralInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegralSeqSimpsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WcfMathLibrary" minOccurs="0" name="IntegralSeqSimpsonResult" nillable="true" type="q22:IntegralOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="F">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="x" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

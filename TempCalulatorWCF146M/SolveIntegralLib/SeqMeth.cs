@@ -67,6 +67,7 @@
             {
                 d += F(a + h * i);
             }
+
             s = (F(a) + F(b)) / 2;
             s = (s + d) * h;
             return s;

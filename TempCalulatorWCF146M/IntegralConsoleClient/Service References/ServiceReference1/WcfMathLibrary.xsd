@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfMathLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfMathLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Array3DLibrary" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:complexType name="InputForTemp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InputForTempBase">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="U" nillable="true" type="q1:ArrayOfArrayOfdouble" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InputForTemp" nillable="true" type="tns:InputForTemp" />
+  <xs:complexType name="InputForTempBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="C" type="xs:double" />
+      <xs:element minOccurs="0" name="H" type="xs:double" />
+      <xs:element minOccurs="0" name="InputMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tau" type="xs:double" />
+      <xs:element minOccurs="0" name="TimeSteps" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InputForTempBase" nillable="true" type="tns:InputForTempBase" />
+  <xs:complexType name="OutputForTemp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OutputForTempBase">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="U" nillable="true" type="q2:ArrayOfArrayOfdouble" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OutputForTemp" nillable="true" type="tns:OutputForTemp" />
+  <xs:complexType name="OutputForTempBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OutputMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutputForTempBase" nillable="true" type="tns:OutputForTempBase" />
+  <xs:complexType name="InputForTemp3D">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InputForTempBase">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Array3DLibrary" minOccurs="0" name="U" nillable="true" type="q3:Array3DOfdouble" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InputForTemp3D" nillable="true" type="tns:InputForTemp3D" />
+  <xs:complexType name="OutputForTemp3D">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OutputForTempBase">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Array3DLibrary" minOccurs="0" name="U" nillable="true" type="q4:Array3DOfdouble" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OutputForTemp3D" nillable="true" type="tns:OutputForTemp3D" />
+  <xs:complexType name="InputForTemp1D">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InputForTempBase">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="U" nillable="true" type="q5:ArrayOfdouble" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InputForTemp1D" nillable="true" type="tns:InputForTemp1D" />
+  <xs:complexType name="OutputForTemp1D">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OutputForTempBase">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="U" nillable="true" type="q6:ArrayOfdouble" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OutputForTemp1D" nillable="true" type="tns:OutputForTemp1D" />
+  <xs:complexType name="MatrixInput">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="matrix1" nillable="true" type="q7:ArrayOfArrayOfint" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="matrix2" nillable="true" type="q8:ArrayOfArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MatrixInput" nillable="true" type="tns:MatrixInput" />
+  <xs:complexType name="MatrixOutput">
+    <xs:sequence>
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="matrixResult" nillable="true" type="q9:ArrayOfArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MatrixOutput" nillable="true" type="tns:MatrixOutput" />
+  <xs:complexType name="IntegralInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="A" type="xs:double" />
+      <xs:element minOccurs="0" name="B" type="xs:double" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="F" nillable="true" type="q10:FuncOfdoubledouble" />
+      <xs:element minOccurs="0" name="N" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IntegralInput" nillable="true" type="tns:IntegralInput" />
+  <xs:complexType name="IntegralOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="result" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IntegralOutput" nillable="true" type="tns:IntegralOutput" />
+</xs:schema>
