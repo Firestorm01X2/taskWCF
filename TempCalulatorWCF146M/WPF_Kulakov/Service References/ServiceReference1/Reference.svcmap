@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5f9dca98-9285-4d70-8ad9-056c65f99b93" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b10909b9-624b-4d89-9583-4905b0b78c3a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,14 +19,16 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/Service1/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/MatrixTemperatureService/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="af87f150-27ff-4b98-8562-59419342d9e8" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/Service1/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="b8736183-b0d6-4dd7-ada6-20a2d080fe5e" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/Service1/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="511e3946-6a3d-4532-8f74-d250c2ea39b8" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/Service1/mex" />
-    <MetadataFile FileName="WcfMathLibrary.xsd" MetadataType="Schema" ID="bec359a9-2bc1-4cb0-99a3-e438d85ef5d8" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/Service1/mex" />
-    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="8aa8ac14-52f2-4cf4-a49a-ad76a703ced2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/Service1/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="2f2181bf-eebe-4d49-836f-d44aba39f81b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/MatrixTemperatureService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="81733024-5644-4dd2-b40c-305fb1b4c101" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/MatrixTemperatureService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="3be7f265-e6fc-4c34-95d6-8f13e8771dbc" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/MatrixTemperatureService/mex" />
+    <MetadataFile FileName="WcfMathLibrary.Temperature.xsd" MetadataType="Schema" ID="77df1e1e-eae2-483e-b7ef-7c590a2816aa" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/MatrixTemperatureService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="fbdf94ea-b603-4c91-844e-92b8b933265a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/MatrixTemperatureService/mex" />
+    <MetadataFile FileName="Array3DLibrary.xsd" MetadataType="Schema" ID="8746477d-f822-42c3-9419-4bbe64b913a0" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/MatrixTemperatureService/mex" />
+    <MetadataFile FileName="WcfMathLibrary.Matrix.xsd" MetadataType="Schema" ID="867227bd-c378-447f-b1be-523e7c2534fe" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/MatrixTemperatureService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

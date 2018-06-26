@@ -55,25 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Service References\ServiceReference1\Array3DLibrary.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReference1\Arrays.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\ServiceReference1\IntegralConsoleClient.ServiceReference1.IntegralOutput.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference1\IntegralConsoleClient.ServiceReference1.MatrixOutput.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference1\IntegralConsoleClient.ServiceReference1.OutputForTemp.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference1\IntegralConsoleClient.ServiceReference1.OutputForTemp1D.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference1\IntegralConsoleClient.ServiceReference1.OutputForTemp3D.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\service.wsdl" />
@@ -86,7 +68,7 @@
     <None Include="Service References\ServiceReference1\System.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference1\WcfMathLibrary.xsd">
+    <None Include="Service References\ServiceReference1\WcfMathLibrary.Integrals.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

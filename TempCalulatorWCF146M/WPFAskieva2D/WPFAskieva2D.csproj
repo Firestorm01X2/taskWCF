@@ -111,10 +111,19 @@
     <None Include="Service References\ServiceReference1\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference1\WcfMathLibrary.xsd">
+    <None Include="Service References\ServiceReference1\WcfMathLibrary.Matrix.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\ServiceReference1\WcfMathLibrary.Temperature.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\WPFAskieva2D.ServiceReference1.MatrixOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\WPFAskieva2D.ServiceReference1.OutputForTemp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\WPFAskieva2D.ServiceReference1.OutputForTemp1D.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\WPFAskieva2D.ServiceReference1.OutputForTemp3D.datasource">

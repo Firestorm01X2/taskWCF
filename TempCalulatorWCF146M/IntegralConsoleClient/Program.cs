@@ -1,10 +1,6 @@
 ﻿namespace IntegralConsoleClient
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using ServiceReference1;
     using System.ServiceModel;
     class Program
@@ -20,18 +16,33 @@
 
             CallBackHandler handler = new CallBackHandler();
             InstanceContext instanceContext = new InstanceContext(handler);
+            ServiceIntegralClient serviceIntegralClient = new ServiceIntegralClient(instanceContext);
 
-            Service1Client client = new Service1Client(instanceContext);
-            IntegralOutput output = client.IntegralParTrapeze(input);
+            IntegralOutput output = serviceIntegralClient.IntegralSeqTrapeze(input);
+            Console.WriteLine($"Sequential trapeze: {output.result}");
 
-            Console.WriteLine(output.result);
+            output = serviceIntegralClient.IntegralParTrapeze(input);
+            Console.WriteLine($"Parallel trapeze: {output.result}");
+
+            output = serviceIntegralClient.IntegralSeqRectangleMedium(input);
+            Console.WriteLine($"Sequential rectangle medium: {output.result}");
+
+            output = serviceIntegralClient.IntegralParRectangleMedium(input);
+            Console.WriteLine($"Parallel rectangle medium: {output.result}");
+
+            output = serviceIntegralClient.IntegralSeqSimpson(input);
+            Console.WriteLine($"Sequential simpson medium: {output.result}");
+
+            output = serviceIntegralClient.IntegralParSimpson(input);
+            Console.WriteLine($"Parallel simpson medium: {output.result}");
+
             Console.WriteLine("End of program!");
             Console.ReadKey();
         }
 
-        public class CallBackHandler : IService1Callback
+        public class CallBackHandler : IServiceIntegralCallback
         {
-            public double F(double x)
+            double IServiceIntegralCallback.Integrand(double x)
             {
                 return x * x;
             }

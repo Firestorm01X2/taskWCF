@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="hwu6egUeBXK9nwcRR63aNMVh/14=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="c5Z8LjQy+92juM5JmbO60yEDbgQ=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="wsDualHttpBinding" name="WSDualHttpBinding_IService1">
+    <bindingConfiguration bindingType="wsDualHttpBinding" name="WSDualHttpBinding_IServiceIntegral">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSDualHttpBinding_IService1</serializedValue>
+          <serializedValue>WSDualHttpBinding_IServiceIntegral</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -97,10 +97,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="WSDualHttpBinding_IService1" contract="ServiceReference1.IService1" bindingType="wsDualHttpBinding" address="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/Service1/dual" bindingConfiguration="WSDualHttpBinding_IService1">
+    <endpoint name="WSDualHttpBinding_IServiceIntegral" contract="ServiceReference1.IServiceIntegral" bindingType="wsDualHttpBinding" address="http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/Integrals/IntegralService" bindingConfiguration="WSDualHttpBinding_IServiceIntegral">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/Service1/dual</serializedValue>
+          <serializedValue>http://localhost:8733/Design_Time_Addresses/WcfMathLibrary/Integrals/IntegralService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -109,10 +109,10 @@
           <serializedValue>wsDualHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSDualHttpBinding_IService1</serializedValue>
+          <serializedValue>WSDualHttpBinding_IServiceIntegral</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>ServiceReference1.IService1</serializedValue>
+          <serializedValue>ServiceReference1.IServiceIntegral</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -127,7 +127,7 @@
           <serializedValue>System.ServiceModel.Configuration.UserPrincipalNameElement</serializedValue>
         </property>
         <property path="/identity/userPrincipalName/value" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>v-vltrun@europe.corp.microsoft.com</serializedValue>
+          <serializedValue>DESKTOP-HSDPKO3\Vlad</serializedValue>
         </property>
         <property path="/identity/servicePrincipalName" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.ServicePrincipalNameElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.ServicePrincipalNameElement</serializedValue>
@@ -172,7 +172,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSDualHttpBinding_IService1</serializedValue>
+          <serializedValue>WSDualHttpBinding_IServiceIntegral</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

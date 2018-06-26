@@ -54,17 +54,18 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Properties\DataSources\WcfMathLibrary.IntegralOutput.datasource" />
+    <None Include="Properties\DataSources\WcfMathLibrary.Matrix.MatrixOutput.datasource" />
     <None Include="Properties\DataSources\WcfMathLibrary.MatrixOutput.datasource" />
     <None Include="Properties\DataSources\WcfMathLibrary.OutputForTemp.datasource" />
     <None Include="Properties\DataSources\WcfMathLibrary.OutputForTemp1D.datasource" />
     <None Include="Properties\DataSources\WcfMathLibrary.OutputForTemp3D.datasource" />
+    <None Include="Properties\DataSources\WcfMathLibrary.Temperature.OutputForTemp.datasource" />
+    <None Include="Properties\DataSources\WcfMathLibrary.Temperature.OutputForTemp1D.datasource" />
+    <None Include="Properties\DataSources\WcfMathLibrary.Temperature.OutputForTemp3D.datasource" />
     <None Include="Service References\ServiceReference1\Array3DLibrary.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServiceReference1\Arrays.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReference1\Matrix.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServiceReference1\service.wsdl" />
@@ -74,10 +75,10 @@
     <None Include="Service References\ServiceReference1\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference1\System.xsd">
+    <None Include="Service References\ServiceReference1\WcfMathLibrary.Matrix.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference1\WcfMathLibrary.xsd">
+    <None Include="Service References\ServiceReference1\WcfMathLibrary.Temperature.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

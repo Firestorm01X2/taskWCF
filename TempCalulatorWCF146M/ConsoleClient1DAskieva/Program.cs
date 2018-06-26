@@ -30,7 +30,7 @@ namespace ConsoleClient1DAskieva
 
             while (true)
             {
-                Service1Client client = new Service1Client();
+                ServiceClient client = new ServiceClient();
                 InputForTemp1D input = new InputForTemp1D();
                 input.C = a;
                 input.H = h;

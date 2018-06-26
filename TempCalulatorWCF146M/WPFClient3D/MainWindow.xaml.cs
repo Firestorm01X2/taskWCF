@@ -198,7 +198,7 @@ namespace WPFClient3D
             inputForTemp3D.U = U;
             inputForTemp3D.TimeSteps = frequency;
 
-            Service1Client client = new Service1Client();
+            ServiceClient client = new ServiceClient();
             OutputForTemp3D output = client.CalculateTemp3D(inputForTemp3D);
             U = output.U;
         }
