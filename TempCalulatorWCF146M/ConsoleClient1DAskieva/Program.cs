@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ConsoleClient1DAskieva.ServiceReference1;
-
-namespace ConsoleClient1DAskieva
+﻿namespace ConsoleClient1DAskieva
 {
+    using System;
+    using ServiceReference1;
+
     class Program
     {
         static void Main(string[] args)

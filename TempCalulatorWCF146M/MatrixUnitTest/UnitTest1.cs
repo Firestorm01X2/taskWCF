@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Matrix;
-
-namespace MatrixUnitTest
+﻿namespace MatrixUnitTest
 {
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Matrix;
+
     [TestClass]
     public class UnitTest1
     {

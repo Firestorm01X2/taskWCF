@@ -1,13 +1,7 @@
 ﻿namespace ConsoleTestMatrix
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using WcfMathLibrary;
-    using Matrix;
-    using ConsoleTestMatrix.ServiceReference1;
+    using ServiceReference1;
     using WcfMathLibrary.Matrix;
 
     class Program

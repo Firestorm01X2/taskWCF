@@ -1,26 +1,15 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WcfMathLibrary;
-using Array3DLibrary;
-using NewMathLib;
-
-namespace ServerUnitTests
+﻿namespace ServerUnitTests
 {
+    using System;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Array3DLibrary;
+
     [TestClass]
     public class ServerUnitTests
     {
         [TestMethod]
-        [ExpectedException(typeof(Exception), "Stability condition is not met!")]
-        public void TestNonStability()
-        {
-            
-            NewMathLib.HeatFlow.CalcNewT(new double[2, 2] { { 0, 0 }, { 0, 0 } }, 1, 0.01, 0.1, 2);
-        }
-
-        [TestMethod]
         public void testNoExceptions()
         {
-            
             try
             {
                 double [,] U = NewMathLib.HeatFlow.CalcNewT(new double[3, 4] { { 0, 0, 0, 0 },
@@ -69,6 +58,5 @@ namespace ServerUnitTests
                 Assert.Fail("Expected no exception, but got: " + e.Message);
             }
         }
-
     }
 }

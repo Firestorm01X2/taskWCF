@@ -1,10 +1,9 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
-using Array3DLibrary;
-
-namespace _3DLibraryUnitTest
+﻿namespace _3DLibraryUnitTest
 {
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System.Collections.Generic;
+    using Array3DLibrary;
+
     [TestClass]
     public class UnitTest1
     {

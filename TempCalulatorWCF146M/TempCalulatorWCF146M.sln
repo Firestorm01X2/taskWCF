@@ -10,11 +10,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempCalulatorWCF146M", "Tem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfMathLibrary", "WcfMathLibrary\WcfMathLibrary.csproj", "{162E2A44-7B04-4398-ABB0-EC6E677930D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientConsole", "ClientConsole\ClientConsole.csproj", "{1F937E02-086B-4FD0-B366-80B7B821BACB}"
-	ProjectSection(ProjectDependencies) = postProject
-		{162E2A44-7B04-4398-ABB0-EC6E677930D4} = {162E2A44-7B04-4398-ABB0-EC6E677930D4}
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerUnitTests", "ServerUnitTests\ServerUnitTests.csproj", "{BDC3AE8F-8A4B-4865-8E1D-91F79C9BD068}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfConsoleHost", "WcfConsoleHost\WcfConsoleHost.csproj", "{0E8B96F2-10E1-4A5B-A703-69C1AED1E03D}"
@@ -81,10 +76,6 @@ Global
 		{162E2A44-7B04-4398-ABB0-EC6E677930D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{162E2A44-7B04-4398-ABB0-EC6E677930D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{162E2A44-7B04-4398-ABB0-EC6E677930D4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1F937E02-086B-4FD0-B366-80B7B821BACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F937E02-086B-4FD0-B366-80B7B821BACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F937E02-086B-4FD0-B366-80B7B821BACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F937E02-086B-4FD0-B366-80B7B821BACB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BDC3AE8F-8A4B-4865-8E1D-91F79C9BD068}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BDC3AE8F-8A4B-4865-8E1D-91F79C9BD068}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDC3AE8F-8A4B-4865-8E1D-91F79C9BD068}.Release|Any CPU.ActiveCfg = Release|Any CPU

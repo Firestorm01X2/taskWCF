@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Array3DLibrary
+﻿namespace Array3DLibrary
 {
+    using System;
+    using System.Collections.Generic;
+
     [Serializable]
     public class Array3D<T>
     {
@@ -47,11 +43,6 @@ namespace Array3DLibrary
 
             MaxItemNumber = xLength * YLength * ZLength - 1;
         }
-
-        //public Array3D(int xSize, int ySize, int zSize, T[] arrayItems) : this(xSize, ySize, zSize)
-        //{
-        //    Items.AddRange(arrayItems);
-        //}
 
         public Array3D(int xSize, int ySize, int zSize, List<T> listItems) : this(xSize, ySize, zSize)
         {
