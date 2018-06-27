@@ -62,6 +62,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegralConsoleClient", "In
 		{162E2A44-7B04-4398-ABB0-EC6E677930D4} = {162E2A44-7B04-4398-ABB0-EC6E677930D4}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestAskieva", "UnitTestAskieva\UnitTestAskieva.csproj", "{241C8961-0136-4090-9BEC-B656EDAE8DF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -144,6 +146,10 @@ Global
 		{48495238-404C-44E3-8EED-A9B409328275}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48495238-404C-44E3-8EED-A9B409328275}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48495238-404C-44E3-8EED-A9B409328275}.Release|Any CPU.Build.0 = Release|Any CPU
+		{241C8961-0136-4090-9BEC-B656EDAE8DF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{241C8961-0136-4090-9BEC-B656EDAE8DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{241C8961-0136-4090-9BEC-B656EDAE8DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{241C8961-0136-4090-9BEC-B656EDAE8DF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
